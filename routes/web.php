@@ -3,7 +3,14 @@
 use App\Http\Controllers\ProfileController;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Artisan;
 use Inertia\Inertia;
+
+Route::get('/setup-db', function () {
+    Artisan::call('migrate:fresh', ['--force' => true]);
+    Artisan::call('storage:link');
+    return "Database wiped and recreated successfully!";
+});
 
 Route::get('/', function () {
     return Inertia::render('Welcome', [
