@@ -1,4 +1,4 @@
-import Header from '@/Components/Header';
+import Header from '@/Components/Shared/Header';
 
 export default function GeneralLayout({ children }) {
     return (
