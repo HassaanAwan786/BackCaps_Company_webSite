@@ -25,13 +25,26 @@ jobs:
           npm install
           npm run build
 
-      - name: 🚀 Deploy via SSH
-        uses: easingthemes/ssh-deploy@v5.1.0
+      - name: 📂 Sync Files via FTP
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
         with:
-          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-          ARGS: "-rlgoDzvc -i --delete"
-          REMOTE_HOST: ${{ secrets.SSH_HOST }}
-          REMOTE_USER: ${{ secrets.SSH_USERNAME }}
-          REMOTE_PORT: ${{ secrets.SSH_PORT }}
-          TARGET: "/home/backcaps/public_html"
-          EXCLUDE: "/node_modules/, /tests/, /storage/logs/, .git/, .github/, .env.example, README.md, **/.env"
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: public_html/
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.github/**
+            **/node_modules/**
+            **/tests/**
+            storage/logs/**
+            .env.example
+            .gitattributes
+            .gitignore
+            README.md
+            package.json
+            package-lock.json
+            vite.config.js
+            tailwind.config.js
+            postcss.config.js
