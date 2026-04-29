@@ -1,0 +1,37 @@
+name: Deploy to CPanel
+
+on:
+  push:
+    branches: develop
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚚 Checkout Code
+        uses: actions/checkout@v3
+
+      - name: 🛠️ Set up PHP
+        uses: shivammathur@setup-php@v2
+        with:
+          php-version: '8.3'
+
+      - name: 📦 Install Composer Dependencies
+        run: composer install --no-dev --optimize-autoloader
+
+      - name: 🏗️ Build Frontend Assets
+        run: |
+          npm install
+          npm run build
+
+      - name: 🚀 Deploy via SSH
+        uses: easingthemes/ssh-deploy@v5.1.0
+        with:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USERNAME }}
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          TARGET: "/home/backcaps/public_html"
+          EXCLUDE: "/node_modules/, /tests/, /storage/logs/, .git/, .github/, .env.example, README.md, **/.env"
