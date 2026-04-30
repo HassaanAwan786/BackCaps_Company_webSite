@@ -1,4 +1,4 @@
-name: Deploy to CPanel
+name: Deploy to CPanel (SSH)
 
 on:
   push:
@@ -25,27 +25,29 @@ jobs:
           npm install
           npm run build
 
-      - name: 📂 Sync Files via FTP
-        uses: SamKirkland/FTP-Deploy-Action@v4.3.4
+      - name: 🚀 Sync Files via SSH (Rsync)
+        uses: easingthemes/ssh-deploy@v5.1.0
+        env:
+          DEBUG: true
         with:
-          server: ${{ secrets.FTP_SERVER }}
-          username: ${{ secrets.FTP_USERNAME }}
-          password: ${{ secrets.FTP_PASSWORD }}
-          server-dir: public_html/
-          exclude: |
-            public/hot
-            **/.git*
-            **/.git*/**
-            **/.github/**
-            **/node_modules/**
-            **/tests/**
-            storage/logs/**
-            .env.example
-            .gitattributes
-            .gitignore
-            README.md
-            package.json
-            package-lock.json
-            vite.config.js
-            tailwind.config.js
-            postcss.config.js
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i --delete"
+          REMOTE_HOST: ${{ secrets.SSH_HOST }}
+          REMOTE_USER: ${{ secrets.SSH_USERNAME }}
+          REMOTE_PORT: "21098" # CHANGE THIS if your port is different (e.g. 22 or 2222)
+          TARGET: /home/backcaps/public_html
+          EXCLUDE: "/node_modules/, /tests/, /storage/logs/, .git/, .github/, .env.example, README.md, **/public/hot"
+
+      - name: ⚡ Optimize Laravel (Fixes Lag)
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: ${{ secrets.SSH_HOST }}
+          username: ${{ secrets.SSH_USERNAME }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          port: "21098" # MATCH THIS with REMOTE_PORT above
+          script: |
+            cd /home/backcaps/public_html
+            php artisan optimize
+            php artisan view:cache
+            php artisan config:cache
+            php artisan route:cache
