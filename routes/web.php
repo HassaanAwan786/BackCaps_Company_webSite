@@ -12,6 +12,13 @@ Route::get('/setup-db', function () {
     return "Database wiped and recreated successfully!";
 });
 
+// Temporary optimization route - Visit yourdomain.com/optimize once
+Route::get('/optimize', function () {
+    Artisan::call('optimize');
+    Artisan::call('view:cache');
+    return "Website Optimized Successfully!";
+});
+
 Route::get('/', function () {
     return Inertia::render('Welcome', [
         'canLogin' => Route::has('login'),
