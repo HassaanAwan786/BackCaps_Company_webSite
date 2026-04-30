@@ -14,7 +14,7 @@ const BrowserMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup
                     animate={{ opacity: 1, scale: 1, y: 0 }}
                     transition={{ duration: 0.8 }}
                     style={{ rotateX, rotateY, transformStyle: "preserve-3d" }}
-                    className="relative w-full max-w-xl bg-[#0c0c14] rounded-2xl border border-white/10 shadow-2xl overflow-visible scale-[0.85] xs:scale-[0.95] sm:scale-100 origin-center lg:origin-right"
+                    className="relative w-full max-w-2xl lg:max-w-3xl bg-[#0c0c14] rounded-2xl border border-white/10 shadow-2xl overflow-visible scale-90 sm:scale-100 lg:scale-110 origin-center lg:origin-right"
                 >
                     {/* Browser Top Bar */}
                     <div className="bg-[#1a1a2e] px-4 py-3 flex items-center gap-4 rounded-t-2xl">
