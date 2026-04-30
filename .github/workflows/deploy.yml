@@ -27,14 +27,12 @@ jobs:
 
       - name: 🚀 Sync Files via SSH (Rsync)
         uses: easingthemes/ssh-deploy@v5.1.0
-        env:
-          DEBUG: true
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i --delete"
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USERNAME }}
-          REMOTE_PORT: "21098" # CHANGE THIS if your port is different (e.g. 22 or 2222)
+          REMOTE_PORT: ${{ secrets.SSH_PORT }}
           TARGET: /home/backcaps/public_html
           EXCLUDE: "/node_modules/, /tests/, /storage/logs/, .git/, .github/, .env.example, README.md, **/public/hot"
 
@@ -44,7 +42,7 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: "21098" # MATCH THIS with REMOTE_PORT above
+          port: ${{ secrets.SSH_PORT }}
           script: |
             cd /home/backcaps/public_html
             php artisan optimize
