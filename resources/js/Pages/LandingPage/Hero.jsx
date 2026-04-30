@@ -6,6 +6,7 @@ import Counter from '@/Components/Hero/Counter';
 import BackgroundCanvas from '@/Components/Hero/BackgroundCanvas';
 import PhoneMockup from '@/Components/Hero/PhoneMockup';
 import BrowserMockup from '@/Components/Hero/BrowserMockup';
+import TabletMockup from '@/Components/Hero/TabletMockup';
 import SliderNav from '@/Components/Hero/SliderNav';
 import CustomCursor from '@/Components/Hero/CustomCursor';
 
@@ -58,7 +59,7 @@ export default function Hero() {
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % 2);
+            setCurrentSlide((prev) => (prev + 1) % 3);
         }, 12000);
         return () => clearInterval(interval);
     }, []);
@@ -104,8 +105,8 @@ export default function Hero() {
         setIsHovering(false);
     };
 
-    const handleNextSlide = () => setCurrentSlide(prev => (prev + 1) % 2);
-    const handlePrevSlide = () => setCurrentSlide(prev => (prev - 1 + 2) % 2);
+    const handleNextSlide = () => setCurrentSlide(prev => (prev + 1) % 3);
+    const handlePrevSlide = () => setCurrentSlide(prev => (prev - 1 + 3) % 3);
 
     return (
         <div
@@ -202,7 +203,7 @@ export default function Hero() {
                                 screenIndex={screenIndex}
                             />
                         </motion.div>
-                    ) : (
+                    ) : currentSlide === 1 ? (
                         <motion.div
                             key="slide2"
                             initial={{ opacity: 0, x: 100 }}
@@ -264,6 +265,63 @@ export default function Hero() {
                             </div>
 
                             <BrowserMockup 
+                                rotateX={rotateX}
+                                rotateY={rotateY}
+                                isHoveringMockup={isHoveringMockup}
+                                setIsHoveringMockup={setIsHoveringMockup}
+                                screenIndex={screenIndex}
+                            />
+                        </motion.div>
+                    ) : (
+                        <motion.div
+                            key="slide3"
+                            initial={{ opacity: 0, x: 100 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -100 }}
+                            transition={{ duration: 0.8, ease: "easeInOut" }}
+                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full"
+                        >
+                            {/* Hero Text (Slide 3) */}
+                            <div className="w-full lg:flex-1 text-left">
+                                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-brand-purple/10 border border-brand-purple/20 mb-6">
+                                    <span className="relative flex h-2 w-2">
+                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
+                                        <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-purple"></span>
+                                    </span>
+                                    <span className="text-[10px] font-bold text-brand-purple uppercase tracking-wider">available for new projects · 2026</span>
+                                </div>
+
+                                <h1 className="text-[32px] sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6">
+                                    We build <br />
+                                    <span className="bg-gradient-to-r from-brand-purple to-pink-500 bg-clip-text text-transparent">Tablet Apps</span> <br />
+                                    that ship.
+                                </h1>
+
+                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
+                                    Designing for the next generation of portable productivity. We create experiences that feel native and powerful on every device.
+                                </p>
+
+                                <div className="flex flex-col sm:flex-row gap-4 mb-6 lg:mb-10">
+                                    <motion.a
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        href="#start"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(178,73,248,0.3)] hover:shadow-[0_15px_40px_rgba(178,73,248,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                    >
+                                        start a project &rarr;
+                                    </motion.a>
+                                    <motion.a
+                                        whileHover={{ scale: 1.05 }}
+                                        whileTap={{ scale: 0.95 }}
+                                        href="#work"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                    >
+                                        view our work
+                                    </motion.a>
+                                </div>
+                            </div>
+
+                            <TabletMockup 
                                 rotateX={rotateX}
                                 rotateY={rotateY}
                                 isHoveringMockup={isHoveringMockup}
