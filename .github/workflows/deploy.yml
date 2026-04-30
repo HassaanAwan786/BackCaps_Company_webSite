@@ -27,14 +27,16 @@ jobs:
 
       - name: 🚀 Sync Files via SSH (Rsync)
         uses: easingthemes/ssh-deploy@v5.1.0
+        env:
+          DEBUG: true
         with:
           SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
           ARGS: "-rlgoDzvc -i --delete"
           REMOTE_HOST: ${{ secrets.SSH_HOST }}
           REMOTE_USER: ${{ secrets.SSH_USERNAME }}
-          REMOTE_PORT: ${{ secrets.SSH_PORT }}
+          REMOTE_PORT: "21098" # CHANGE THIS if your port is different (e.g. 22 or 2222)
           TARGET: /home/backcaps/public_html
-          EXCLUDE: "/node_modules/, /tests/, /storage/logs/, .git/, .github/, .env.example, README.md, **/public/hot"
+          EXCLUDE: "/node_modules/, /tests/, /storage/logs/, .git/, .github/, .env.example, .env, .env.*, README.md, **/public/hot"
 
       - name: ⚡ Optimize Laravel (Fixes Lag)
         uses: appleboy/ssh-action@v1.0.3
@@ -42,10 +44,10 @@ jobs:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
           key: ${{ secrets.SSH_PRIVATE_KEY }}
-          port: ${{ secrets.SSH_PORT }}
+          port: "21098" # MATCH THIS with REMOTE_PORT above
           script: |
             cd /home/backcaps/public_html
             php artisan optimize
             php artisan view:cache
-            php artisan config:cache
+            php artisan config:clear
             php artisan route:cache
