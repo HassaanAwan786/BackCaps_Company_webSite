@@ -61,7 +61,18 @@ export default function Hero() {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % 3);
         }, 12000);
-        return () => clearInterval(interval);
+
+        const handleScroll = () => {
+            if (window.scrollY > 100) {
+                setIsHovering(false);
+            }
+        };
+
+        window.addEventListener('scroll', handleScroll);
+        return () => {
+            clearInterval(interval);
+            window.removeEventListener('scroll', handleScroll);
+        };
     }, []);
 
     const mouseXSpring = useSpring(x);
@@ -81,11 +92,26 @@ export default function Hero() {
     // Handle mouse movement for tilt
     const handleMouseMoveTilt = (e) => {
         if (!containerRef.current) return;
+        
+        // Only show custom cursor if at the top of the page
+        if (window.scrollY > 50) {
+            if (isHovering) setIsHovering(false);
+            return;
+        }
+
         const rect = containerRef.current.getBoundingClientRect();
         const width = rect.width;
         const height = rect.height;
         const mouseX = e.clientX - rect.left;
         const mouseY = e.clientY - rect.top;
+
+        // Check if mouse is actually within the hero bounds relative to viewport
+        if (e.clientY > rect.bottom || e.clientY < rect.top) {
+            if (isHovering) setIsHovering(false);
+            return;
+        }
+
+        if (!isHovering) setIsHovering(true);
 
         const xPct = mouseX / width - 0.5;
         const yPct = mouseY / height - 0.5;
@@ -112,9 +138,11 @@ export default function Hero() {
         <div
             ref={containerRef}
             onMouseMove={handleMouseMoveTilt}
-            onMouseEnter={() => setIsHovering(true)}
-            onMouseLeave={handleMouseLeaveTilt}
-            className="relative min-h-screen lg:h-screen flex flex-col items-center justify-center pt-24 pb-20 lg:py-0 overflow-hidden bg-brand-dark cursor-none"
+            onMouseEnter={() => {
+                if (window.scrollY < 50) setIsHovering(true);
+            }}
+            onMouseLeave={() => setIsHovering(false)}
+            className={`relative min-h-screen lg:h-screen flex flex-col items-center justify-center pt-24 pb-20 lg:py-0 overflow-hidden bg-brand-dark transition-colors duration-500 ${isHovering ? 'cursor-none' : ''}`}
         >
             {/* Background Pattern */}
             <div className="absolute inset-0 z-0 pointer-events-none">
@@ -333,7 +361,18 @@ export default function Hero() {
                 </AnimatePresence>
             </div>
 
-            <motion.div
+            <motion.button
+                onClick={() => {
+                    const element = document.getElementById('tech-stats');
+                    if (element) {
+                        const offset = 80; // Header height
+                        const elementPosition = element.getBoundingClientRect().top + window.pageYOffset;
+                        window.scrollTo({
+                            top: elementPosition - offset,
+                            behavior: 'smooth'
+                        });
+                    }
+                }}
                 animate={{ y: [0, 10, 0] }}
                 transition={{ duration: 2, repeat: Infinity }}
                 className="absolute bottom-10 left-1/2 -translate-x-1/2 hidden lg:flex flex-col items-center gap-2 cursor-pointer opacity-50 hover:opacity-100 transition-opacity z-30"
@@ -343,7 +382,7 @@ export default function Hero() {
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
                     </svg>
                 </div>
-            </motion.div>
+            </motion.button>
 
             <SliderNav onPrev={handlePrevSlide} onNext={handleNextSlide} />
 
