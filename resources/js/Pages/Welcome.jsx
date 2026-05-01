@@ -18,9 +18,9 @@ export default function Welcome({ auth }) {
             <TechHeadline />
             <WhoWeAre />
             <Services />
+            <CallToAction />
             <Team />
             <Contact />
-            <CallToAction />
             <Footer />
 
 
