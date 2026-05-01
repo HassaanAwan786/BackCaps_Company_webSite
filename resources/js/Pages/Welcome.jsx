@@ -7,6 +7,7 @@ import Services from '@/Components/Hero/Services';
 import Team from '@/Components/Hero/Team';
 import Contact from '@/Components/Hero/Contact';
 import CallToAction from '@/Components/Hero/CallToAction';
+import Footer from '@/Components/Hero/Footer';
 
 export default function Welcome({ auth }) {
     return (
@@ -17,9 +18,10 @@ export default function Welcome({ auth }) {
             <TechHeadline />
             <WhoWeAre />
             <Services />
-            <CallToAction />
             <Team />
             <Contact />
+            <CallToAction />
+            <Footer />
 
 
         </GeneralLayout>
