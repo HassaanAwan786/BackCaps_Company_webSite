@@ -22,6 +22,7 @@ const Services = () => {
     const services = [
         {
             title: "Web Development",
+            category: 'project',
             description: "Custom websites and web applications built for performance, scalability, and conversion.",
             items: ["Blog Websites", "Business Websites", "Portals and Event Websites", "E-Commerce Solutions"],
             bg: "bg-gradient-to-br from-blue-600/10 via-blue-600/5 to-transparent border-blue-500/20",
@@ -37,6 +38,7 @@ const Services = () => {
         },
         {
             title: "Mobile Application Development",
+            category: 'project',
             description: "High-performance mobile apps designed to engage users and drive growth.",
             items: ["Cross-Platform Development", "Native App Development", "Pixel Perfect UI & UX", "High-Performance Apps"],
             bg: "bg-gradient-to-br from-pink-600/10 via-pink-600/5 to-transparent border-pink-500/20",
@@ -53,6 +55,7 @@ const Services = () => {
         },
         {
             title: "UI/UX Designing",
+            category: 'project',
             description: "We have a team of skilled professionals crafting user-centric designs that are intuitive, engaging and impactful.",
             items: ["User Research", "Wireframing and Prototyping", "UI Design", "Usability Testing"],
             bg: "bg-gradient-to-br from-cyan-600/10 via-cyan-600/5 to-transparent border-cyan-500/20",
@@ -73,14 +76,72 @@ const Services = () => {
             bg: "bg-gradient-to-br from-purple-600/10 via-purple-600/5 to-transparent border-purple-500/20",
             image: "/assets/images/ai.png",
             icon: "/assets/images/ai_logo.png",
+            category: 'project',
+            category: 'project',
+            expertise: "Deep Learning & NLP",
+            stats: "98% Accuracy",
             techIcons: [
                 { name: 'python', top: '15%', left: '25%', color: '#3776AB', mTop: '-15%', mLeft: '20%' },
                 { name: 'tensorflow', top: '10%', right: '15%', color: '#FF6F00', mTop: '-10%', mRight: '0%' },
                 { name: 'pytorch', bottom: '45%', left: '-10%', color: '#EE4C2C', mTop: '30%', mLeft: '-55%' },
                 { name: 'keras', top: '70%', left: '-20%', color: '#D00000', mTop: '40%', mLeft: '-5%' }
             ]
+        },
+        // Service Based Products
+        {
+            title: "Cloud Infrastructure",
+            category: 'service',
+            expertise: "DevOps & Scaling",
+            stats: "99.9% Uptime",
+            description: "Scalable and secure cloud hosting, DevOps, and infrastructure management solutions.",
+            items: ["AWS/Azure Management", "CI/CD Pipelines", "Kubernetes Orchestration", "Server Migration"],
+            bg: "bg-gradient-to-br from-orange-600/10 via-orange-600/5 to-transparent border-orange-500/20",
+            image: "/assets/images/macbook.png",
+            icon: "/assets/images/macbook_logo.png",
+            techIcons: [
+                { name: 'amazonwebservices', top: '20%', left: '10%', color: '#FF9900' },
+                { name: 'docker', top: '10%', right: '15%', color: '#2496ED' },
+                { name: 'kubernetes', bottom: '30%', left: '5%', color: '#326CE5' }
+            ]
+        },
+        {
+            title: "Cyber Security",
+            category: 'service',
+            expertise: "Security Audits",
+            stats: "Zero Breaches",
+            description: "Enterprise-grade security audits, threat protection, and vulnerability assessments.",
+            items: ["Security Audits", "Penetration Testing", "Encryption Solutions", "Threat Monitoring"],
+            bg: "bg-gradient-to-br from-red-600/10 via-red-600/5 to-transparent border-red-500/20",
+            image: "/assets/images/ai.png",
+            icon: "/assets/images/ai_logo.png",
+            techIcons: [
+                { name: 'kalilinux', top: '15%', left: '15%', color: '#557C94' },
+                { name: 'fortinet', top: '10%', right: '20%', color: '#EE3124' }
+            ]
+        },
+        {
+            title: "Digital Marketing",
+            category: 'service',
+            expertise: "Growth Hacking",
+            stats: "3x ROI",
+            description: "Data-driven marketing strategies to increase your online presence and conversion rates.",
+            items: ["SEO Optimization", "Social Media Management", "Content Strategy", "PPC Campaigns"],
+            bg: "bg-gradient-to-br from-green-600/10 via-green-600/5 to-transparent border-green-500/20",
+            image: "/assets/images/studio.png",
+            icon: "/assets/images/studio_logo.png",
+            techIcons: [
+                { name: 'googleads', top: '20%', left: '10%', color: '#4285F4' },
+                { name: 'mailchimp', bottom: '25%', right: '15%', color: '#FFE01B' }
+            ]
         }
     ];
+
+    // Add expertise/stats to existing projects
+    services[0].expertise = "Performance Web"; services[0].stats = "200+ Projects";
+    services[1].expertise = "Cross-Platform"; services[1].stats = "150+ Apps";
+    services[2].expertise = "User-Centric UI"; services[2].stats = "50+ Designs";
+
+    const filteredServices = services.filter(s => s.category === activeTab);
 
     return (
         <section className="bg-[#05050d] py-24 px-6 sm:px-12 lg:px-24 relative overflow-hidden">
@@ -130,7 +191,7 @@ const Services = () => {
                         transition={{ duration: 0.3 }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
                     >
-                        {services.map((service, index) => (
+                        {filteredServices.map((service, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 30 }}
@@ -140,26 +201,54 @@ const Services = () => {
                                 className={`${service.bg} ${service.className || ''} rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden group lg:min-h-[380px] border flex flex-col lg:flex-row gap-8 lg:gap-10 items-start text-left transition-all duration-500 hover:scale-[1.01] lg:hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-600/10`}
                             >
                                 {/* Content Side */}
-                                <div className="flex-1 z-10 relative">
-                                    <div className="flex items-center gap-4 mb-8">
-                                        <div className="flex-shrink-0 flex items-center justify-center">
-                                            <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
+                                <div className="flex-1 z-10 relative pr-4">
+                                    {/* Default Screen */}
+                                    <div className="transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:opacity-0 group-hover:-translate-y-12 group-hover:scale-95 group-hover:blur-sm">
+                                        <div className="flex items-center gap-4 mb-8">
+                                            <div className="flex-shrink-0 flex items-center justify-center">
+                                                <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
+                                            </div>
+                                            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight">
+                                                {service.title}
+                                            </h3>
                                         </div>
-                                        <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight">
-                                            {service.title}
-                                        </h3>
+                                        <p className="text-gray-400 text-[13px] sm:text-sm font-medium leading-relaxed mb-8">
+                                            {service.description}
+                                        </p>
+                                        <ul className="space-y-3 sm:space-y-4 inline-block text-left">
+                                            {service.items.map((item, i) => (
+                                                <li key={i} className="flex items-center gap-3 text-[13px] font-bold text-gray-300">
+                                                    {checkmark}
+                                                    {item}
+                                                </li>
+                                            ))}
+                                        </ul>
                                     </div>
-                                    <p className="text-gray-400 text-[13px] sm:text-sm font-medium leading-relaxed mb-8">
-                                        {service.description}
-                                    </p>
-                                    <ul className="space-y-3 sm:space-y-4 inline-block text-left">
-                                        {service.items.map((item, i) => (
-                                            <li key={i} className="flex items-center gap-3 text-[13px] font-bold text-gray-300">
-                                                {checkmark}
-                                                {item}
-                                            </li>
-                                        ))}
-                                    </ul>
+
+                                    {/* Hover Screen - Insights Dashboard */}
+                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] translate-y-12 group-hover:translate-y-0 flex flex-col justify-center pointer-events-none group-hover:pointer-events-auto">
+                                        <div className="flex items-center gap-3 mb-6">
+                                            <div className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
+                                                <img src={service.icon} alt="" width={24} height={24} className="brightness-125" />
+                                            </div>
+                                            <h4 className="text-lg font-black text-white uppercase tracking-widest">Insights</h4>
+                                        </div>
+                                        
+                                        <div className="space-y-6 mb-8">
+                                            <div>
+                                                <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Expertise</p>
+                                                <p className="text-lg font-black text-blue-400 uppercase">{service.expertise}</p>
+                                            </div>
+                                            <div>
+                                                <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Key Result</p>
+                                                <p className="text-lg font-black text-white uppercase">{service.stats}</p>
+                                            </div>
+                                        </div>
+
+                                        <button className="w-fit px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 active:scale-95">
+                                            Explore Solutions
+                                        </button>
+                                    </div>
                                 </div>
 
                                 <div className="flex-1 w-full relative min-h-[200px] sm:min-h-[250px] lg:min-h-full self-stretch mt-6 lg:mt-0">
