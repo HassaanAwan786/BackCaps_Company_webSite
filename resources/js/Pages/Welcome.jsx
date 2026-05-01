@@ -3,6 +3,7 @@ import { Head } from '@inertiajs/react';
 import Hero from './LandingPage/Hero';
 import TechHeadline from '@/Components/Hero/TechHeadline';
 import WhoWeAre from '@/Components/Hero/WhoWeAre';
+import CallToAction from '@/Components/Hero/CallToAction';
 
 export default function Welcome({ auth }) {
     return (
@@ -12,6 +13,7 @@ export default function Welcome({ auth }) {
             <Hero />
             <TechHeadline />
             <WhoWeAre />
+            <CallToAction />
 
             {/* Next Section (Work) */}
             <div className="min-h-screen bg-[#05050d] flex items-center justify-center border-t border-white/5">
