@@ -4,6 +4,7 @@ import Hero from './LandingPage/Hero';
 import TechHeadline from '@/Components/Hero/TechHeadline';
 import WhoWeAre from '@/Components/Hero/WhoWeAre';
 import Services from '@/Components/Hero/Services';
+import Team from '@/Components/Hero/Team';
 import CallToAction from '@/Components/Hero/CallToAction';
 
 export default function Welcome({ auth }) {
@@ -16,6 +17,7 @@ export default function Welcome({ auth }) {
             <WhoWeAre />
             <Services />
             <CallToAction />
+            <Team />
 
         </GeneralLayout>
     );
