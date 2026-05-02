@@ -1,11 +1,13 @@
 import { Head, useForm, Link } from '@inertiajs/react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { useState, useEffect } from 'react';
+import ConfirmationModal from '@/Components/Admin/ConfirmationModal';
 
 export default function AdminLayout({ auth, children, title }) {
     const { post } = useForm();
     const [isSidebarOpen, setIsSidebarOpen] = useState(true);
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+    const [isLogoutModalOpen, setIsLogoutModalOpen] = useState(false);
 
     // Handle window resize for sidebar
     useEffect(() => {
@@ -21,8 +23,7 @@ export default function AdminLayout({ auth, children, title }) {
         return () => window.removeEventListener('resize', handleResize);
     }, []);
 
-    const handleLogout = (e) => {
-        e.preventDefault();
+    const confirmLogout = () => {
         post('/admin/logout');
     };
 
@@ -76,7 +77,7 @@ export default function AdminLayout({ auth, children, title }) {
 
             <div className={`border-t border-white/5 shrink-0 overflow-hidden transition-all duration-300 ${isSidebarOpen || isMobileMenuOpen ? 'p-4' : 'p-2'}`}>
                 <button
-                    onClick={handleLogout}
+                    onClick={() => setIsLogoutModalOpen(true)}
                     className={`w-full flex items-center rounded-2xl text-gray-500 hover:bg-red-500/10 hover:text-red-500 transition-all duration-300
                     ${isSidebarOpen || isMobileMenuOpen ? 'px-4 py-4 gap-4 justify-start' : 'p-4 justify-center'}`}
                 >
@@ -161,6 +162,16 @@ export default function AdminLayout({ auth, children, title }) {
                     </p>
                 </footer>
             </div>
+
+            <ConfirmationModal 
+                isOpen={isLogoutModalOpen}
+                onClose={() => setIsLogoutModalOpen(false)}
+                onConfirm={confirmLogout}
+                title="End Session?"
+                message="Are you sure you want to log out of the admin dashboard? You will need to log in again to manage your leads."
+                confirmText="Logout Now"
+                type="primary"
+            />
         </div>
     );
 }
