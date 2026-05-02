@@ -4,12 +4,12 @@ import Hero from './LandingPage/Hero';
 import TechHeadline from '@/Components/Hero/TechHeadline';
 import WhoWeAre from '@/Components/Hero/WhoWeAre';
 import Services from '@/Components/Hero/Services';
+import CallToAction from '@/Components/Hero/CallToAction';
 import Team from '@/Components/Hero/Team';
 import Contact from '@/Components/Hero/Contact';
-import CallToAction from '@/Components/Hero/CallToAction';
 import Footer from '@/Components/Hero/Footer';
 
-export default function Welcome({ auth }) {
+export default function Welcome({ auth, timeSlots }) {
     return (
         <GeneralLayout>
             <Head title="Premium Product Engineers" />
@@ -20,7 +20,7 @@ export default function Welcome({ auth }) {
             <Services />
             <CallToAction />
             <Team />
-            <Contact />
+            <Contact timeSlots={timeSlots} />
             <Footer />
 
 

@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Inertia\Inertia;
+use App\Models\Lead;
 
 class AdminController extends Controller
 {
@@ -34,7 +35,10 @@ class AdminController extends Controller
 
     public function dashboard()
     {
-        return Inertia::render('Admin/Dashboard');
+        $leads = Lead::latest()->get();
+        return Inertia::render('Admin/Dashboard', [
+            'leads' => $leads
+        ]);
     }
 
     public function logout(Request $request)
