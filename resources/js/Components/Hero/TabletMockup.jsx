@@ -98,9 +98,9 @@ const TabletMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup,
                                     </div>
                                     <div className="flex-1 grid grid-cols-2 sm:grid-cols-3 gap-3 sm:gap-4">
                                         {[
-                                            { name: 'UI Design', color: 'from-pink-500 to-purple-600', icon: '🎨' },
+                                            { name: 'UI Design', color: 'from-blue-400 to-blue-600', icon: '🎨' },
                                             { name: 'Dev Ops', color: 'from-blue-500 to-cyan-500', icon: '⚡' },
-                                            { name: 'AI Models', color: 'from-purple-500 to-indigo-600', icon: '🧠' },
+                                            { name: 'AI Models', color: 'from-blue-600 to-indigo-600', icon: '🧠' },
                                             { name: 'Analytics', color: 'from-orange-500 to-amber-500', icon: '📈' },
                                             { name: 'Security', color: 'from-green-500 to-emerald-600', icon: '🛡️' },
                                             { name: 'Assets', color: 'from-red-500 to-rose-600', icon: '💎' }

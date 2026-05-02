@@ -208,7 +208,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#work"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(178,73,248,0.3)] hover:shadow-[0_15px_40px_rgba(178,73,248,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(21,93,252,0.3)] hover:shadow-[0_15px_40px_rgba(21,93,252,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
                                     >
                                         view our work
                                     </motion.a>
@@ -283,7 +283,7 @@ export default function Hero() {
                                     <span className="text-[10px] text-brand-gray uppercase font-bold tracking-widest">trusted by</span>
                                     <div className="flex -space-x-3">
                                         {[1, 2, 3, 4, 5].map((i) => (
-                                            <div key={i} className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-brand-dark bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-500 to-purple-500' : 'from-brand-purple to-pink-500'} flex items-center justify-center text-[8px] sm:text-[10px] font-bold text-white`}>
+                                            <div key={i} className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-brand-dark bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-500 to-blue-700' : 'from-brand-purple to-blue-400'} flex items-center justify-center text-[8px] sm:text-[10px] font-bold text-white`}>
                                                 {String.fromCharCode(64 + i * 3)}
                                             </div>
                                         ))}
@@ -321,7 +321,7 @@ export default function Hero() {
 
                                 <h1 className="text-[32px] sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6">
                                     We build <br />
-                                    <span className="bg-gradient-to-r from-brand-purple to-pink-500 bg-clip-text text-transparent">Tablet Apps</span> <br />
+                                    <span className="bg-gradient-to-r from-brand-purple to-blue-400 bg-clip-text text-transparent">Tablet Apps</span> <br />
                                     that ship.
                                 </h1>
 
@@ -334,7 +334,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#start"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(178,73,248,0.3)] hover:shadow-[0_15px_40px_rgba(178,73,248,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(21,93,252,0.3)] hover:shadow-[0_15px_40px_rgba(21,93,252,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
                                     >
                                         start a project &rarr;
                                     </motion.a>

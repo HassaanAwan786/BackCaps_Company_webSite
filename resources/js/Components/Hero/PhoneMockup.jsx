@@ -22,7 +22,7 @@ const PhoneMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup, 
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-12 md:top-24 -right-4 md:-right-8 px-4 py-2 rounded-full bg-brand-purple text-white text-[10px] md:text-sm font-bold uppercase shadow-[0_10px_30px_rgba(178,73,248,0.3)] w-28 md:w-36 text-end z-10"
+                            className="absolute top-12 md:top-24 -right-4 md:-right-8 px-4 py-2 rounded-full bg-brand-purple text-white text-[10px] md:text-sm font-bold uppercase shadow-[0_10px_30px_rgba(21,93,252,0.3)] w-28 md:w-36 text-end z-10"
                         >
                             6 weeks
                         </motion.div>
@@ -38,7 +38,7 @@ const PhoneMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup, 
 
                         {/* Phone Body */}
                         <motion.div
-                            animate={{ borderColor: isHoveringMockup ? "rgba(178, 73, 248, 0.5)" : "#1a1a2e" }}
+                            animate={{ borderColor: isHoveringMockup ? "rgba(21, 93, 252, 0.5)" : "#1a1a2e" }}
                             className="relative w-[260px] sm:w-[320px] h-[520px] sm:h-[640px] bg-[#0c0c14] rounded-[3rem] border-[2px] shadow-2xl overflow-hidden z-10 cursor-pointer"
                             style={{
                                 transform: "translateZ(50px)",
@@ -184,7 +184,7 @@ const PhoneMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup, 
                                             <p className="text-brand-gray text-xs mb-6">Experience the next generation of automated deployments and real-time analytics.</p>
 
                                             <div className="flex flex-col gap-3">
-                                                <div className="h-12 w-full rounded-xl bg-brand-purple flex items-center justify-center font-bold text-sm uppercase tracking-widest text-white shadow-lg shadow-brand-purple/20">
+                                                <div className="h-12 w-full rounded-xl bg-brand-purple flex items-center justify-center font-bold text-sm uppercase tracking-widest text-white shadow-lg shadow-brand-purple/30">
                                                     launch demo
                                                 </div>
                                                 <div className="h-12 w-full rounded-xl border border-white/10 flex items-center justify-center font-bold text-sm uppercase tracking-widest text-brand-gray">

@@ -255,9 +255,20 @@ const Services = () => {
                                     <div className={`absolute inset-0 flex ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'items-end' : 'items-center'} justify-center`}>
                                         {/* Main Image */}
                                         <motion.div
-                                            initial={{ scale: 0.9, opacity: 0 }}
-                                            whileInView={{ scale: 1, opacity: 1 }}
-                                            transition={{ delay: 0.4 }}
+                                            initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                                            whileInView={{ 
+                                                scale: 1, 
+                                                opacity: 1, 
+                                                y: [0, -15, 0],
+                                                rotate: [0, 1, -1, 0]
+                                            }}
+                                            viewport={{ once: true }}
+                                            transition={{ 
+                                                scale: { duration: 0.8, delay: 0.2 },
+                                                opacity: { duration: 0.8, delay: 0.2 },
+                                                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                                                rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
+                                            }}
                                             className="relative z-0"
                                         >
                                             <img
@@ -270,9 +281,22 @@ const Services = () => {
                                                     object-contain drop-shadow-2xl transition-transform duration-700 ${service.title === 'Mobile Application Development' ? 'translate-x-20 lg:translate-x-12 translate-y-18 lg:translate-y-5' : ''}`}
                                             />
                                             {service.image2 && (
-                                                <img
+                                                <motion.img
                                                     src={service.image2}
                                                     alt={service.title}
+                                                    initial={{ opacity: 0, x: -20 }}
+                                                    whileInView={{ 
+                                                        opacity: 1, 
+                                                        x: 0,
+                                                        y: [0, 10, 0],
+                                                        rotate: [0, -3, 3, 0]
+                                                    }}
+                                                    transition={{ 
+                                                        opacity: { duration: 0.8, delay: 0.4 },
+                                                        x: { duration: 0.8, delay: 0.4 },
+                                                        y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                                                        rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+                                                    }}
                                                     className="absolute -left-10 bottom-0 w-[120px] object-contain drop-shadow-2xl z-20 transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
                                                 />
                                             )}
@@ -283,8 +307,21 @@ const Services = () => {
                                             <motion.div
                                                 key={i}
                                                 initial={{ opacity: 0, scale: 0 }}
-                                                whileInView={{ opacity: 1, scale: 1 }}
-                                                transition={{ delay: 0.5 + i * 0.1 }}
+                                                whileInView={{ 
+                                                    opacity: 1, 
+                                                    scale: 1,
+                                                    y: [0, (i % 2 === 0 ? -12 : 12), 0],
+                                                    x: [0, (i % 3 === 0 ? 8 : -8), 0],
+                                                    rotate: [0, (i % 2 === 0 ? 10 : -10), 0]
+                                                }}
+                                                viewport={{ once: true }}
+                                                transition={{ 
+                                                    opacity: { duration: 0.5, delay: 0.5 + i * 0.1 },
+                                                    scale: { duration: 0.5, delay: 0.5 + i * 0.1 },
+                                                    y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
+                                                    x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
+                                                    rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                }}
                                                 style={{
                                                     position: 'absolute',
                                                     top: isMobile ? (icon.mTop || icon.top) : icon.top,
