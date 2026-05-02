@@ -41,22 +41,22 @@ export default function Header() {
     const serviceCategories = {
         project: {
             title: "Project Based",
-            description: "End-to-end development for your next big idea.",
+            description: "High-impact, end-to-end digital solutions for your vision.",
             items: [
-                { title: "Custom Web Apps", desc: "Scalable, high-performance web applications built for growth.", icon: "🌐" },
-                { title: "Mobile Apps", desc: "Native iOS and Android experiences with seamless performance.", icon: "📱" },
-                { title: "E-commerce Solutions", desc: "Robust online stores with advanced payment integrations.", icon: "🛒" },
-                { title: "AI & Automation", desc: "Smart features and automated workflows to scale your business.", icon: "🤖" }
+                { title: "Web Development", desc: "Custom websites and applications built for performance and scale.", icon: "🌐" },
+                { title: "Mobile Apps", desc: "High-performance iOS and Android experiences with native speed.", icon: "📱" },
+                { title: "UI/UX Design", desc: "User-centric design systems and interactive prototyping.", icon: "✨" },
+                { title: "Artificial Intelligence", desc: "Intelligent automation and predictive analytics solutions.", icon: "🤖" }
             ]
         },
         service: {
             title: "Service Based",
-            description: "Continuous support and specialized expertise.",
+            description: "Continuous expertise and specialized technology support.",
             items: [
-                { title: "UI/UX Research", desc: "User-centric design and interactive prototyping.", icon: "✨" },
-                { title: "Cloud Infrastructure", desc: "Managed hosting and automated deployment pipelines.", icon: "☁️" },
-                { title: "System Maintenance", desc: "24/7 monitoring and security updates for peace of mind.", icon: "🛡️" },
-                { title: "Brand Identity", desc: "Modern visual guidelines and distinctive brand assets.", icon: "💎" }
+                { title: "Cloud Infrastructure", desc: "Managed hosting, DevOps, and automated scaling solutions.", icon: "☁️" },
+                { title: "Cyber Security", desc: "Enterprise-grade security audits and vulnerability assessments.", icon: "🛡️" },
+                { title: "Digital Marketing", desc: "Data-driven strategies for growth and conversion optimization.", icon: "📈" },
+                { title: "Tech Consulting", desc: "Strategic technology roadmaps and architecture reviews.", icon: "💎" }
             ]
         }
     };

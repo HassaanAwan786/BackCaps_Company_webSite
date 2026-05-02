@@ -3,6 +3,7 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const Services = () => {
     const [activeTab, setActiveTab] = useState('project');
+    const [flippedCard, setFlippedCard] = useState(null); // For mobile tap interaction
 
     const checkmark = (
         <svg className="w-5 h-5 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -45,13 +46,10 @@ const Services = () => {
             image: "/assets/images/iPhone_1.png",
             image2: "/assets/images/iPhone_2.png",
             icon: "/assets/images/iphone_logo.png",
-            // techIcons: [
-            //     { name: 'swift', top: '10%', right: '10%', color: '#F05138' },
-            //     { name: 'kotlin', top: '35%', right: '5%', color: '#7F52FF' },
-            //     { name: 'flutter', bottom: '40%', right: '5%', color: '#02569B' },
-            //     { name: 'react', bottom: '20%', right: '10%', color: '#61DAFB' }
-            // ]
-
+            techIcons: [
+                // { name: 'swift', top: '10%', left: '10%', color: '#F05138' },
+                // { name: 'kotlin', top: '35%', right: '5%', color: '#7F52FF' }
+            ]
         },
         {
             title: "UI/UX Designing",
@@ -77,7 +75,6 @@ const Services = () => {
             image: "/assets/images/ai.png",
             icon: "/assets/images/ai_logo.png",
             category: 'project',
-            category: 'project',
             expertise: "Deep Learning & NLP",
             stats: "98% Accuracy",
             techIcons: [
@@ -87,7 +84,6 @@ const Services = () => {
                 { name: 'keras', top: '70%', left: '-20%', color: '#D00000', mTop: '40%', mLeft: '-5%' }
             ]
         },
-        // Service Based Products
         {
             title: "Cloud Infrastructure",
             category: 'service',
@@ -145,11 +141,9 @@ const Services = () => {
 
     return (
         <section className="bg-[#05050d] py-24 px-6 sm:px-12 lg:px-24 relative overflow-hidden">
-            {/* Background Glow */}
             <div className="absolute top-0 left-1/4 w-[500px] h-[500px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
 
             <div className="max-w-7xl mx-auto relative z-10">
-                {/* Header */}
                 <div className="text-center mb-16">
                     <div className="flex items-center justify-center gap-3 mb-6">
                         <div className="h-[2px] w-8 bg-blue-600" />
@@ -191,161 +185,173 @@ const Services = () => {
                         transition={{ duration: 0.3 }}
                         className="grid grid-cols-1 lg:grid-cols-2 gap-8"
                     >
-                        {filteredServices.map((service, index) => (
-                            <motion.div
-                                key={index}
-                                initial={{ opacity: 0, y: 30 }}
-                                whileInView={{ opacity: 1, y: 0 }}
-                                viewport={{ once: true }}
-                                transition={{ delay: index * 0.1 }}
-                                className={`${service.bg} ${service.className || ''} rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden group lg:min-h-[380px] border flex flex-col lg:flex-row gap-8 lg:gap-10 items-start text-left transition-all duration-500 hover:scale-[1.01] lg:hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-600/10`}
-                            >
-                                {/* Content Side */}
-                                <div className="flex-1 z-10 relative pr-4">
-                                    {/* Default Screen */}
-                                    <div className="transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] group-hover:opacity-0 group-hover:-translate-y-12 group-hover:scale-95 group-hover:blur-sm">
-                                        <div className="flex items-center gap-4 mb-8">
-                                            <div className="flex-shrink-0 flex items-center justify-center">
-                                                <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
-                                            </div>
-                                            <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight">
-                                                {service.title}
-                                            </h3>
+                        {filteredServices.map((service, index) => {
+                            const isFlipped = flippedCard === index;
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={{ opacity: 0, y: 30 }}
+                                    whileInView={{ opacity: 1, y: 0 }}
+                                    viewport={{ once: true }}
+                                    transition={{ delay: index * 0.1 }}
+                                    onClick={() => isMobile && setFlippedCard(isFlipped ? null : index)}
+                                    className={`${service.bg} ${service.className || ''} rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden group lg:min-h-[380px] border flex flex-col lg:flex-row gap-8 lg:gap-10 items-start text-left transition-all duration-500 hover:scale-[1.01] lg:hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-600/10 cursor-pointer lg:cursor-default`}
+                                >
+                                    {/* Mobile Flip Indicator */}
+                                    {isMobile && (
+                                        <div className="absolute top-6 right-6 text-[8px] font-black uppercase tracking-widest text-blue-600/50">
+                                            {isFlipped ? 'Close Details ×' : 'Tap for Insights ⚡'}
                                         </div>
-                                        <p className="text-gray-400 text-[13px] sm:text-sm font-medium leading-relaxed mb-8">
-                                            {service.description}
-                                        </p>
-                                        <ul className="space-y-3 sm:space-y-4 inline-block text-left">
-                                            {service.items.map((item, i) => (
-                                                <li key={i} className="flex items-center gap-3 text-[13px] font-bold text-gray-300">
-                                                    {checkmark}
-                                                    {item}
-                                                </li>
-                                            ))}
-                                        </ul>
+                                    )}
+
+                                    {/* Content Side */}
+                                    <div className="flex-1 z-10 relative pr-4 w-full">
+                                        {/* Default Screen */}
+                                        <div className={`transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] 
+                                            ${isFlipped ? 'opacity-0 -translate-y-12 scale-95 blur-sm' : 'opacity-100 translate-y-0 scale-100'}
+                                            lg:group-hover:opacity-0 lg:group-hover:-translate-y-12 lg:group-hover:scale-95 lg:group-hover:blur-sm`}>
+                                            <div className="flex items-center gap-4 mb-8">
+                                                <div className="flex-shrink-0 flex items-center justify-center">
+                                                    <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
+                                                </div>
+                                                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight">
+                                                    {service.title}
+                                                </h3>
+                                            </div>
+                                            <p className="text-gray-400 text-[13px] sm:text-sm font-medium leading-relaxed mb-8">
+                                                {service.description}
+                                            </p>
+                                            <ul className="space-y-3 sm:space-y-4 inline-block text-left">
+                                                {service.items.map((item, i) => (
+                                                    <li key={i} className="flex items-center gap-3 text-[13px] font-bold text-gray-300">
+                                                        {checkmark}
+                                                        {item}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        </div>
+
+                                        {/* Hover/Flip Screen - Insights Dashboard */}
+                                        <div className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col justify-center
+                                            ${isFlipped ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none'}
+                                            lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto`}>
+                                            <div className="flex items-center gap-3 mb-6">
+                                                <div className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
+                                                    <img src={service.icon} alt="" width={24} height={24} className="brightness-125" />
+                                                </div>
+                                                <h4 className="text-lg font-black text-white uppercase tracking-widest">Insights</h4>
+                                            </div>
+
+                                            <div className="space-y-6 mb-8">
+                                                <div>
+                                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Expertise</p>
+                                                    <p className="text-lg font-black text-blue-400 uppercase">{service.expertise}</p>
+                                                </div>
+                                                <div>
+                                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Key Result</p>
+                                                    <p className="text-lg font-black text-white uppercase">{service.stats}</p>
+                                                </div>
+                                            </div>
+
+                                            <button className="w-fit px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 active:scale-95">
+                                                Explore Solutions
+                                            </button>
+                                        </div>
                                     </div>
 
-                                    {/* Hover Screen - Insights Dashboard */}
-                                    <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] translate-y-12 group-hover:translate-y-0 flex flex-col justify-center pointer-events-none group-hover:pointer-events-auto">
-                                        <div className="flex items-center gap-3 mb-6">
-                                            <div className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
-                                                <img src={service.icon} alt="" width={24} height={24} className="brightness-125" />
-                                            </div>
-                                            <h4 className="text-lg font-black text-white uppercase tracking-widest">Insights</h4>
-                                        </div>
-                                        
-                                        <div className="space-y-6 mb-8">
-                                            <div>
-                                                <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Expertise</p>
-                                                <p className="text-lg font-black text-blue-400 uppercase">{service.expertise}</p>
-                                            </div>
-                                            <div>
-                                                <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Key Result</p>
-                                                <p className="text-lg font-black text-white uppercase">{service.stats}</p>
-                                            </div>
-                                        </div>
-
-                                        <button className="w-fit px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 active:scale-95">
-                                            Explore Solutions
-                                        </button>
-                                    </div>
-                                </div>
-
-                                <div className="flex-1 w-full relative min-h-[200px] sm:min-h-[250px] lg:min-h-full self-stretch mt-6 lg:mt-0">
-                                    <div className={`absolute inset-0 flex ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'items-end' : 'items-center'} justify-center`}>
-                                        {/* Main Image */}
-                                        <motion.div
-                                            initial={{ scale: 0.8, opacity: 0, y: 20 }}
-                                            whileInView={{ 
-                                                scale: 1, 
-                                                opacity: 1, 
-                                                y: [0, -15, 0],
-                                                rotate: [0, 1, -1, 0]
-                                            }}
-                                            viewport={{ once: true }}
-                                            transition={{ 
-                                                scale: { duration: 0.8, delay: 0.2 },
-                                                opacity: { duration: 0.8, delay: 0.2 },
-                                                y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                                                rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                                            }}
-                                            className="relative z-0"
-                                        >
-                                            <img
-                                                src={service.image}
-                                                alt={service.title}
-                                                className={`w-full 
-                                                    ${service.title === 'UI/UX Designing' ? 'max-w-[220px] lg:max-w-[340px] translate-y-4 lg:translate-y-8 scale-110 lg:scale-140 lg:group-hover:scale-145' :
-                                                        service.title === 'Artificial Intelligence' ? 'max-w-[220px] lg:max-w-[320px] translate-y-6 lg:translate-x-10 lg:translate-y-10 scale-100 lg:scale-110' :
-                                                            'max-w-[180px] lg:max-w-[300px] lg:group-hover:scale-105'} 
-                                                    object-contain drop-shadow-2xl transition-transform duration-700 ${service.title === 'Mobile Application Development' ? 'translate-x-20 lg:translate-x-12 translate-y-18 lg:translate-y-5' : ''}`}
-                                            />
-                                            {service.image2 && (
-                                                <motion.img
-                                                    src={service.image2}
-                                                    alt={service.title}
-                                                    initial={{ opacity: 0, x: -20 }}
-                                                    whileInView={{ 
-                                                        opacity: 1, 
-                                                        x: 0,
-                                                        y: [0, 10, 0],
-                                                        rotate: [0, -3, 3, 0]
-                                                    }}
-                                                    transition={{ 
-                                                        opacity: { duration: 0.8, delay: 0.4 },
-                                                        x: { duration: 0.8, delay: 0.4 },
-                                                        y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                                                        rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" }
-                                                    }}
-                                                    className="absolute -left-10 bottom-0 w-[120px] object-contain drop-shadow-2xl z-20 transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
-                                                />
-                                            )}
-                                        </motion.div>
-
-                                        {/* Tech Floating Icons */}
-                                        {service.techIcons?.map((icon, i) => (
+                                    {/* Visual Side */}
+                                    <div className="flex-1 w-full relative min-h-[200px] sm:min-h-[250px] lg:min-h-full self-stretch mt-6 lg:mt-0">
+                                        <div className={`absolute inset-0 flex ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'items-end' : 'items-center'} justify-center transition-opacity duration-500 ${isFlipped ? 'opacity-20' : 'opacity-100'}`}>
                                             <motion.div
-                                                key={i}
-                                                initial={{ opacity: 0, scale: 0 }}
-                                                whileInView={{ 
-                                                    opacity: 1, 
+                                                initial={{ scale: 0.8, opacity: 0, y: 20 }}
+                                                whileInView={{
                                                     scale: 1,
-                                                    y: [0, (i % 2 === 0 ? -12 : 12), 0],
-                                                    x: [0, (i % 3 === 0 ? 8 : -8), 0],
-                                                    rotate: [0, (i % 2 === 0 ? 10 : -10), 0]
+                                                    opacity: 1,
+                                                    y: [0, -15, 0],
+                                                    rotate: [0, 1, -1, 0]
                                                 }}
                                                 viewport={{ once: true }}
-                                                transition={{ 
-                                                    opacity: { duration: 0.5, delay: 0.5 + i * 0.1 },
-                                                    scale: { duration: 0.5, delay: 0.5 + i * 0.1 },
-                                                    y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
-                                                    x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
-                                                    rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                transition={{
+                                                    scale: { duration: 0.8, delay: 0.2 },
+                                                    opacity: { duration: 0.8, delay: 0.2 },
+                                                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
+                                                    rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
                                                 }}
-                                                style={{
-                                                    position: 'absolute',
-                                                    top: isMobile ? (icon.mTop || icon.top) : icon.top,
-                                                    bottom: isMobile ? (icon.mBottom || icon.bottom) : icon.bottom,
-                                                    left: isMobile ? (icon.mLeft || icon.left) : icon.left,
-                                                    right: isMobile ? (icon.mRight || icon.right) : icon.right,
-                                                    zIndex: 10
-                                                }}
-                                                className="bg-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
+                                                className="relative z-0"
                                             >
                                                 <img
-                                                    src={`https://cdn.simpleicons.org/${icon.name}/${icon.color.replace('#', '')}`}
-                                                    alt={icon.name}
-                                                    className="w-4 h-4 sm:w-6 sm:h-6 object-contain"
+                                                    src={service.image}
+                                                    alt={service.title}
+                                                    className={`w-full 
+                                                        ${service.title === 'UI/UX Designing' ? 'max-w-[220px] lg:max-w-[340px] translate-y-4 lg:translate-y-8 scale-110 lg:scale-140 lg:group-hover:scale-145' :
+                                                            service.title === 'Artificial Intelligence' ? 'max-w-[220px] lg:max-w-[320px] translate-y-6 lg:translate-x-10 lg:translate-y-10 scale-100 lg:scale-110' :
+                                                                'max-w-[180px] lg:max-w-[300px] lg:group-hover:scale-105'} 
+                                                        object-contain drop-shadow-2xl transition-transform duration-700 ${service.title === 'Mobile Application Development' ? 'translate-x-20 lg:translate-x-12 translate-y-18 lg:translate-y-5' : ''}`}
                                                 />
+                                                {service.image2 && (
+                                                    <motion.img
+                                                        src={service.image2}
+                                                        alt={service.title}
+                                                        initial={{ opacity: 0, x: -20 }}
+                                                        whileInView={{
+                                                            opacity: 1,
+                                                            x: 0,
+                                                            y: [0, 10, 0],
+                                                            rotate: [0, -3, 3, 0]
+                                                        }}
+                                                        transition={{
+                                                            opacity: { duration: 0.8, delay: 0.4 },
+                                                            x: { duration: 0.8, delay: 0.4 },
+                                                            y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
+                                                            rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" }
+                                                        }}
+                                                        className="absolute -left-10 bottom-0 w-[120px] object-contain drop-shadow-2xl z-20 transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
+                                                    />
+                                                )}
                                             </motion.div>
-                                        ))}
-                                    </div>
 
-                                    {/* Ambient Glow behind image */}
-                                    <div className={`absolute ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'bottom-0 translate-y-1/2' : 'inset-0'} bg-white/20 blur-3xl rounded-full scale-50 opacity-0 group-hover:opacity-100 transition-opacity duration-700`} />
-                                </div>
-                            </motion.div>
-                        ))}
+                                            {service.techIcons?.map((icon, i) => (
+                                                <motion.div
+                                                    key={i}
+                                                    initial={{ opacity: 0, scale: 0 }}
+                                                    whileInView={{
+                                                        opacity: 1,
+                                                        scale: 1,
+                                                        y: [0, (i % 2 === 0 ? -12 : 12), 0],
+                                                        x: [0, (i % 3 === 0 ? 8 : -8), 0],
+                                                        rotate: [0, (i % 2 === 0 ? 10 : -10), 0]
+                                                    }}
+                                                    viewport={{ once: true }}
+                                                    transition={{
+                                                        opacity: { duration: 0.5, delay: 0.5 + i * 0.1 },
+                                                        scale: { duration: 0.5, delay: 0.5 + i * 0.1 },
+                                                        y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
+                                                        x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
+                                                        rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                    }}
+                                                    style={{
+                                                        position: 'absolute',
+                                                        top: isMobile ? (icon.mTop || icon.top) : icon.top,
+                                                        bottom: isMobile ? (icon.mBottom || icon.bottom) : icon.bottom,
+                                                        left: isMobile ? (icon.mLeft || icon.left) : icon.left,
+                                                        right: isMobile ? (icon.mRight || icon.right) : icon.right,
+                                                        zIndex: 10
+                                                    }}
+                                                    className="bg-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
+                                                >
+                                                    <img
+                                                        src={`https://cdn.simpleicons.org/${icon.name}/${icon.color.replace('#', '')}`}
+                                                        alt={icon.name}
+                                                        className="w-4 h-4 sm:w-6 sm:h-6 object-contain"
+                                                    />
+                                                </motion.div>
+                                            ))}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
                     </motion.div>
                 </AnimatePresence>
             </div>

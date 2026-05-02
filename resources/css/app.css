@@ -14,3 +14,30 @@
 
     --spacing-8xl: 90rem;
 }
+
+/* Custom Scrollbar Styles - Premium Dark Mode */
+::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: #05050d;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #1a1a2e;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #155DFC;
+    box-shadow: 0 0 10px rgba(21, 93, 252, 0.5);
+}
+
+/* Firefox Support */
+* {
+    scrollbar-width: thin;
+    scrollbar-color: #1a1a2e #05050d;
+}

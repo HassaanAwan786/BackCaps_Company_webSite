@@ -108,14 +108,23 @@ const Contact = ({ timeSlots = [] }) => {
                             >
                                 <span className="text-lg">📅</span> Schedule a Meeting
                             </button>
+                            <a 
+                                href="tel:+447000000000"
+                                className="px-8 py-4 bg-white border border-slate-200 hover:border-blue-600 text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-3 group"
+                            >
+                                <span className="text-lg group-hover:rotate-12 transition-transform">📞</span> Quick Call Request
+                            </a>
                         </div>
                     </div>
 
                     {/* Agency Details Card */}
                     <div className="lg:col-span-4">
-                        <div className="bg-[#0a0a0a] rounded-[2.5rem] p-10 h-full flex flex-col shadow-2xl">
-                            <h3 className="text-white text-xs font-black uppercase tracking-[0.3em] mb-8">Agency Details</h3>
-                            <div className="space-y-8 flex-1">
+                        <div className="bg-[#0a0a0a] rounded-[2.5rem] p-10 h-full flex flex-col shadow-2xl relative overflow-hidden group">
+                            {/* Decorative Glow */}
+                            <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-[50px] rounded-full group-hover:bg-blue-600/20 transition-colors duration-500" />
+                            
+                            <h3 className="text-white text-xs font-black uppercase tracking-[0.3em] mb-8 relative z-10">Agency Details</h3>
+                            <div className="space-y-8 flex-1 relative z-10">
                                 <div className="flex gap-4">
                                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-sm border border-white/10">📍</div>
                                     <div>
@@ -136,6 +145,18 @@ const Contact = ({ timeSlots = [] }) => {
                                         <p className="text-[10px] text-slate-500 uppercase font-black mb-1">Office Hours</p>
                                         <p className="text-white text-xs font-bold">Mon — Fri: 09:00 - 18:00 GMT</p>
                                     </div>
+                                </div>
+                            </div>
+
+                            {/* Stats in Agency Card */}
+                            <div className="mt-10 pt-8 border-t border-white/5 grid grid-cols-2 gap-4 relative z-10">
+                                <div>
+                                    <p className="text-2xl font-black text-white">250+</p>
+                                    <p className="text-[9px] text-slate-500 uppercase font-black tracking-widest">Successful Projects</p>
+                                </div>
+                                <div>
+                                    <p className="text-2xl font-black text-white">100+</p>
+                                    <p className="text-[9px] text-slate-500 uppercase font-black tracking-widest">Trusted Clients</p>
                                 </div>
                             </div>
                         </div>
