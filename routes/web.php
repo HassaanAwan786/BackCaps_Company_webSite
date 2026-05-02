@@ -31,7 +31,7 @@ require __DIR__.'/auth.php';
 
 use App\Http\Controllers\AdminController;
 
-Route::get('admin/login', [AdminController::class, 'login'])->name('admin.login');
+Route::get('admin/login', [AdminController::class, 'login'])->name('login');
 Route::post('admin/login', [AdminController::class, 'authenticate']);
 Route::post('admin/logout', [AdminController::class, 'logout'])->name('admin.logout');
 
