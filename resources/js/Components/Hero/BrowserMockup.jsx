@@ -133,7 +133,7 @@ const BrowserMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup
                                         {[1, 2, 3].map((i) => (
                                             <div key={i} className="p-4 rounded-xl bg-white/5 border border-white/10 flex items-center justify-between">
                                                 <div className="flex items-center gap-4">
-                                                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${i === 1 ? 'from-blue-500 to-purple-500' : i === 2 ? 'from-green-500 to-teal-500' : 'from-orange-500 to-red-500'} flex items-center justify-center font-bold text-white`}>
+                                                    <div className={`w-10 h-10 rounded-lg bg-gradient-to-br ${i === 1 ? 'from-blue-500 to-blue-700' : i === 2 ? 'from-green-500 to-teal-500' : 'from-orange-500 to-red-500'} flex items-center justify-center font-bold text-white`}>
                                                         P{i}
                                                     </div>
                                                     <div>

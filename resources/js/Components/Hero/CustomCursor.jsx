@@ -23,7 +23,7 @@ const CustomCursor = ({ cursorX, cursorY, cursorXSpring, cursorYSpring, isHoveri
                     y: cursorYSpring,
                     translateX: "-50%",
                     translateY: "-50%",
-                    boxShadow: "0 0 20px rgba(178, 73, 248, 0.3), inset 0 0 15px rgba(178, 73, 248, 0.2)",
+                    boxShadow: "0 0 20px rgba(21, 93, 252, 0.3), inset 0 0 15px rgba(21, 93, 252, 0.2)",
                 }}
             />
         </>
