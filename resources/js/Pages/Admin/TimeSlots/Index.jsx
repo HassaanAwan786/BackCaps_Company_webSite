@@ -38,22 +38,22 @@ export default function TimeSlots({ auth, timeSlots }) {
 
     return (
         <AdminLayout auth={auth} title="Time Slots Management">
-            <div className="max-w-5xl mx-auto space-y-10">
+            <div className="max-w-5xl mx-auto space-y-6 sm:space-y-10">
                 <motion.div
                     initial={{ opacity: 0, y: 20 }}
                     animate={{ opacity: 1, y: 0 }}
                 >
-                    <h1 className="text-4xl lg:text-5xl font-black tracking-tighter mb-4 uppercase">
+                    <h1 className="text-3xl sm:text-4xl lg:text-5xl font-black tracking-tighter mb-2 sm:mb-4 uppercase">
                         Manage <span className="text-brand-purple">Time Slots</span>
                     </h1>
-                    <p className="text-gray-500 font-medium">Add or toggle available meeting slots for your clients.</p>
+                    <p className="text-gray-500 font-medium text-sm sm:text-base">Add or toggle available meeting slots.</p>
                 </motion.div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-12 gap-10">
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-10">
                     {/* Add Slot Form */}
                     <div className="lg:col-span-4">
-                        <div className="bg-[#0a0a0f] border border-white/10 rounded-[2.5rem] p-8">
-                            <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white mb-6">Add New Slot</h3>
+                        <div className="bg-[#0a0a0f] border border-white/10 rounded-[2rem] sm:rounded-[2.5rem] p-6 sm:p-8">
+                            <h3 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-white mb-6">Add New Slot</h3>
                             <form onSubmit={submit} className="space-y-4">
                                 <div>
                                     <label className="text-[10px] text-gray-500 font-black uppercase tracking-widest block mb-2">Slot Time</label>
@@ -62,7 +62,7 @@ export default function TimeSlots({ auth, timeSlots }) {
                                         value={data.time}
                                         onChange={e => setData('time', e.target.value)}
                                         placeholder="e.g. 11:00 AM" 
-                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-brand-purple focus:outline-none transition-all"
+                                        className="w-full bg-white/5 border border-white/10 rounded-2xl px-5 py-3 text-white focus:border-brand-purple focus:outline-none transition-all text-sm"
                                         required
                                     />
                                     {errors.time && <p className="text-red-500 text-[10px] mt-1">{errors.time}</p>}
@@ -79,19 +79,19 @@ export default function TimeSlots({ auth, timeSlots }) {
 
                     {/* Slots List */}
                     <div className="lg:col-span-8">
-                        <div className="bg-[#0a0a0f] border border-white/10 rounded-[2.5rem] overflow-hidden">
-                            <div className="p-8 border-b border-white/5">
-                                <h3 className="text-xs font-black uppercase tracking-[0.2em] text-white">Existing Slots</h3>
+                        <div className="bg-[#0a0a0f] border border-white/10 rounded-[2rem] sm:rounded-[2.5rem] overflow-hidden">
+                            <div className="p-6 sm:p-8 border-b border-white/5">
+                                <h3 className="text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] text-white">Existing Slots</h3>
                             </div>
-                            <div className="p-4">
+                            <div className="p-4 sm:p-6">
                                 <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                                     {timeSlots.map((slot) => (
                                         <div 
                                             key={slot.id}
-                                            className="bg-white/5 border border-white/5 rounded-2xl p-6 flex items-center justify-between group hover:border-white/10 transition-all"
+                                            className="bg-white/5 border border-white/5 rounded-2xl p-4 sm:p-6 flex items-center justify-between group hover:border-white/10 transition-all"
                                         >
                                             <div>
-                                                <p className="text-lg font-black text-white">{slot.time}</p>
+                                                <p className="text-base sm:text-lg font-black text-white">{slot.time}</p>
                                                 <span className={`text-[8px] font-black uppercase tracking-widest ${slot.is_available ? 'text-green-500' : 'text-orange-500'}`}>
                                                     {slot.is_available ? 'Available' : 'Full / Blocked'}
                                                 </span>
@@ -116,7 +116,7 @@ export default function TimeSlots({ auth, timeSlots }) {
                                     ))}
                                 </div>
                                 {timeSlots.length === 0 && (
-                                    <div className="py-20 text-center text-gray-500 font-bold uppercase tracking-widest text-[10px]">
+                                    <div className="py-16 sm:py-20 text-center text-gray-500 font-bold uppercase tracking-widest text-[9px] sm:text-[10px]">
                                         No time slots created yet.
                                     </div>
                                 )}
