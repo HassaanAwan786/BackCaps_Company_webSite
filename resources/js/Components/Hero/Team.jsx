@@ -197,79 +197,98 @@ const Team = () => {
 
     const team = [
         {
-            name: "Michael Anderson",
-            role: "Founder & CEO",
-            experience: "12+ Years",
-            projectsCount: "150+",
-            quote: "True innovation isn't just about code; it's about solving real-world problems with elegant, scalable technology.",
-            about: "Michael is a visionary leader with over a decade of experience in the tech industry. He has spearheaded numerous high-impact projects for global enterprises.",
-            education: "MBA, Stanford University",
-            expertise: ["Strategic Leadership", "Venture Capital", "System Architecture", "Business Growth"],
-            achievements: ["Built 3 successful startups", "Featured in Forbes 30 Under 30", "Consulted for Fortune 500s"],
+            name: "Waqar Ahmed",
+            role: "Mobile App Team Lead",
+            experience: "8+ Years",
+            projectsCount: "45+",
+            quote: "Great mobile applications are not just built with code—they are crafted with vision, precision, and a deep understanding of user experience.",
+            about: "Waqar Ahmed is a dedicated Mobile App Team Lead focused on building scalable, user-friendly, and high-performance applications. With strong expertise in modern frameworks and clean architecture, he leads teams to deliver reliable and impactful digital products. His approach blends technical excellence with a clear understanding of user needs.",
+            education: "BS Software Engineering",
+            expertise: ["Mobile Frameworks", "Clean Architecture", "Team Leadership", "Performance Optimization", "User Experience"],
+            achievements: ["Led 15+ high-performance app launches", "Architected scalable mobile solutions", "Mentored 20+ mobile developers"],
             workSamples: [
-                { title: "Enterprise ERP", type: "Enterprise", image: "/assets/images/team/work_1.png" },
-                { title: "FinTech Platform", type: "Finance", image: "/assets/images/team/work_2.png" },
-                { title: "Global Logistics", type: "Infrastructure", image: "/assets/images/team/work_3.png" }
+                { title: "Enterprise Mobile ERP", type: "Mobile", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop" },
+                { title: "FinTech App", type: "Finance", image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Health Monitoring System", type: "Health", image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
+            image: "/assets/images/team/portfolio/waqar_img.jpeg",
             color: "text-blue-500"
         },
         {
-            name: "Sarah Williams",
-            role: "Creative Director",
-            experience: "9+ Years",
-            projectsCount: "80+",
-            quote: "Design is not just what it looks like and feels like. Design is how it works.",
-            about: "Sarah is a design maven who believes in the power of visual storytelling and user-centric interfaces.",
-            education: "BFA in Visual Communication, RISD",
-            expertise: ["Brand Identity", "UX Strategy", "Motion Design", "Design Systems"],
-            achievements: ["Awwwards Site of the Year", "Behance Featured Artist", "Red Dot Design Award"],
+            name: "Syed Ibnay Hussain",
+            role: "Full Stack Web Developer Team Lead",
+            experience: "10+ Years",
+            projectsCount: "75+",
+            quote: "For me, development isn’t about stacking technologies—it’s about making things work simply and effectively.",
+            about: "Syed Ibnay Hussain leads with a builder’s mindset—someone who doesn’t just manage projects but actively shapes them from idea to deployment. He works across the entire stack, connecting clean backend logic with intuitive front-end experiences. He focuses on writing maintainable code and designing scalable systems.",
+            education: "Software Engineering Specialist",
+            expertise: ["Full Stack Development", "System Design", "Scalable Architecture", "API Engineering", "UI Interactions"],
+            achievements: ["Architected 30+ complex web systems", "Reduced system latency by 50%", "Established team coding standards"],
             workSamples: [
-                { title: "Luxury Brand Refresh", type: "Branding", image: "/assets/images/team/work_1.png" },
-                { title: "E-commerce Redesign", type: "UX/UI", image: "/assets/images/team/work_2.png" },
-                { title: "Interactive Museum", type: "Experiential", image: "/assets/images/team/work_3.png" }
+                { title: "Global E-commerce Engine", type: "Web", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Real-time SaaS Platform", type: "SaaS", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Interactive Analytics Dashboard", type: "Analytics", image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2000&auto=format&fit=crop",
-            color: "text-pink-500"
-        },
-        {
-            name: "Emily Johnson",
-            role: "Product Manager",
-            experience: "7+ Years",
-            projectsCount: "50+",
-            quote: "Great products come from deeply understanding user needs and translating them into experiences that delight, retain and convert.",
-            about: "Emily has 7+ years of product management experience at both startups and enterprise companies. She excels at bridging the gap between technical teams and business stakeholders, ensuring products deliver real value to users.",
-            education: "MS Product Management, Berkeley",
-            expertise: ["Product Strategy", "Agile/Scrum", "User Research", "Roadmap Planning", "Data Analytics"],
-            achievements: ["Launched 15 successful products", "Increased user retention by 150%", "Certified Scrum Master", "Product of the Year award winner"],
-            workSamples: [
-                { title: "SaaS Product Launch", type: "Product", image: "/assets/images/team/work_1.png" },
-                { title: "Mobile App Redesign", type: "Mobile", image: "/assets/images/team/work_2.png" },
-                { title: "Growth Experiment", type: "Growth", image: "/assets/images/team/work_3.png" }
-            ],
-            socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2000&auto=format&fit=crop",
+            image: "/assets/images/team/portfolio/ibnay_img.jpeg",
             color: "text-blue-600"
         },
         {
-            name: "David Martinez",
-            role: "Lead Developer",
-            experience: "8+ Years",
-            projectsCount: "120+",
-            quote: "Code is like humor. When you have to explain it, it’s bad.",
-            about: "David is a full-stack wizard who specializes in building scalable backend systems and high-performance frontend applications.",
-            education: "BS Computer Science, MIT",
-            expertise: ["React/Next.js", "Node.js", "Python", "Cloud Infrastructure"],
-            achievements: ["Open Source Contributor", "Tech Speaker at JSConf", "Developed high-frequency trading bot"],
+            name: "Uzair Ahmed",
+            role: "Product Designer",
+            experience: "6+ Years",
+            projectsCount: "40+",
+            quote: "I believe great products are built at the intersection of clarity, usability, and purpose.",
+            about: "Uzair is a Product Designer with a strong foundation in software engineering, focused on creating intuitive, scalable, and user-centered digital experiences. His approach combines design thinking with technical understanding, allowing him to bridge the gap between users and business goals.",
+            education: "Product Design & Software Engineering",
+            expertise: ["Design Thinking", "User-Centered Design", "Scalable Experiences", "Prototyping", "Technical Design"],
+            achievements: ["Redesigned 5+ enterprise platforms", "Won 3 international design awards", "Led successful rebranding for 10+ clients"],
             workSamples: [
-                { title: "Real-time Chat App", type: "Web App", image: "/assets/images/team/work_1.png" },
-                { title: "Crypto Exchange", type: "FinTech", image: "/assets/images/team/work_2.png" },
-                { title: "AI Image Generator", type: "AI/ML", image: "/assets/images/team/work_3.png" }
+                { title: "Modern FinTech Interface", type: "Design", image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Mobile App Design System", type: "System", image: "https://images.unsplash.com/photo-1581291518062-c9a79e7e9f33?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Corporate Branding Identity", type: "Branding", image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2000&auto=format&fit=crop",
+            image: "/assets/images/team/portfolio/uzair_img.jpeg",
+            color: "text-pink-500"
+        },
+        {
+            name: "Zohaib Ahmed",
+            role: "SwiftUI & Mobile Developer",
+            experience: "7+ Years",
+            projectsCount: "50+",
+            quote: "Software is about more than just functionality—it’s about how it feels to use. A great app should work so naturally that the user never thinks about the complexity behind it.",
+            about: "Zohaib Ahmed turns clean design into functional, high-quality products. As a SwiftUI and cross-platform mobile Developer with a strong foundation in Software Engineering, he bridges the gap between polished UI/UX and solid backend logic. He prioritizes seamless user experiences.",
+            education: "Software Engineering",
+            expertise: ["SwiftUI", "Xcode", "Cross-Platform Mobile", "UI/UX Design", "Figma", "Data Structures"],
+            achievements: ["Developed 20+ iOS applications", "Instructed Data Structures labs", "Built complex logistics platforms"],
+            workSamples: [
+                { title: "SwiftUI Logistics App", type: "iOS", image: "https://images.unsplash.com/photo-1512428559083-a40ce9033afb?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Cross-Platform Restaurant Hub", type: "Mobile", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop" },
+                { title: "iOS Fitness Tracker", type: "iOS", image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=1000&auto=format&fit=crop" }
+            ],
+            socials: { linkedin: "#", twitter: "#", github: "#" },
+            image: "/assets/images/team/portfolio/zohaib_img.jpeg",
+            color: "text-blue-600"
+        },
+        {
+            name: "Muhammad Hassan",
+            role: "Full-Stack Developer | System Architect | Design-Focused Engineer",
+            experience: "4+ Years",
+            projectsCount: "25+",
+            quote: "For me, great software starts with great structure—and great structure deserves great design. I build full-stack applications with a focus on architecture that lasts and interfaces that feel right. Whether it's integrating an LLM chatbot or designing a seamless user journey, I keep the bird's eye view while sweating the small details. Code works. Systems scale. And design makes it all worth using.",
+            about: "Hassan is a Software Engineering graduate who thinks in systems and designs with intention.With a 3x Chancellor's Roll of Honor and Bronze Medal, he brings technical depth and architectural clarity to every project. He has hands-on experience with LLMs and chatbots, but his true focus lies in clean architecture, thoughtful design, and full-stack development. He maintains a bird's eye view of the entire project lifecycle—from database schema and backend logic to frontend polish and user flow.Whether he's structuring a ReactJS frontend, building out Node.js/Express backends, or ensuring design consistency across features, Hassan prioritizes scalability, maintainability, and visual quality. His approach blends the precision of a system architect with the intuition of a designer who cares how things feel to use.",
+            education: "Computer Science Degree",
+            expertise: ["Node.js", "Python", "PostgreSQL", "System Architecture", "Cloud Infrastructure"],
+            achievements: ["Built 10+ core backend services", "Optimized database queries by 60%", "Improved server uptime to 99.9%"],
+            workSamples: [
+                { title: "Core API Infrastructure", type: "Backend", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Database Migration Engine", type: "System", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1000&auto=format&fit=crop" },
+                { title: "High-Traffic Auth Service", type: "Security", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" }
+            ],
+            socials: { linkedin: "#", twitter: "#", github: "#" },
+            image: "/assets/images/team/portfolio/hassan_img.jpeg",
             color: "text-blue-400"
         }
     ];
