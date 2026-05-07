@@ -2,160 +2,99 @@ import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 
 const TeamModal = ({ member, onClose }) => {
-    useEffect(() => {
-        document.body.style.overflow = 'hidden';
-        return () => {
-            document.body.style.overflow = 'unset';
-        };
-    }, []);
-
-    if (!member) return null;
-
     return (
         <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] flex items-start justify-center p-4 sm:p-8 lg:p-12 overflow-y-auto bg-black/95 backdrop-blur-md"
+            className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6 lg:p-8"
         >
+            <div className="absolute inset-0 bg-[#05050d]/90 backdrop-blur-2xl" onClick={onClose} />
+
             <motion.div
-                initial={{ opacity: 0, scale: 0.9, y: 20 }}
-                animate={{ opacity: 1, scale: 1, y: 0 }}
-                exit={{ opacity: 0, scale: 0.9, y: 20 }}
-                className="relative w-full max-w-6xl bg-[#0a0a14] border border-white/10 rounded-[3rem] overflow-hidden shadow-2xl"
+                initial={{ scale: 0.9, opacity: 0, y: 20 }}
+                animate={{ scale: 1, opacity: 1, y: 0 }}
+                exit={{ scale: 0.9, opacity: 0, y: 20 }}
+                className="bg-white/[0.03] border border-white/10 w-full max-w-5xl max-h-[90vh] overflow-y-auto rounded-[3rem] relative z-10 custom-scrollbar"
             >
-                {/* Back Button */}
+                {/* Modal Header/Close */}
                 <button
                     onClick={onClose}
-                    className="absolute top-2 left-8 z-20 flex items-center gap-3 text-gray-400 hover:text-white transition-colors group"
+                    className="absolute top-8 right-8 w-12 h-12 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-white hover:bg-white/10 transition-all z-20"
                 >
-                    <div className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center group-hover:border-blue-600 transition-colors">
-                        <svg className="w-4 h-4 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                        </svg>
-                    </div>
-                    <span className="text-[10px] font-black uppercase tracking-widest">Back to Team</span>
+                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
                 </button>
 
-                <div className="flex flex-col lg:flex-row min-h-[80vh]">
-                    {/* Left Column - Image & Stats */}
-                    <div className="lg:w-2/5 p-8 lg:p-12 border-r border-white/5">
-                        <div className="sticky top-12">
-                            <div className="relative aspect-[4/5] rounded-[2rem] overflow-hidden mb-8 shadow-2xl group">
-                                <img src={member.image} alt={member.name} className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" />
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-transparent to-transparent" />
-                                <div className="absolute bottom-6 left-6">
-                                    <h2 className="text-white text-2xl font-black uppercase tracking-tight mb-1">{member.name}</h2>
-                                    <p className="text-blue-600 text-[10px] font-black uppercase tracking-widest">{member.role}</p>
-                                </div>
-                                <a href={member.socials.linkedin} target="_blank" className="absolute bottom-6 right-6 w-8 h-8 bg-blue-600 rounded-lg flex items-center justify-center text-white hover:bg-blue-500 transition-colors">
-                                    <svg className="w-4 h-4 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                                </a>
-                            </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-0 relative">
+                    {/* Left Side: Visuals */}
+                    <div className="relative h-[400px] lg:h-auto overflow-hidden bg-white/5">
+                        <img
+                            src={member.image}
+                            alt={member.name}
+                            className="w-full h-full object-cover"
+                        />
+                        <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent lg:bg-gradient-to-r" />
 
-                            <div className="grid grid-cols-2 gap-4 mb-8">
-                                <div className="bg-white/[0.03] border border-white/5 p-6 rounded-2xl">
-                                    <div className="text-blue-600 text-xl font-black mb-1">{member.experience}</div>
-                                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">Experience</div>
-                                </div>
-                                <div className="bg-white/[0.03] border border-white/5 p-6 rounded-2xl">
-                                    <div className="text-blue-600 text-xl font-black mb-1">{member.projectsCount}</div>
-                                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">Projects</div>
-                                </div>
-                            </div>
-
-                            <div className="space-y-4">
-                                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-4">Work Samples</h4>
-                                {member.workSamples.map((sample, i) => (
-                                    <div key={i} className="relative group/sample aspect-[16/6] rounded-xl overflow-hidden cursor-pointer">
-                                        <img src={sample.image} alt={sample.title} className="w-full h-full object-cover transition-transform duration-500 group-hover/sample:scale-110" />
-                                        <div className="absolute inset-0 bg-black/60 flex items-center justify-between px-6">
-                                            <span className="text-white text-[10px] font-bold">{sample.title}</span>
-                                            <span className="text-blue-600 text-[8px] font-black uppercase px-2 py-1 bg-blue-600/10 rounded-full">{sample.type}</span>
-                                        </div>
-                                    </div>
-                                ))}
-                            </div>
-
-                            <div className="flex gap-4 mt-8">
-                                <a href="#" className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition-all">
-                                    <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" /></svg>
-                                </a>
-                                <a href="#" className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition-all">
-                                    <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M23.954 4.569c-.885.389-1.83.654-2.825.775 1.014-.611 1.794-1.574 2.163-2.723-.951.555-2.005.959-3.127 1.184-.896-.959-2.173-1.559-3.591-1.559-2.717 0-4.92 2.203-4.92 4.917 0 .39.045.765.127 1.124-4.087-.19-7.713-2.16-10.141-5.144-.424.722-.666 1.561-.666 2.457 0 1.694.87 3.192 2.188 4.075-.807-.026-1.566-.248-2.228-.616v.061c0 2.385 1.693 4.374 3.946 4.827-.413.111-.849.171-1.296.171-.314 0-.615-.03-.916-.086.631 1.953 2.445 3.377 4.604 3.417-1.68 1.319-3.809 2.105-6.102 2.105-.39 0-.779-.023-1.17-.067 2.189 1.394 4.768 2.209 7.557 2.209 9.054 0 13.999-7.496 13.999-13.986 0-.209 0-.42-.015-.63.961-.689 1.8-1.56 2.46-2.548l-.047-.02z" /></svg>
-                                </a>
-                                <a href="#" className="w-8 h-8 rounded-full border border-white/10 flex items-center justify-center text-gray-500 hover:text-white hover:border-white transition-all">
-                                    <svg className="w-3 h-3 fill-current" viewBox="0 0 24 24"><path d="M12 0c-6.626 0-12 5.373-12 12 0 5.302 3.438 9.8 8.207 11.387.599.111.793-.261.793-.577v-2.234c-3.338.726-4.042-1.416-4.042-1.416-.546-1.387-1.333-1.756-1.333-1.756-1.089-.745.083-.729.083-.729 1.205.084 1.839 1.237 1.839 1.237 1.07 1.834 2.807 1.304 3.492.997.107-.775.418-1.305.762-1.604-2.665-.305-5.467-1.334-5.467-5.931 0-1.311.469-2.381 1.236-3.221-.124-.303-.535-1.524.117-3.176 0 0 1.008-.322 3.301 1.23.957-.266 1.983-.399 3.003-.404 1.02.005 2.047.138 3.006.404 2.291-1.552 3.297-1.23 3.297-1.23.653 1.653.242 2.874.118 3.176.77.84 1.235 1.911 1.235 3.221 0 4.609-2.807 5.624-5.479 5.921.43.372.823 1.102.823 2.222v3.293c0 .319.192.694.801.576 4.765-1.589 8.199-6.086 8.199-11.386 0-6.627-5.373-12-12-12z" /></svg>
-                                </a>
-                            </div>
+                        {/* Overlay Info */}
+                        <div className="absolute bottom-12 left-12">
+                            <motion.div
+                                initial={{ opacity: 0, x: -20 }}
+                                animate={{ opacity: 1, x: 0 }}
+                                transition={{ delay: 0.2 }}
+                            >
+                                <span className={`text-[10px] font-black uppercase tracking-[0.3em] px-4 py-2 rounded-full bg-white/5 backdrop-blur-md border border-white/10 ${member.color} mb-4 inline-block`}>
+                                    {member.role}
+                                </span>
+                                <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tighter mb-2">
+                                    {member.name.split(' ')[0]}<br />
+                                    <span className="text-white/20">{member.name.split(' ').slice(1).join(' ')}</span>
+                                </h2>
+                            </motion.div>
                         </div>
                     </div>
 
-                    {/* Right Column - Content */}
-                    <div className="lg:w-3/5 p-8 lg:p-12 bg-white/[0.01]">
-                        <div className="max-w-2xl">
-                            <div className="mb-12">
-                                <span className="text-blue-600 text-[10px] font-black uppercase tracking-[0.3em] block mb-4">Team Member</span>
-                                <h1 className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-4">{member.name}</h1>
-                                <p className="text-gray-500 text-lg font-medium">{member.role}</p>
-                            </div>
-
-                            <div className="mb-12 relative pl-12">
-                                <div className="absolute left-0 top-0 bottom-0 w-1 bg-blue-600 rounded-full" />
-                                <svg className="absolute left-4 top-0 w-6 h-6 text-blue-600/30 fill-current" viewBox="0 0 24 24"><path d="M14.017 21L14.017 18C14.017 16.8954 14.9124 16 16.017 16H19.017C19.5693 16 20.017 15.5523 20.017 15V9C20.017 8.44772 19.5693 8 19.017 8H16.017C14.9124 8 14.017 7.10457 14.017 6V5C14.017 3.89543 14.9124 3 16.017 3H19.017C21.2261 3 23.017 4.79086 23.017 7V15C23.017 18.3137 20.3307 21 17.017 21H14.017ZM1.0166 21L1.0166 18C1.0166 16.8954 1.91203 16 3.0166 16H6.0166C6.56888 16 7.0166 15.5523 7.0166 15V9C7.0166 8.44772 6.56888 8 6.0166 8H3.0166C1.91203 8 1.0166 7.10457 1.0166 6V5C1.0166 3.89543 1.91203 3 3.0166 3H6.0166C8.22574 3 10.0166 4.79086 10.0166 7V15C10.0166 18.3137 7.3303 21 4.0166 21H1.0166Z" /></svg>
-                                <p className="text-gray-300 text-lg sm:text-xl font-medium leading-relaxed italic">
-                                    {member.quote}
+                    {/* Right Side: Content */}
+                    <div className="p-8 sm:p-12 lg:p-20 flex flex-col justify-center">
+                        <div className="space-y-12">
+                            {/* Bio Section */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.3 }}
+                            >
+                                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em] mb-6">Professional Bio</h4>
+                                <p className="text-gray-300 text-lg font-medium leading-relaxed italic mb-8 border-l-2 border-blue-600 pl-6">
+                                    "{member.quote}"
                                 </p>
-                            </div>
-
-                            <div className="mb-12">
-                                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">About</h4>
-                                <p className="text-gray-400 text-base leading-relaxed font-medium">
+                                <p className="text-gray-400 text-sm leading-relaxed font-medium">
                                     {member.about}
                                 </p>
-                            </div>
+                            </motion.div>
 
-                            <div className="mb-12">
-                                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">Education</h4>
-                                <div className="bg-white/[0.03] border border-white/5 p-6 rounded-2xl flex items-center gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-blue-600/10 flex items-center justify-center text-blue-600">
-                                        <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 14l9-5-9-5-9 5 9 5z" /><path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z" /><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222" /></svg>
-                                    </div>
-                                    <span className="text-white text-sm font-bold">{member.education}</span>
-                                </div>
-                            </div>
+                            {/* Discover Section */}
+                            <motion.div
+                                initial={{ opacity: 0, y: 20 }}
+                                animate={{ opacity: 1, y: 0 }}
+                                transition={{ delay: 0.4 }}
+                                className="pt-12 border-t border-white/5"
+                            >
+                                <h3 className="text-white text-xl font-black uppercase tracking-tight mb-4">Discover {member.name.split(' ')[0]}'s Story</h3>
+                                <p className="text-gray-500 text-xs font-medium leading-relaxed mb-10">
+                                    Explore the expertise, achievements, and creative journey of our {member.role}.
+                                </p>
 
-                            <div className="mb-12">
-                                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">Expertise & Tech Stack</h4>
-                                <div className="flex flex-wrap gap-3">
-                                    {member.expertise.map((skill, i) => (
-                                        <span key={i} className="px-6 py-3 bg-white/[0.03] border border-white/5 rounded-full text-white text-xs font-bold hover:bg-blue-600 hover:border-blue-600 transition-all cursor-default">
-                                            {skill}
-                                        </span>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <div className="mb-12">
-                                <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-widest mb-6">Key Achievements</h4>
-                                <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                                    {member.achievements.map((achievement, i) => (
-                                        <div key={i} className="bg-white/[0.03] border border-white/5 p-6 rounded-2xl flex items-center gap-4 group/ach">
-                                            <div className="w-6 h-6 rounded-full bg-blue-600 flex items-center justify-center flex-shrink-0 group-hover/ach:scale-110 transition-transform">
-                                                <svg className="w-3 h-3 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" /></svg>
-                                            </div>
-                                            <span className="text-gray-300 text-xs font-semibold">{achievement}</span>
-                                        </div>
-                                    ))}
-                                </div>
-                            </div>
-
-                            <button className="w-full py-6 bg-blue-600 hover:bg-blue-500 text-white text-xs font-black uppercase tracking-[0.3em] rounded-2xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-[0.98] flex items-center justify-center gap-3 group">
-                                <span>View Full Profile</span>
-                                <svg className="w-5 h-5 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                </svg>
-                            </button>
+                                <button
+                                    onClick={() => console.log("Navigate to full profile page")}
+                                    className="px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 group flex items-center gap-3"
+                                >
+                                    <span>View Full Profile</span>
+                                    <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                    </svg>
+                                </button>
+                            </motion.div>
                         </div>
                     </div>
                 </div>
@@ -165,9 +104,6 @@ const TeamModal = ({ member, onClose }) => {
 };
 
 const Team = () => {
-    const [activeTestimonial, setActiveTestimonial] = useState(0);
-    const [selectedMember, setSelectedMember] = useState(null);
-
     const testimonials = [
         {
             name: "John Doe",
@@ -197,79 +133,98 @@ const Team = () => {
 
     const team = [
         {
-            name: "Michael Anderson",
-            role: "Founder & CEO",
-            experience: "12+ Years",
-            projectsCount: "150+",
-            quote: "True innovation isn't just about code; it's about solving real-world problems with elegant, scalable technology.",
-            about: "Michael is a visionary leader with over a decade of experience in the tech industry. He has spearheaded numerous high-impact projects for global enterprises.",
-            education: "MBA, Stanford University",
-            expertise: ["Strategic Leadership", "Venture Capital", "System Architecture", "Business Growth"],
-            achievements: ["Built 3 successful startups", "Featured in Forbes 30 Under 30", "Consulted for Fortune 500s"],
+            name: "Waqar Ahmed",
+            role: "Mobile App Team Lead",
+            experience: "8+ Years",
+            projectsCount: "45+",
+            quote: "Great mobile applications are not just built with code—they are crafted with vision, precision, and a deep understanding of user experience.",
+            about: "Waqar Ahmed is a dedicated Mobile App Team Lead focused on building scalable, user-friendly, and high-performance applications. With strong expertise in modern frameworks and clean architecture, he leads teams to deliver reliable and impactful digital products. His approach blends technical excellence with a clear understanding of user needs.",
+            education: "BS Software Engineering",
+            expertise: ["Mobile Frameworks", "Clean Architecture", "Team Leadership", "Performance Optimization", "User Experience"],
+            achievements: ["Led 15+ high-performance app launches", "Architected scalable mobile solutions", "Mentored 20+ mobile developers"],
             workSamples: [
-                { title: "Enterprise ERP", type: "Enterprise", image: "/assets/images/team/work_1.png" },
-                { title: "FinTech Platform", type: "Finance", image: "/assets/images/team/work_2.png" },
-                { title: "Global Logistics", type: "Infrastructure", image: "/assets/images/team/work_3.png" }
+                { title: "Enterprise Mobile ERP", type: "Mobile", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop" },
+                { title: "FinTech App", type: "Finance", image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Health Monitoring System", type: "Health", image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?q=80&w=2000&auto=format&fit=crop",
+            image: "/assets/images/team/portfolio/waqar_img.jpeg",
             color: "text-blue-500"
         },
         {
-            name: "Sarah Williams",
-            role: "Creative Director",
-            experience: "9+ Years",
-            projectsCount: "80+",
-            quote: "Design is not just what it looks like and feels like. Design is how it works.",
-            about: "Sarah is a design maven who believes in the power of visual storytelling and user-centric interfaces.",
-            education: "BFA in Visual Communication, RISD",
-            expertise: ["Brand Identity", "UX Strategy", "Motion Design", "Design Systems"],
-            achievements: ["Awwwards Site of the Year", "Behance Featured Artist", "Red Dot Design Award"],
+            name: "Syed Ibnay Hussain",
+            role: "Full Stack Web Developer Team Lead",
+            experience: "10+ Years",
+            projectsCount: "75+",
+            quote: "For me, development isn’t about stacking technologies—it’s about making things work simply and effectively.",
+            about: "Syed Ibnay Hussain leads with a builder’s mindset—someone who doesn’t just manage projects but actively shapes them from idea to deployment. He works across the entire stack, connecting clean backend logic with intuitive front-end experiences. He focuses on writing maintainable code and designing scalable systems.",
+            education: "Software Engineering Specialist",
+            expertise: ["Full Stack Development", "System Design", "Scalable Architecture", "API Engineering", "UI Interactions"],
+            achievements: ["Architected 30+ complex web systems", "Reduced system latency by 50%", "Established team coding standards"],
             workSamples: [
-                { title: "Luxury Brand Refresh", type: "Branding", image: "/assets/images/team/work_1.png" },
-                { title: "E-commerce Redesign", type: "UX/UI", image: "/assets/images/team/work_2.png" },
-                { title: "Interactive Museum", type: "Experiential", image: "/assets/images/team/work_3.png" }
+                { title: "Global E-commerce Engine", type: "Web", image: "https://images.unsplash.com/photo-1441986300917-64674bd600d8?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Real-time SaaS Platform", type: "SaaS", image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Interactive Analytics Dashboard", type: "Analytics", image: "https://images.unsplash.com/photo-1551288049-bbbda5366392?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?q=80&w=2000&auto=format&fit=crop",
-            color: "text-pink-500"
-        },
-        {
-            name: "Emily Johnson",
-            role: "Product Manager",
-            experience: "7+ Years",
-            projectsCount: "50+",
-            quote: "Great products come from deeply understanding user needs and translating them into experiences that delight, retain and convert.",
-            about: "Emily has 7+ years of product management experience at both startups and enterprise companies. She excels at bridging the gap between technical teams and business stakeholders, ensuring products deliver real value to users.",
-            education: "MS Product Management, Berkeley",
-            expertise: ["Product Strategy", "Agile/Scrum", "User Research", "Roadmap Planning", "Data Analytics"],
-            achievements: ["Launched 15 successful products", "Increased user retention by 150%", "Certified Scrum Master", "Product of the Year award winner"],
-            workSamples: [
-                { title: "SaaS Product Launch", type: "Product", image: "/assets/images/team/work_1.png" },
-                { title: "Mobile App Redesign", type: "Mobile", image: "/assets/images/team/work_2.png" },
-                { title: "Growth Experiment", type: "Growth", image: "/assets/images/team/work_3.png" }
-            ],
-            socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?q=80&w=2000&auto=format&fit=crop",
+            image: "/assets/images/team/portfolio/ibnay_img.jpeg",
             color: "text-blue-600"
         },
         {
-            name: "David Martinez",
-            role: "Lead Developer",
-            experience: "8+ Years",
-            projectsCount: "120+",
-            quote: "Code is like humor. When you have to explain it, it’s bad.",
-            about: "David is a full-stack wizard who specializes in building scalable backend systems and high-performance frontend applications.",
-            education: "BS Computer Science, MIT",
-            expertise: ["React/Next.js", "Node.js", "Python", "Cloud Infrastructure"],
-            achievements: ["Open Source Contributor", "Tech Speaker at JSConf", "Developed high-frequency trading bot"],
+            name: "Uzair Ahmed",
+            role: "Product Designer",
+            experience: "6+ Years",
+            projectsCount: "40+",
+            quote: "I believe great products are built at the intersection of clarity, usability, and purpose.",
+            about: "Uzair is a Product Designer with a strong foundation in software engineering, focused on creating intuitive, scalable, and user-centered digital experiences. His approach combines design thinking with technical understanding, allowing him to bridge the gap between users and business goals.",
+            education: "Product Design & Software Engineering",
+            expertise: ["Design Thinking", "User-Centered Design", "Scalable Experiences", "Prototyping", "Technical Design"],
+            achievements: ["Redesigned 5+ enterprise platforms", "Won 3 international design awards", "Led successful rebranding for 10+ clients"],
             workSamples: [
-                { title: "Real-time Chat App", type: "Web App", image: "/assets/images/team/work_1.png" },
-                { title: "Crypto Exchange", type: "FinTech", image: "/assets/images/team/work_2.png" },
-                { title: "AI Image Generator", type: "AI/ML", image: "/assets/images/team/work_3.png" }
+                { title: "Modern FinTech Interface", type: "Design", image: "https://images.unsplash.com/photo-1586717791821-3f44a563eb4c?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Mobile App Design System", type: "System", image: "https://images.unsplash.com/photo-1581291518062-c9a79e7e9f33?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Corporate Branding Identity", type: "Branding", image: "https://images.unsplash.com/photo-1626785774573-4b799315345d?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?q=80&w=2000&auto=format&fit=crop",
+            image: "/assets/images/team/portfolio/uzair_img.jpeg",
+            color: "text-pink-500"
+        },
+        {
+            name: "Zohaib Ahmed",
+            role: "SwiftUI & Mobile Developer",
+            experience: "7+ Years",
+            projectsCount: "50+",
+            quote: "Software is about more than just functionality—it’s about how it feels to use. A great app should work so naturally that the user never thinks about the complexity behind it.",
+            about: "Zohaib Ahmed turns clean design into functional, high-quality products. As a SwiftUI and cross-platform mobile Developer with a strong foundation in Software Engineering, he bridges the gap between polished UI/UX and solid backend logic. He prioritizes seamless user experiences.",
+            education: "Software Engineering",
+            expertise: ["SwiftUI", "Xcode", "Cross-Platform Mobile", "UI/UX Design", "Figma", "Data Structures"],
+            achievements: ["Developed 20+ iOS applications", "Instructed Data Structures labs", "Built complex logistics platforms"],
+            workSamples: [
+                { title: "SwiftUI Logistics App", type: "iOS", image: "https://images.unsplash.com/photo-1512428559083-a40ce9033afb?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Cross-Platform Restaurant Hub", type: "Mobile", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop" },
+                { title: "iOS Fitness Tracker", type: "iOS", image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=1000&auto=format&fit=crop" }
+            ],
+            socials: { linkedin: "#", twitter: "#", github: "#" },
+            image: "/assets/images/team/portfolio/zohaib_img.jpeg",
+            color: "text-blue-600"
+        },
+        {
+            name: "Muhammad Hassan",
+            role: "Full-Stack Developer | System Architect | Design-Focused Engineer",
+            experience: "4+ Years",
+            projectsCount: "25+",
+            quote: "For me, great software starts with great structure—and great structure deserves great design. I build full-stack applications with a focus on architecture that lasts and interfaces that feel right. Whether it's integrating an LLM chatbot or designing a seamless user journey, I keep the bird's eye view while sweating the small details. Code works. Systems scale. And design makes it all worth using.",
+            about: "Hassan is a Software Engineering graduate who thinks in systems and designs with intention.With a 3x Chancellor's Roll of Honor and Bronze Medal, he brings technical depth and architectural clarity to every project. He has hands-on experience with LLMs and chatbots, but his true focus lies in clean architecture, thoughtful design, and full-stack development. He maintains a bird's eye view of the entire project lifecycle—from database schema and backend logic to frontend polish and user flow.Whether he's structuring a ReactJS frontend, building out Node.js/Express backends, or ensuring design consistency across features, Hassan prioritizes scalability, maintainability, and visual quality. His approach blends the precision of a system architect with the intuition of a designer who cares how things feel to use.",
+            education: "Computer Science Degree",
+            expertise: ["Node.js", "Python", "PostgreSQL", "System Architecture", "Cloud Infrastructure"],
+            achievements: ["Built 10+ core backend services", "Optimized database queries by 60%", "Improved server uptime to 99.9%"],
+            workSamples: [
+                { title: "Core API Infrastructure", type: "Backend", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Database Migration Engine", type: "System", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1000&auto=format&fit=crop" },
+                { title: "High-Traffic Auth Service", type: "Security", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" }
+            ],
+            socials: { linkedin: "#", twitter: "#", github: "#" },
+            image: "/assets/images/team/portfolio/hassan_img.jpeg",
             color: "text-blue-400"
         }
     ];
@@ -280,6 +235,21 @@ const Team = () => {
         { label: "Projects Delivered", value: "250+", icon: "🚀" },
         { label: "Client Satisfaction", value: "98%", icon: "❤️" }
     ];
+
+    const [activeTestimonial, setActiveTestimonial] = useState(0);
+    const [activeMemberIndex, setActiveMemberIndex] = useState(0);
+    const [selectedMember, setSelectedMember] = useState(null);
+
+    // Auto-slide effect for Team Slider
+    useEffect(() => {
+        if (selectedMember) return;
+
+        const timer = setInterval(() => {
+            setActiveMemberIndex((prev) => (prev + 1) % team.length);
+        }, 3000);
+
+        return () => clearInterval(timer);
+    }, [selectedMember, team.length]);
 
     return (
         <section className="bg-[#05050d] py-24 px-6 sm:px-12 lg:px-24 relative overflow-hidden border-t border-white/5">
@@ -350,44 +320,110 @@ const Team = () => {
                     </div>
                 </div>
 
-                {/* Team Grid */}
-                <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 mb-24">
-                    {team.map((member, index) => (
-                        <motion.div
-                            key={index}
-                            initial={{ opacity: 0, y: 20 }}
-                            whileInView={{ opacity: 1, y: 0 }}
-                            viewport={{ once: true }}
-                            transition={{ delay: index * 0.1 }}
-                            className="group"
-                            onClick={() => setSelectedMember(member)}
-                        >
-                            <div className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-4 transition-all duration-500 group-hover:bg-white/[0.05] group-hover:border-white/10 group-hover:-translate-y-2 cursor-pointer">
-                                <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 relative">
-                                    <img
-                                        src={member.image}
-                                        alt={member.name}
-                                        className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
-                                    />
-                                    <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent opacity-60" />
-                                </div>
-                                <div className="px-2 pb-2">
-                                    <h3 className="text-white text-xl font-black uppercase tracking-tight mb-1">{member.name}</h3>
-                                    <p className={`text-[10px] font-black uppercase tracking-[0.2em] mb-4 ${member.color}`}>
-                                        {member.role}
-                                    </p>
-                                    <p className="text-gray-500 text-xs font-medium leading-relaxed mb-6 opacity-0 group-hover:opacity-100 transition-opacity duration-500">
-                                        {member.experience} EXPERIENCE • {member.projectsCount} PROJECTS
-                                    </p>
-                                    <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center group-hover:bg-blue-600 group-hover:border-blue-600 transition-all duration-300">
-                                        <svg className="w-4 h-4 text-white transform group-hover:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                        </svg>
-                                    </button>
-                                </div>
-                            </div>
-                        </motion.div>
-                    ))}
+                {/* Team Curved 3D Slider */}
+                <div className="relative mb-24 py-20 overflow-visible group/slider">
+                    <div className="flex justify-center items-center h-[500px] perspective-[1000px] overflow-visible">
+                        {team.map((member, index) => {
+                            const position = index - activeMemberIndex;
+                            const absPosition = Math.abs(position);
+
+                            const rotateY = position * 35;
+                            const z = absPosition * -250;
+                            const x = position * 220;
+                            const scale = 1 - (absPosition * 0.2);
+                            const opacity = 1 - (absPosition * 0.4);
+
+                            return (
+                                <motion.div
+                                    key={index}
+                                    initial={false}
+                                    animate={{
+                                        x: x,
+                                        z: z,
+                                        rotateY: rotateY,
+                                        scale: scale,
+                                        opacity: opacity,
+                                        zIndex: 10 - absPosition
+                                    }}
+                                    transition={{
+                                        type: "spring",
+                                        stiffness: 260,
+                                        damping: 20
+                                    }}
+                                    onClick={() => {
+                                        if (index === activeMemberIndex) {
+                                            setSelectedMember(member);
+                                        } else {
+                                            setActiveMemberIndex(index);
+                                        }
+                                    }}
+                                    className="absolute w-[280px] sm:w-[320px] cursor-pointer"
+                                    style={{ transformStyle: "preserve-3d" }}
+                                >
+                                    <div className={`bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-[2.5rem] p-4 transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10 ${index === activeMemberIndex ? 'shadow-[0_0_50px_rgba(37,99,235,0.2)] border-blue-600/30' : ''}`}>
+                                        <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 relative">
+                                            <img
+                                                src={member.image}
+                                                alt={member.name}
+                                                className={`w-full h-full object-cover transition-all duration-700 ${index === activeMemberIndex ? 'grayscale-0 scale-105' : 'grayscale'}`}
+                                            />
+                                            <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent opacity-60" />
+                                        </div>
+                                        <div className="px-2 pb-2 text-center">
+                                            <h3 className="text-white text-lg sm:text-xl font-black uppercase tracking-tight mb-1">{member.name}</h3>
+                                            <p className={`text-[9px] font-black uppercase tracking-[0.2em] mb-4 ${member.color}`}>
+                                                {member.role}
+                                            </p>
+
+                                            {index === activeMemberIndex && (
+                                                <motion.div
+                                                    initial={{ opacity: 0, y: 10 }}
+                                                    animate={{ opacity: 1, y: 0 }}
+                                                    className="flex flex-col items-center"
+                                                >
+                                                    <p className="text-gray-500 text-[10px] font-medium leading-relaxed mb-6">
+                                                        {member.experience} EXPERIENCE • {member.projectsCount} PROJECTS
+                                                    </p>
+                                                    <button className="w-12 h-12 rounded-full bg-blue-600 border border-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/20 hover:scale-110 transition-all">
+                                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                                                        </svg>
+                                                    </button>
+                                                </motion.div>
+                                            )}
+                                        </div>
+                                    </div>
+                                </motion.div>
+                            );
+                        })}
+                    </div>
+
+                    <div className="flex justify-center gap-3 mt-12">
+                        {team.map((_, i) => (
+                            <button
+                                key={i}
+                                onClick={() => setActiveMemberIndex(i)}
+                                className={`h-1.5 rounded-full transition-all duration-500 ${activeMemberIndex === i ? 'w-12 bg-blue-600' : 'w-3 bg-white/10 hover:bg-white/20'}`}
+                            />
+                        ))}
+                    </div>
+
+                    <button
+                        onClick={() => setActiveMemberIndex(prev => (prev > 0 ? prev - 1 : team.length - 1))}
+                        className="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/5 bg-white/[0.01] flex items-center justify-center text-white/20 hover:text-white hover:border-white/10 hover:bg-white/[0.05] transition-all hidden lg:flex"
+                    >
+                        <svg className="w-6 h-6 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
+                    <button
+                        onClick={() => setActiveMemberIndex(prev => (prev < team.length - 1 ? prev + 1 : 0))}
+                        className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/5 bg-white/[0.01] flex items-center justify-center text-white/20 hover:text-white hover:border-white/10 hover:bg-white/[0.05] transition-all hidden lg:flex"
+                    >
+                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
+                        </svg>
+                    </button>
                 </div>
 
                 {/* Stats Bar */}
@@ -408,7 +444,6 @@ const Team = () => {
                 </div>
             </div>
 
-            {/* Modal */}
             <AnimatePresence>
                 {selectedMember && (
                     <TeamModal
