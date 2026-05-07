@@ -56,8 +56,8 @@ const WhoWeAre = () => {
     ];
 
     return (
-        <section className="bg-white py-24 sm:py-32 overflow-hidden">
-            <div className="max-w-7xl mx-auto px-6 lg:px-8">
+        <section className="bg-white py-16 sm:py-32 overflow-hidden">
+            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 {/* Header */}
                 <div className="text-center mb-24 max-w-4xl mx-auto">
                     <motion.span
@@ -74,12 +74,12 @@ const WhoWeAre = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.1 }}
-                        className="flex flex-col items-center mb-10"
+                        className="flex flex-col items-center mb-6 sm:mb-10"
                     >
-                        <h2 className="text-6xl sm:text-8xl font-black text-black uppercase tracking-tighter leading-[0.8] mb-2">
+                        <h2 className="text-5xl sm:text-8xl font-black text-black uppercase tracking-tighter leading-[0.8] mb-2">
                             Who
                         </h2>
-                        <div className="flex items-center gap-8 sm:gap-12">
+                        <div className="flex items-center gap-4 sm:gap-12">
                             <motion.div 
                                 initial={{ opacity: 0, x: 20 }}
                                 whileInView={{ opacity: 1, x: 0 }}
@@ -93,8 +93,8 @@ const WhoWeAre = () => {
                                 </svg>
                             </motion.div>
                             
-                            <div className="bg-[#1d4ed8] px-8 py-3 rounded-xl transform -rotate-1">
-                                <span className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tighter leading-none">
+                            <div className="bg-[#1d4ed8] px-6 py-2 sm:px-8 sm:py-3 rounded-xl transform -rotate-1">
+                                <span className="text-4xl sm:text-7xl font-black text-white uppercase tracking-tighter leading-none">
                                     We Are
                                 </span>
                             </div>
@@ -126,13 +126,13 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Pillars Section Label */}
-                <div className="flex items-center gap-4 mb-20">
+                <div className="flex items-center gap-4 mb-12 sm:mb-20">
                     <div className="h-[2px] w-12 bg-blue-600" />
                     <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Our Pillars</span>
                 </div>
 
                 {/* Pillars Content */}
-                <div className="space-y-40">
+                <div className="space-y-24 sm:space-y-40">
                     {pillars.map((pillar, i) => (
                         <div key={i} className={`flex flex-col ${pillar.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-32`}>
                             {/* Text Content */}
@@ -142,10 +142,10 @@ const WhoWeAre = () => {
                                 viewport={{ once: true, margin: "-100px" }}
                                 className="flex-1 text-left"
                             >
-                                <h3 className="text-5xl sm:text-6xl font-black text-black uppercase tracking-tighter mb-8 leading-none">
+                                <h3 className="text-4xl sm:text-6xl font-black text-black uppercase tracking-tighter mb-6 sm:mb-8 leading-none">
                                     {pillar.title}
                                 </h3>
-                                <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-medium mb-10 max-w-xl">
+                                <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-medium mb-8 sm:mb-10 max-w-xl">
                                     {pillar.description}
                                 </p>
                                 
@@ -189,7 +189,7 @@ const WhoWeAre = () => {
                                         whileInView={{ opacity: 1, scale: 1, x: 0 }}
                                         viewport={{ once: true }}
                                         transition={{ delay: 0.4 }}
-                                        className={`absolute ${pillar.reverse ? '-right-8' : '-left-8'} top-1/2 -translate-y-1/2 w-1/2 aspect-square rounded-3xl overflow-hidden border-8 border-white shadow-xl z-10`}
+                                        className={`absolute ${pillar.reverse ? '-right-4 sm:-right-8' : '-left-4 sm:-left-8'} top-1/2 -translate-y-1/2 w-1/2 aspect-square rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-xl z-10`}
                                     >
                                         <img
                                             src={pillar.secondaryImage}
