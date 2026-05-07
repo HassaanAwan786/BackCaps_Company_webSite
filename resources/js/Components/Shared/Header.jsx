@@ -64,10 +64,16 @@ export default function Header() {
     return (
         <>
             <div
-                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 ${isScrolled || isMobileMenuOpen || isServicesOpen ? 'bg-[#0c0c14]/90 backdrop-blur-xl py-4 border-b border-white/5' : 'bg-transparent py-6'}`}
+                className={`fixed top-0 left-0 w-full z-50 transition-all duration-500 flex justify-center
+                    ${isScrolled || isMobileMenuOpen || isServicesOpen ? 'pt-0 px-0' : 'sm:pt-6 px-0 sm:px-8'}`}
                 onMouseLeave={handleMouseLeave}
             >
-                <header className={`mx-auto transition-all duration-500 flex items-center justify-between px-6 md:px-12 ${isScrolled ? 'max-w-full' : 'max-w-8xl'}`}>
+                <header 
+                    className={`transition-all duration-700 flex items-center justify-between px-6 sm:px-12 py-4 w-full relative
+                        ${isScrolled || isMobileMenuOpen || isServicesOpen 
+                            ? 'bg-[#0c0c14]/90 backdrop-blur-2xl border-b border-white/10 rounded-none max-w-full' 
+                            : 'bg-[#0c0c14]/80 backdrop-blur-2xl border border-white/10 sm:rounded-[2.5rem] shadow-2xl max-w-7xl sm:max-w-7xl'}`}
+                >
                     <div className="flex items-center gap-2">
                         <Link href="/" className="flex items-center group">
                             <span className="text-2xl font-bold tracking-tighter text-white">Back</span>

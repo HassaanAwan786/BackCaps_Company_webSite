@@ -92,7 +92,7 @@ export default function Hero() {
     // Handle mouse movement for tilt
     const handleMouseMoveTilt = (e) => {
         if (!containerRef.current) return;
-        
+
         // Only show custom cursor if at the top of the page
         if (window.scrollY > 50) {
             if (isHovering) setIsHovering(false);
@@ -150,7 +150,7 @@ export default function Hero() {
                 <BackgroundCanvas mousePosRef={mousePosRef} />
             </div>
 
-            <div className="relative z-10 w-full max-w-7xl mx-auto px-8">
+            <div className="relative z-10 w-full max-w-7xl mx-auto px-8 mt-24">
                 <AnimatePresence mode="wait">
                     {currentSlide === 0 ? (
                         <motion.div
@@ -292,7 +292,7 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <BrowserMockup 
+                            <BrowserMockup
                                 rotateX={rotateX}
                                 rotateY={rotateY}
                                 isHoveringMockup={isHoveringMockup}
@@ -349,7 +349,7 @@ export default function Hero() {
                                 </div>
                             </div>
 
-                            <TabletMockup 
+                            <TabletMockup
                                 rotateX={rotateX}
                                 rotateY={rotateY}
                                 isHoveringMockup={isHoveringMockup}
