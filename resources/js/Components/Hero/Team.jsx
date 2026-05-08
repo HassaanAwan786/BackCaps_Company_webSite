@@ -237,19 +237,40 @@ const Team = () => {
     ];
 
     const [activeTestimonial, setActiveTestimonial] = useState(0);
-    const [activeMemberIndex, setActiveMemberIndex] = useState(0);
+    const [activePage, setActivePage] = useState(0);
     const [selectedMember, setSelectedMember] = useState(null);
+    const [itemsPerPage, setItemsPerPage] = useState(5);
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth < 1024) { // Below LG breakpoint
+                setItemsPerPage(1);
+            } else {
+                setItemsPerPage(5);
+            }
+        };
+        handleResize();
+        window.addEventListener('resize', handleResize);
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    const totalPages = Math.ceil(team.length / itemsPerPage);
+
+    // Reset active page if total pages change (e.g. on resize)
+    useEffect(() => {
+        if (activePage >= totalPages) {
+            setActivePage(0);
+        }
+    }, [totalPages, activePage]);
 
     // Auto-slide effect for Team Slider
     useEffect(() => {
-        if (selectedMember) return;
-
+        if (selectedMember || totalPages <= 1) return;
         const timer = setInterval(() => {
-            setActiveMemberIndex((prev) => (prev + 1) % team.length);
-        }, 3000);
-
+            setActivePage((prev) => (prev + 1) % totalPages);
+        }, 8000);
         return () => clearInterval(timer);
-    }, [selectedMember, team.length]);
+    }, [selectedMember, totalPages]);
 
     return (
         <section className="bg-[#05050d] py-24 px-6 sm:px-12 lg:px-24 relative overflow-hidden border-t border-white/5">
@@ -261,8 +282,8 @@ const Team = () => {
                 <div className="flex flex-col lg:flex-row justify-between items-start lg:items-end gap-12 mb-20">
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-3 mb-6">
-                            <div className="h-[2px] w-8 bg-blue-600" />
-                            <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Our Team</span>
+                            <div className="h-[2px] w-8 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]" />
+                            <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em]">Our Elite Collective</span>
                         </div>
                         <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-8">
                             Meet the Minds <br /> Behind <span className="text-blue-600">The Magic.</span>
@@ -287,7 +308,7 @@ const Team = () => {
                                 animate={{ opacity: 1, x: 0, scale: 1 }}
                                 exit={{ opacity: 0, x: -20, scale: 0.95 }}
                                 transition={{ duration: 0.5, ease: [0.23, 1, 0.32, 1] }}
-                                className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] max-w-sm relative"
+                                className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] max-w-sm relative shadow-2xl"
                             >
                                 <div className="text-4xl text-blue-600/30 font-serif absolute top-4 left-6 leading-none">"</div>
                                 <p className="text-gray-300 text-sm font-medium leading-relaxed mb-8 italic relative z-10">
@@ -320,123 +341,95 @@ const Team = () => {
                     </div>
                 </div>
 
-                {/* Team Curved 3D Slider */}
-                <div className="relative mb-24 py-20 overflow-visible group/slider">
-                    <div className="flex justify-center items-center h-[500px] perspective-[1000px] overflow-visible">
-                        {team.map((member, index) => {
-                            const position = index - activeMemberIndex;
-                            const absPosition = Math.abs(position);
-
-                            const rotateY = position * 35;
-                            const z = absPosition * -250;
-                            const x = position * 220;
-                            const scale = 1 - (absPosition * 0.2);
-                            const opacity = 1 - (absPosition * 0.4);
-
-                            return (
+                {/* Team Straight Grid Slider - 5 Cards Loop */}
+                <div className="relative mb-10 md:mb-24 min-h-[500px]">
+                    <AnimatePresence mode="wait">
+                        <motion.div
+                            key={activePage}
+                            initial={{ opacity: 0, x: 50 }}
+                            animate={{ opacity: 1, x: 0 }}
+                            exit={{ opacity: 0, x: -50 }}
+                            transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
+                            className={`grid grid-cols-1 ${itemsPerPage === 5 ? 'lg:grid-cols-5' : ''} gap-6`}
+                        >
+                            {team.slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage).map((member) => (
                                 <motion.div
-                                    key={index}
-                                    initial={false}
-                                    animate={{
-                                        x: x,
-                                        z: z,
-                                        rotateY: rotateY,
-                                        scale: scale,
-                                        opacity: opacity,
-                                        zIndex: 10 - absPosition
-                                    }}
-                                    transition={{
-                                        type: "spring",
-                                        stiffness: 260,
-                                        damping: 20
-                                    }}
-                                    onClick={() => {
-                                        if (index === activeMemberIndex) {
-                                            setSelectedMember(member);
-                                        } else {
-                                            setActiveMemberIndex(index);
-                                        }
-                                    }}
-                                    className="absolute w-[280px] sm:w-[320px] cursor-pointer"
-                                    style={{ transformStyle: "preserve-3d" }}
+                                    key={member.name}
+                                    whileHover={{ y: -12 }}
+                                    onClick={() => setSelectedMember(member)}
+                                    className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] overflow-hidden cursor-pointer group hover:bg-white/[0.06] hover:border-blue-600/30 transition-all duration-500 shadow-xl"
                                 >
-                                    <div className={`bg-white/[0.02] backdrop-blur-xl border border-white/5 rounded-[2.5rem] p-4 transition-all duration-500 hover:bg-white/[0.05] hover:border-white/10 ${index === activeMemberIndex ? 'shadow-[0_0_50px_rgba(37,99,235,0.2)] border-blue-600/30' : ''}`}>
-                                        <div className="aspect-[4/5] rounded-[2rem] overflow-hidden mb-6 relative">
-                                            <img
-                                                src={member.image}
-                                                alt={member.name}
-                                                className={`w-full h-full object-cover transition-all duration-700 ${index === activeMemberIndex ? 'grayscale-0 scale-105' : 'grayscale'}`}
-                                            />
-                                            <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent opacity-60" />
-                                        </div>
-                                        <div className="px-2 pb-2 text-center">
-                                            <h3 className="text-white text-lg sm:text-xl font-black uppercase tracking-tight mb-1">{member.name}</h3>
-                                            <p className={`text-[9px] font-black uppercase tracking-[0.2em] mb-4 ${member.color}`}>
+                                    <div className="aspect-[4/5] relative overflow-hidden">
+                                        <div className="absolute inset-0 bg-gradient-to-tr from-blue-600/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-700 z-10" />
+                                        <img
+                                            src={member.image}
+                                            alt={member.name}
+                                            className="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all duration-700 group-hover:scale-110"
+                                        />
+                                        <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent opacity-80" />
+                                        <div className="absolute bottom-6 left-6 right-6">
+                                            <h3 className="text-white text-base font-black uppercase tracking-tight group-hover:tracking-[0.1em] transition-all duration-500">{member.name}</h3>
+                                            <p className={`text-[8px] font-black uppercase tracking-[0.2em] mt-1 ${member.color}`}>
                                                 {member.role}
                                             </p>
-
-                                            {index === activeMemberIndex && (
-                                                <motion.div
-                                                    initial={{ opacity: 0, y: 10 }}
-                                                    animate={{ opacity: 1, y: 0 }}
-                                                    className="flex flex-col items-center"
-                                                >
-                                                    <p className="text-gray-500 text-[10px] font-medium leading-relaxed mb-6">
-                                                        {member.experience} EXPERIENCE • {member.projectsCount} PROJECTS
-                                                    </p>
-                                                    <button className="w-12 h-12 rounded-full bg-blue-600 border border-blue-600 flex items-center justify-center shadow-lg shadow-blue-600/20 hover:scale-110 transition-all">
-                                                        <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
-                                                        </svg>
-                                                    </button>
-                                                </motion.div>
-                                            )}
                                         </div>
                                     </div>
+                                    <div className="p-6 pt-0 text-center">
+                                        <div className="h-[1px] w-full bg-white/5 group-hover:bg-blue-600/30 transition-all duration-500 mb-4" />
+                                        <button className="text-[9px] font-black uppercase tracking-[0.3em] text-gray-500 group-hover:text-blue-500 transition-colors">
+                                            View Profile
+                                        </button>
+                                    </div>
                                 </motion.div>
-                            );
-                        })}
-                    </div>
+                            ))}
+                        </motion.div>
+                    </AnimatePresence>
 
-                    <div className="flex justify-center gap-3 mt-12">
-                        {team.map((_, i) => (
+                    {/* Bottom Controls */}
+                    {totalPages > 1 && (
+                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-8 lg:gap-16 z-20 w-full justify-center">
                             <button
-                                key={i}
-                                onClick={() => setActiveMemberIndex(i)}
-                                className={`h-1.5 rounded-full transition-all duration-500 ${activeMemberIndex === i ? 'w-12 bg-blue-600' : 'w-3 bg-white/10 hover:bg-white/20'}`}
-                            />
-                        ))}
-                    </div>
+                                onClick={() => setActivePage(prev => (prev - 1 + totalPages) % totalPages)}
+                                className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 bg-white/5 items-center justify-center text-white/40 hover:text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all group hidden lg:flex"
+                            >
+                                <svg className="w-5 h-5 transform rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
 
-                    <button
-                        onClick={() => setActiveMemberIndex(prev => (prev > 0 ? prev - 1 : team.length - 1))}
-                        className="absolute left-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/5 bg-white/[0.01] flex items-center justify-center text-white/20 hover:text-white hover:border-white/10 hover:bg-white/[0.05] transition-all hidden lg:flex"
-                    >
-                        <svg className="w-6 h-6 transform rotate-180" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
-                    <button
-                        onClick={() => setActiveMemberIndex(prev => (prev < team.length - 1 ? prev + 1 : 0))}
-                        className="absolute right-0 top-1/2 -translate-y-1/2 w-16 h-16 rounded-full border border-white/5 bg-white/[0.01] flex items-center justify-center text-white/20 hover:text-white hover:border-white/10 hover:bg-white/[0.05] transition-all hidden lg:flex"
-                    >
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M9 5l7 7-7 7" />
-                        </svg>
-                    </button>
+                            <div className="flex gap-3 lg:gap-4">
+                                {Array.from({ length: totalPages }).map((_, i) => (
+                                    <button
+                                        key={i}
+                                        onClick={() => setActivePage(i)}
+                                        className={`h-1 lg:h-1.5 rounded-full transition-all duration-700 ${activePage === i ? 'w-10 lg:w-16 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)]' : 'w-3 lg:w-4 bg-white/10 hover:bg-white/20'}`}
+                                    />
+                                ))}
+                            </div>
+
+                            <button
+                                onClick={() => setActivePage(prev => (prev + 1) % totalPages)}
+                                className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 bg-white/5 items-center justify-center text-white/40 hover:text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all group hidden lg:flex"
+                            >
+                                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                                </svg>
+                            </button>
+                        </div>
+                    )}
                 </div>
 
                 {/* Stats Bar */}
-                <div className="bg-white/[0.02] border border-white/5 rounded-[2.5rem] p-8 sm:p-12">
-                    <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 sm:gap-8">
+                <div className="bg-white/[0.02] border border-white/5 rounded-[2rem] sm:rounded-[3rem] p-8 sm:p-14 md:mt-32">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                         {stats.map((stat, index) => (
-                            <div key={index} className="flex items-center gap-6 group">
-                                <div className="w-14 h-14 rounded-full border border-white/10 flex items-center justify-center text-2xl group-hover:border-blue-600/50 group-hover:bg-blue-600/5 transition-all duration-500">
+                            <div key={index} className="flex items-center gap-6 sm:gap-8 group">
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-center text-2xl sm:text-3xl group-hover:border-blue-600/50 group-hover:bg-blue-600/5 transition-all duration-700 shadow-2xl shrink-0">
                                     {stat.icon}
                                 </div>
                                 <div>
-                                    <div className="text-2xl sm:text-3xl font-black text-white mb-1 tracking-tight">{stat.value}</div>
-                                    <div className="text-[10px] font-black text-gray-500 uppercase tracking-widest">{stat.label}</div>
+                                    <div className="text-2xl sm:text-4xl font-black text-white mb-1 tracking-tight group-hover:text-blue-500 transition-colors whitespace-nowrap">{stat.value}</div>
+                                    <div className="text-[9px] sm:text-[10px] font-black text-gray-500 uppercase tracking-widest leading-none">{stat.label}</div>
                                 </div>
                             </div>
                         ))}
