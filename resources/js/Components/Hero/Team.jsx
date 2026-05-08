@@ -385,38 +385,35 @@ const Team = () => {
                         </motion.div>
                     </AnimatePresence>
 
-                    {/* Bottom Controls */}
-                    {totalPages > 1 && (
-                        <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-8 lg:gap-16 z-20 w-full justify-center">
-                            <button
-                                onClick={() => setActivePage(prev => (prev - 1 + totalPages) % totalPages)}
-                                className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 bg-white/5 items-center justify-center text-white/40 hover:text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all group hidden lg:flex"
-                            >
-                                <svg className="w-5 h-5 transform rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                    <div className="absolute bottom-2 left-1/2 -translate-x-1/2 flex items-center gap-8 lg:gap-16 z-20 w-full justify-center">
+                        <button
+                            onClick={() => setActivePage(prev => (prev - 1 + totalPages) % totalPages)}
+                            className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 bg-white/5 items-center justify-center text-white/40 hover:text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all group hidden lg:flex"
+                        >
+                            <svg className="w-5 h-5 transform rotate-180 group-hover:-translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
 
-                            <div className="flex gap-3 lg:gap-4">
-                                {Array.from({ length: totalPages }).map((_, i) => (
-                                    <button
-                                        key={i}
-                                        onClick={() => setActivePage(i)}
-                                        className={`h-1 lg:h-1.5 rounded-full transition-all duration-700 ${activePage === i ? 'w-10 lg:w-16 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)]' : 'w-3 lg:w-4 bg-white/10 hover:bg-white/20'}`}
-                                    />
-                                ))}
-                            </div>
-
-                            <button
-                                onClick={() => setActivePage(prev => (prev + 1) % totalPages)}
-                                className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 bg-white/5 items-center justify-center text-white/40 hover:text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all group hidden lg:flex"
-                            >
-                                <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
-                                </svg>
-                            </button>
+                        <div className="flex gap-3 lg:gap-4">
+                            {Array.from({ length: totalPages }).map((_, i) => (
+                                <button
+                                    key={i}
+                                    onClick={() => setActivePage(i)}
+                                    className={`h-1 lg:h-1.5 rounded-full transition-all duration-700 ${activePage === i ? 'w-10 lg:w-16 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.6)]' : 'w-3 lg:w-4 bg-white/10 hover:bg-white/20'}`}
+                                />
+                            ))}
                         </div>
-                    )}
+
+                        <button
+                            onClick={() => setActivePage(prev => (prev + 1) % totalPages)}
+                            className="w-12 h-12 lg:w-14 lg:h-14 rounded-full border border-white/10 bg-white/5 items-center justify-center text-white/40 hover:text-white hover:border-blue-600 hover:bg-blue-600/10 transition-all group hidden lg:flex"
+                        >
+                            <svg className="w-5 h-5 group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2.5" d="M9 5l7 7-7 7" />
+                            </svg>
+                        </button>
+                    </div>
                 </div>
 
                 {/* Stats Bar */}
