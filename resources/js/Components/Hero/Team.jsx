@@ -285,7 +285,7 @@ const Team = () => {
                             <div className="h-[2px] w-8 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]" />
                             <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em]">Our Elite Collective</span>
                         </div>
-                        <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-8">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-tight mb-8 font-display">
                             Meet the Minds <br /> Behind <span className="text-blue-600">The Magic.</span>
                         </h2>
                         <p className="text-white text-sm sm:text-base font-normal leading-relaxed mb-8 max-w-lg">
@@ -368,7 +368,7 @@ const Team = () => {
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent opacity-80" />
                                         <div className="absolute bottom-6 left-6 right-6">
-                                            <h3 className="text-white text-base font-black uppercase tracking-tight group-hover:tracking-[0.1em] transition-all duration-500">{member.name}</h3>
+                                            <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight group-hover:tracking-[0.1em] transition-all duration-500 font-display">{member.name}</h3>
                                             <p className={`text-[8px] font-black uppercase tracking-[0.2em] mt-1 ${member.color}`}>
                                                 {member.role}
                                             </p>

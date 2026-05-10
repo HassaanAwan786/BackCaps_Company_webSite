@@ -78,7 +78,7 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-8">
                     {/* Brand Info */}
                     <div className="lg:col-span-5">
-                        <div className="text-2xl font-black text-white mb-8 tracking-tighter uppercase">
+                        <div className="text-2xl font-black text-white mb-8 tracking-tighter uppercase font-display">
                             Back<span className="text-blue-600">Caps</span>
                         </div>
                         <p className="text-white text-sm font-normal leading-relaxed mb-8 max-w-sm">
@@ -147,7 +147,7 @@ const Footer = () => {
                 {/* Middle Section: Newsletter */}
                 <div className="py-16 border-y border-white flex flex-col lg:flex-row justify-between items-center gap-12 mb-8">
                     <div className="max-w-lg text-center lg:text-left">
-                        <h3 className="text-white text-3xl font-black uppercase tracking-tight mb-3">Stay Updated</h3>
+                        <h3 className="text-white text-3xl sm:text-4xl font-black uppercase tracking-tight mb-3 font-display">Stay Updated</h3>
                         <p className="text-white text-sm sm:text-base font-normal leading-relaxed">Subscribe to our newsletter for the latest updates and digital insights from the frontier of tech.</p>
                     </div>
                     <div className="flex w-full lg:w-auto max-w-md gap-3">

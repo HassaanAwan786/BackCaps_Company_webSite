@@ -86,7 +86,7 @@ const Contact = ({ timeSlots = [] }) => {
     const todayFormatted = getLocalISOString(today);
 
     return (
-        <section id="contact" className="bg-[#05050d] py-24 px-6 sm:px-12 lg:px-24 relative overflow-hidden">
+        <section id="contact" className="bg-white py-24 px-6 sm:px-12 lg:px-24 relative overflow-hidden">
             <div className="absolute top-0 right-1/4 w-[600px] h-[600px] bg-blue-600/5 blur-[120px] rounded-full pointer-events-none" />
             <div className="max-w-7xl mx-auto relative z-10">
                 {/* Header Grid */}
@@ -94,12 +94,12 @@ const Contact = ({ timeSlots = [] }) => {
                     <div className="lg:col-span-8">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-[2px] w-8 bg-blue-600" />
-                            <span className="text-[10px] font-black text-white/50 uppercase tracking-[0.3em]">Ready to start?</span>
+                            <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Ready to start?</span>
                         </div>
-                        <h2 className="text-5xl sm:text-7xl font-black text-white uppercase tracking-tighter leading-none mb-8">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tighter leading-none mb-8 font-display">
                             Let's Build <br /> <span className="text-blue-600">Something Great</span> <br /> Together.
                         </h2>
-                        <p className="text-white text-sm sm:text-base font-normal leading-relaxed max-w-xl mb-10">
+                        <p className="text-gray-900 text-sm sm:text-base font-normal leading-relaxed max-w-xl mb-10">
                             We're currently accepting new projects for {monthNames[currentMonth]} {currentYear}. Let's discuss how we can scale your vision through premium design and engineering.
                         </p>
                         <div className="flex flex-wrap gap-4">
@@ -111,7 +111,7 @@ const Contact = ({ timeSlots = [] }) => {
                             </button>
                             <a 
                                 href="tel:+447000000000"
-                                className="px-8 py-4 bg-white/5 border border-white/10 hover:border-blue-600 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-3 group"
+                                className="px-8 py-4 bg-gray-50 border border-gray-200 hover:border-blue-600 text-gray-900 text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-3 group"
                             >
                                 <span className="text-lg group-hover:rotate-12 transition-transform">📞</span> Quick Call Request
                             </a>
@@ -167,11 +167,11 @@ const Contact = ({ timeSlots = [] }) => {
                 {/* Interaction Grid */}
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8">
                     {/* Project Brief & Calendar */}
-                    <div className="lg:col-span-9 bg-[#0a0a0a] border border-white/5 rounded-[3rem] overflow-hidden shadow-sm">
+                    <div className="lg:col-span-9 bg-gray-50 border border-gray-100 rounded-[3rem] overflow-hidden shadow-sm">
                         <div className="grid grid-cols-1 md:grid-cols-2 h-full">
                             {/* Form Side */}
-                            <div className="pb-0 md:pb-auto p-8 sm:p-12 border-b md:border-b-0 md:border-r border-white/5 bg-[#0a0a0a]">
-                                <h3 className="text-white text-xl font-black uppercase tracking-tight mb-10">Project Brief</h3>
+                            <div className="pb-0 md:pb-auto p-8 sm:p-12 border-b md:border-b-0 md:border-r border-gray-100 bg-gray-50">
+                                <h3 className="text-gray-900 text-lg sm:text-xl font-black uppercase tracking-tight mb-10 font-display">Project Brief</h3>
                                 {submitted ? (
                                     <motion.div 
                                         initial={{ opacity: 0, scale: 0.9 }}
@@ -179,8 +179,8 @@ const Contact = ({ timeSlots = [] }) => {
                                         className="h-full flex flex-col items-center justify-center text-center space-y-6 py-20"
                                     >
                                         <div className="w-20 h-20 bg-green-500/10 rounded-full flex items-center justify-center text-4xl">✅</div>
-                                        <h3 className="text-2xl font-black text-white">INQUIRY RECEIVED!</h3>
-                                        <p className="text-white font-normal leading-relaxed">We've successfully received your project brief. <br /> Our team will review it and get back to you within 24 hours.</p>
+                                        <h3 className="text-2xl font-black text-gray-900">INQUIRY RECEIVED!</h3>
+                                        <p className="text-gray-900 font-normal leading-relaxed">We've successfully received your project brief. <br /> Our team will review it and get back to you within 24 hours.</p>
                                         <button 
                                             onClick={() => setSubmitted(false)}
                                             className="text-blue-600 font-black uppercase text-[10px] tracking-widest hover:underline"
@@ -192,53 +192,53 @@ const Contact = ({ timeSlots = [] }) => {
                                     <form onSubmit={handleSubmit} className="space-y-6">
                                         <div className="grid grid-cols-2 gap-4">
                                             <div>
-                                                <label className="text-[10px] text-white/50 uppercase font-black mb-2 block ml-2">Full Name</label>
+                                                <label className="text-[10px] text-gray-900/50 uppercase font-black mb-2 block ml-2">Full Name</label>
                                                 <input 
                                                     type="text" 
                                                     value={data.name}
                                                     onChange={e => setData('name', e.target.value)}
                                                     placeholder="John Doe" 
-                                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-white/20" 
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-gray-900/20" 
                                                     required
                                                 />
                                             </div>
                                             <div>
-                                                <label className="text-[10px] text-white/50 uppercase font-black mb-2 block ml-2">Company</label>
+                                                <label className="text-[10px] text-gray-900/50 uppercase font-black mb-2 block ml-2">Company</label>
                                                 <input 
                                                     type="text" 
                                                     value={data.company}
                                                     onChange={e => setData('company', e.target.value)}
                                                     placeholder="Acme Inc." 
-                                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-white/20" 
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-gray-900/20" 
                                                 />
                                             </div>
                                         </div>
                                         <div className="grid grid-cols-2 gap-4">
                                             <div>
-                                                <label className="text-[10px] text-white/50 uppercase font-black mb-2 block ml-2">Email Address</label>
+                                                <label className="text-[10px] text-gray-900/50 uppercase font-black mb-2 block ml-2">Email Address</label>
                                                 <input 
                                                     type="email" 
                                                     value={data.email}
                                                     onChange={e => setData('email', e.target.value)}
                                                     placeholder="john@acme.com" 
-                                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-white/20" 
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-gray-900/20" 
                                                     required
                                                 />
                                             </div>
                                             <div>
-                                                <label className="text-[10px] text-white/50 uppercase font-black mb-2 block ml-2">Service</label>
+                                                <label className="text-[10px] text-gray-900/50 uppercase font-black mb-2 block ml-2">Service</label>
                                                 <select 
                                                     value={data.service}
                                                     onChange={e => setData('service', e.target.value)}
-                                                    className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors appearance-none"
+                                                    className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors appearance-none"
                                                 >
-                                                    {services.map(s => <option key={s} className="bg-[#0a0a0a]">{s}</option>)}
+                                                    {services.map(s => <option key={s} className="bg-gray-50">{s}</option>)}
                                                 </select>
                                             </div>
                                         </div>
                                         <div>
                                             <div className="flex justify-between items-center mb-2 px-2">
-                                                <label className="text-[10px] text-white/50 uppercase font-black block">Approx. Budget</label>
+                                                <label className="text-[10px] text-gray-900/50 uppercase font-black block">Approx. Budget</label>
                                                 <button 
                                                     type="button"
                                                     onClick={() => {
@@ -261,7 +261,7 @@ const Contact = ({ timeSlots = [] }) => {
                                                         value={data.budget}
                                                         onChange={e => setData('budget', e.target.value)}
                                                         placeholder="e.g. $15,000"
-                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-white/20"
+                                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors placeholder:text-gray-900/20"
                                                     />
                                                 ) : (
                                                     <motion.select 
@@ -271,23 +271,23 @@ const Contact = ({ timeSlots = [] }) => {
                                                         exit={{ opacity: 0, y: 10 }}
                                                         value={data.budget}
                                                         onChange={e => setData('budget', e.target.value)}
-                                                        className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors appearance-none"
+                                                        className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors appearance-none"
                                                     >
-                                                        <option className="bg-[#0a0a0a]">$25k - $50k</option>
-                                                        <option className="bg-[#0a0a0a]">$50k - $100k</option>
-                                                        <option className="bg-[#0a0a0a]">$100k+</option>
+                                                        <option className="bg-gray-50">$25k - $50k</option>
+                                                        <option className="bg-gray-50">$50k - $100k</option>
+                                                        <option className="bg-gray-50">$100k+</option>
                                                     </motion.select>
                                                 )}
                                             </AnimatePresence>
                                         </div>
                                         <div>
-                                            <label className="text-[10px] text-white/50 uppercase font-black mb-2 block ml-2">Tell us about your project</label>
+                                            <label className="text-[10px] text-gray-900/50 uppercase font-black mb-2 block ml-2">Tell us about your project</label>
                                             <textarea 
                                                 value={data.message}
                                                 onChange={e => setData('message', e.target.value)}
                                                 rows="4" 
                                                 placeholder="I need a high-converting landing page for..." 
-                                                className="w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white text-sm focus:outline-none focus:border-blue-600 transition-colors resize-none mb-6 placeholder:text-white/20" 
+                                                className="w-full bg-gray-50 border border-gray-200 rounded-xl px-4 py-3 text-gray-900 text-sm focus:outline-none focus:border-blue-600 transition-colors resize-none mb-6 placeholder:text-gray-900/20" 
                                             ></textarea>
                                         </div>
                                         <button 
@@ -297,7 +297,7 @@ const Contact = ({ timeSlots = [] }) => {
                                             <span>{processing ? 'SENDING...' : 'Send Inquiry'}</span>
                                             {!processing && <span className="transform group-hover:translate-x-1 transition-transform">↗</span>}
                                         </button>
-                                        <p className="text-[9px] text-center text-white/40 font-bold flex items-center justify-center gap-2">
+                                        <p className="text-[9px] text-center text-gray-900/40 font-bold flex items-center justify-center gap-2">
                                             <span className="text-blue-600">🛡️</span> Privacy guaranteed. 24h response time.
                                         </p>
                                     </form>
@@ -305,22 +305,22 @@ const Contact = ({ timeSlots = [] }) => {
                             </div>
 
                             {/* Calendar Side */}
-                            <div id="calendar-section" className="p-8 sm:p-12 bg-white/5">
+                            <div id="calendar-section" className="p-8 sm:p-12 bg-gray-50">
                                 <div className="flex justify-between items-center mb-10">
-                                    <h3 className="text-white text-xl font-black uppercase tracking-tight">Pick a Date</h3>
+                                    <h3 className="text-gray-900 text-lg sm:text-xl font-black uppercase tracking-tight font-display">Pick a Date</h3>
                                     <span className="text-[10px] font-black text-blue-600 bg-blue-50 px-2 py-1 rounded">PKT (UTC+5)</span>
                                 </div>
 
                                 {/* Calendar UI */}
-                                <div className="bg-[#0a0a0a] rounded-2xl p-6 mb-8 shadow-sm border border-white/5">
+                                <div className="bg-gray-50 rounded-2xl p-6 mb-8 shadow-sm border border-gray-100">
                                     <div className="flex justify-between items-center mb-6">
-                                        <span className="text-sm font-black text-white uppercase tracking-wider">{monthNames[currentMonth]} {currentYear}</span>
+                                        <span className="text-sm font-black text-gray-900 uppercase tracking-wider">{monthNames[currentMonth]} {currentYear}</span>
                                         <div className="flex gap-2">
-                                            <button onClick={handlePrevMonth} className="p-1 text-white/40 hover:text-blue-600 transition-colors">←</button>
-                                            <button onClick={handleNextMonth} className="p-1 text-white/40 hover:text-blue-600 transition-colors">→</button>
+                                            <button onClick={handlePrevMonth} className="p-1 text-gray-900/40 hover:text-blue-600 transition-colors">←</button>
+                                            <button onClick={handleNextMonth} className="p-1 text-gray-900/40 hover:text-blue-600 transition-colors">→</button>
                                         </div>
                                     </div>
-                                    <div className="grid grid-cols-7 gap-2 text-center text-[10px] font-black text-white/20 mb-4">
+                                    <div className="grid grid-cols-7 gap-2 text-center text-[10px] font-black text-gray-900/20 mb-4">
                                         <span>S</span><span>M</span><span>T</span><span>W</span><span>T</span><span>F</span><span>S</span>
                                     </div>
                                     <div className="grid grid-cols-7 gap-2 text-center">
@@ -340,7 +340,7 @@ const Contact = ({ timeSlots = [] }) => {
                                                     type="button"
                                                     onClick={() => setData('meeting_date', formattedDate)}
                                                     className={`text-[11px] font-bold py-2 rounded-lg transition-all relative
-                                                        ${isSelected ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-white hover:bg-white/5'}
+                                                        ${isSelected ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-gray-900 hover:bg-gray-50'}
                                                         ${isToday && !isSelected ? 'text-blue-600' : ''}`}
                                                 >
                                                     {day}
@@ -352,7 +352,7 @@ const Contact = ({ timeSlots = [] }) => {
                                 </div>
 
                                 <div className="space-y-4">
-                                    <p className="text-[10px] text-white/40 uppercase font-black tracking-widest mb-4">Available Time Slots</p>
+                                    <p className="text-[10px] text-gray-900/40 uppercase font-black tracking-widest mb-4">Available Time Slots</p>
                                     <div className="grid grid-cols-2 gap-3">
                                         {timeSlots.map((slot, i) => (
                                             <button
@@ -363,8 +363,8 @@ const Contact = ({ timeSlots = [] }) => {
                                                 className={`py-3 px-4 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all border ${data.meeting_time === slot.time
                                                     ? 'bg-blue-600 border-blue-600 text-white shadow-lg shadow-blue-600/20'
                                                     : !slot.is_available
-                                                        ? 'bg-white/5 border-white/5 text-white/20 cursor-not-allowed'
-                                                        : 'bg-white/5 border-white/10 text-white hover:border-blue-600/50'
+                                                        ? 'bg-gray-50 border-gray-100 text-gray-900/20 cursor-not-allowed'
+                                                        : 'bg-gray-50 border-gray-200 text-gray-900 hover:border-blue-600/50'
                                                     }`}
                                             >
                                                 {slot.time} {!slot.is_available && '(Full)'}
@@ -374,7 +374,7 @@ const Contact = ({ timeSlots = [] }) => {
                                 </div>
                                 <div className="mt-8 p-4 bg-blue-600/5 border border-blue-600/10 rounded-2xl">
                                     <p className="text-[10px] text-blue-600 font-black uppercase tracking-widest mb-1">Selected Meeting:</p>
-                                    <p className="text-sm font-bold text-white">
+                                    <p className="text-sm font-bold text-gray-900">
                                         {new Date(data.meeting_date + 'T00:00:00').toLocaleDateString('en-US', { month: 'long', day: 'numeric', year: 'numeric' })} at {data.meeting_time}
                                     </p>
                                 </div>
