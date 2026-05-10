@@ -53,7 +53,7 @@ export default function ReadyToStart() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-gray-400 text-lg font-medium leading-relaxed mb-10"
+                                className="text-white text-lg font-normal leading-relaxed mb-10"
                             >
                                 Tell us about your vision. Our team of product engineers is ready to turn your ideas into a high-performance digital reality.
                             </motion.p>
@@ -82,7 +82,7 @@ export default function ReadyToStart() {
                                 >
                                     <div className="w-20 h-20 bg-green-500/20 rounded-full flex items-center justify-center text-4xl">✅</div>
                                     <h3 className="text-2xl font-black text-white">MESSAGE SENT!</h3>
-                                    <p className="text-gray-400 font-medium">We've received your inquiry and will get back to you within 24 hours.</p>
+                                    <p className="text-white font-normal">We've received your inquiry and will get back to you within 24 hours.</p>
                                 </motion.div>
                             ) : (
                                 <form onSubmit={handleSubmit} className="space-y-6">

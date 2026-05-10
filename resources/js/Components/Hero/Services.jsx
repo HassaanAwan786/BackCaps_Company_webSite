@@ -154,7 +154,7 @@ const Services = () => {
                         We Build Digital <br /> Solutions That <span className="text-blue-600">Drive Results.</span>
                     </h2>
 
-                    <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
+                    <p className="text-white text-xl sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
                         Our team blends design with technology to deliver exceptional and functional digital solutions.
                     </p>
                 </div>
@@ -219,7 +219,7 @@ const Services = () => {
                                                     {service.title}
                                                 </h3>
                                             </div>
-                                            <p className="text-gray-400 text-[13px] sm:text-sm font-medium leading-relaxed mb-8">
+                                            <p className="text-white text-[13px] sm:text-sm font-normal leading-relaxed mb-8">
                                                 {service.description}
                                             </p>
                                             <ul className="space-y-3 sm:space-y-4 inline-block text-left">

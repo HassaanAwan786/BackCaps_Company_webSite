@@ -31,7 +31,7 @@ const CallToAction = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.6 }}
-                    className="text-gray-400 text-sm sm:text-lg max-w-2xl mb-14 font-medium leading-relaxed"
+                    className="text-white text-sm sm:text-lg max-w-2xl mb-14 font-normal leading-relaxed"
                 >
                     Ready to turn your vision into reality? Whether you're launching a startup or scaling an enterprise, we're here to build something extraordinary with you.
                 </motion.p>

@@ -199,7 +199,7 @@ export default function Hero() {
                                     >that ship.</motion.span>
                                 </h1>
 
-                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
+                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -256,7 +256,7 @@ export default function Hero() {
                                     that ship.
                                 </h1>
 
-                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
+                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -325,8 +325,8 @@ export default function Hero() {
                                     that ship.
                                 </h1>
 
-                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
-                                    Designing for the next generation of portable productivity. We create experiences that feel native and powerful on every device.
+                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
+                                    A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row gap-4 mb-6 lg:mb-10">
