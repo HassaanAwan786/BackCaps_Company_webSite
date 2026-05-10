@@ -65,10 +65,10 @@ const TeamModal = ({ member, onClose }) => {
                                 transition={{ delay: 0.3 }}
                             >
                                 <h4 className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em] mb-6">Professional Bio</h4>
-                                <p className="text-gray-300 text-lg font-medium leading-relaxed italic mb-8 border-l-2 border-blue-600 pl-6">
+                                <p className="text-white text-lg font-normal leading-relaxed italic mb-8 border-l-2 border-blue-600 pl-6">
                                     "{member.quote}"
                                 </p>
-                                <p className="text-gray-400 text-sm leading-relaxed font-medium">
+                                <p className="text-white text-sm leading-relaxed font-normal">
                                     {member.about}
                                 </p>
                             </motion.div>
@@ -81,7 +81,7 @@ const TeamModal = ({ member, onClose }) => {
                                 className="pt-12 border-t border-white/5"
                             >
                                 <h3 className="text-white text-xl font-black uppercase tracking-tight mb-4">Discover {member.name.split(' ')[0]}'s Story</h3>
-                                <p className="text-gray-500 text-xs font-medium leading-relaxed mb-10">
+                                <p className="text-white text-xs font-normal leading-relaxed mb-10">
                                     Explore the expertise, achievements, and creative journey of our {member.role}.
                                 </p>
 
@@ -285,10 +285,10 @@ const Team = () => {
                             <div className="h-[2px] w-8 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]" />
                             <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em]">Our Elite Collective</span>
                         </div>
-                        <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tighter leading-tight mb-8">
+                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-tight mb-8 font-display">
                             Meet the Minds <br /> Behind <span className="text-blue-600">The Magic.</span>
                         </h2>
-                        <p className="text-gray-400 text-sm sm:text-base font-medium leading-relaxed mb-8 max-w-lg">
+                        <p className="text-white text-sm sm:text-base font-normal leading-relaxed mb-8 max-w-lg">
                             We're a team of designers, developers, and strategists passionate about building digital experiences that drive real results.
                         </p>
                         <button className="flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 group">
@@ -311,7 +311,7 @@ const Team = () => {
                                 className="bg-white/[0.03] backdrop-blur-xl border border-white/10 p-8 rounded-[2rem] max-w-sm relative shadow-2xl"
                             >
                                 <div className="text-4xl text-blue-600/30 font-serif absolute top-4 left-6 leading-none">"</div>
-                                <p className="text-gray-300 text-sm font-medium leading-relaxed mb-8 italic relative z-10">
+                                <p className="text-white text-sm font-normal leading-relaxed mb-8 italic relative z-10">
                                     {testimonials[activeTestimonial].quote}
                                 </p>
                                 <div className="flex items-center gap-4">
@@ -368,7 +368,7 @@ const Team = () => {
                                         />
                                         <div className="absolute inset-0 bg-gradient-to-t from-[#05050d] via-transparent to-transparent opacity-80" />
                                         <div className="absolute bottom-6 left-6 right-6">
-                                            <h3 className="text-white text-base font-black uppercase tracking-tight group-hover:tracking-[0.1em] transition-all duration-500">{member.name}</h3>
+                                            <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight group-hover:tracking-[0.1em] transition-all duration-500 font-display">{member.name}</h3>
                                             <p className={`text-[8px] font-black uppercase tracking-[0.2em] mt-1 ${member.color}`}>
                                                 {member.role}
                                             </p>

@@ -5,19 +5,15 @@ import Counter from './Counter';
 const TechHeadline = () => {
     const techStack = [
         { name: 'Python', icon: '🐍' },
-        { name: 'Figma', icon: '🎨' },
+        { name: 'Next.js', icon: '▲' },
         { name: 'PostgreSQL', icon: '🐘' },
-        { name: 'MongoDB', icon: '🍃' },
+        { name: 'Node.js', icon: '🟢' },
         { name: 'AWS', icon: '☁️' },
+        { name: 'React', icon: '⚛️' },
+        { name: 'TypeScript', icon: '🔷' },
         { name: 'Docker', icon: '🐳' },
         { name: 'Tailwind', icon: '🌊' },
-        { name: 'Redis', icon: '📦' },
-        { name: 'GraphQL', icon: '🧬' },
-        { name: 'Prisma', icon: '💎' },
-        { name: 'Stripe', icon: '💳' },
-        { name: 'Vercel', icon: '▲' },
-        { name: 'GitHub', icon: '🐙' },
-        { name: 'Kubernetes', icon: '☸️' }
+        { name: 'Redis', icon: '📦' }
     ];
 
     const stats = [
@@ -31,9 +27,9 @@ const TechHeadline = () => {
     return (
         <div id="tech-stats" className="mt-16 md:mt-0 w-full bg-[#05050d] border-t border-white/5 relative overflow-hidden">
             {/* Top Row: Tech Stack Marquee */}
-            <div className="flex items-center border-b border-white/5 h-20 sm:h-24">
-                <div className="bg-[#2563eb] px-6 sm:px-12 h-full flex items-center justify-center z-10 shadow-[20px_0_40px_rgba(0,0,0,0.5)]">
-                    <span className="text-[10px] sm:text-xs font-black text-white uppercase tracking-[0.2em] whitespace-nowrap">Tech Stack</span>
+            <div className="flex items-center border-b border-white/5 h-14 sm:h-16">
+                <div className="bg-[#2563eb] px-4 sm:px-8 h-full flex items-center justify-center z-10 shadow-[20px_0_40px_rgba(0,0,0,0.5)]">
+                    <span className="text-[8px] sm:text-[10px] font-black text-white uppercase tracking-[0.2em] whitespace-nowrap">Tech Stack</span>
                 </div>
 
                 <div className="flex-1 overflow-hidden relative">
@@ -48,9 +44,9 @@ const TechHeadline = () => {
                     >
                         {[...techStack, ...techStack, ...techStack].map((tech, i) => (
                             <div key={i} className="flex items-center gap-3 group cursor-default">
-                                <span className="text-xl sm:text-3xl opacity-70 group-hover:opacity-100 transition-opacity">{tech.icon}</span>
-                                <span className="text-xs sm:text-base font-bold text-white/30 group-hover:text-white/80 uppercase tracking-widest transition-colors">{tech.name}</span>
-                                <div className="w-1.5 h-1.5 rounded-full bg-white/10 mx-2" />
+                                <span className="text-lg sm:text-xl opacity-70 group-hover:opacity-100 transition-opacity">{tech.icon}</span>
+                                <span className="text-[10px] sm:text-sm font-bold text-white/30 group-hover:text-white/80 uppercase tracking-widest transition-colors">{tech.name}</span>
+                                <div className="w-1 h-1 rounded-full bg-white/10 mx-2" />
                             </div>
                         ))}
                     </motion.div>
@@ -58,8 +54,8 @@ const TechHeadline = () => {
             </div>
 
             {/* Bottom Row: Stats - Full Width Responsive Grid */}
-            <div className="w-full px-6 sm:px-12 py-16 sm:py-24">
-                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-16 gap-x-8">
+            <div className="w-full px-6 sm:px-12 py-10 sm:py-12">
+                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8">
                     {stats.map((stat, i) => (
                         <div key={i} className="flex flex-col items-center text-center relative group">
                             {/* Vertical Divider Logic */}
@@ -78,7 +74,7 @@ const TechHeadline = () => {
                                 transition={{ delay: i * 0.1, duration: 0.5, type: "spring" }}
                                 className="mb-3"
                             >
-                                <div className="text-6xl sm:text-6xl lg:text-7xl font-black text-white tracking-tighter block group-hover:text-[#2563eb] transition-colors duration-300">
+                                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter block group-hover:text-[#2563eb] transition-colors duration-300">
                                     <Counter
                                         value={stat.value}
                                         prefix={stat.prefix}

@@ -150,11 +150,11 @@ const Services = () => {
                         <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Our Services</span>
                     </div>
 
-                    <h2 className="text-4xl sm:text-6xl font-black text-white uppercase tracking-tighter leading-tight max-w-4xl mx-auto mb-8">
+                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-tight max-w-4xl mx-auto mb-8 font-display">
                         We Build Digital <br /> Solutions That <span className="text-blue-600">Drive Results.</span>
                     </h2>
 
-                    <p className="text-gray-400 text-sm sm:text-base max-w-2xl mx-auto font-medium leading-relaxed">
+                    <p className="text-white text-xl sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
                         Our team blends design with technology to deliver exceptional and functional digital solutions.
                     </p>
                 </div>
@@ -215,11 +215,11 @@ const Services = () => {
                                                 <div className="flex-shrink-0 flex items-center justify-center">
                                                     <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
                                                 </div>
-                                                <h3 className="text-xl sm:text-2xl lg:text-3xl font-black text-white uppercase tracking-tight leading-tight">
+                                                <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight leading-tight font-display">
                                                     {service.title}
                                                 </h3>
                                             </div>
-                                            <p className="text-gray-400 text-[13px] sm:text-sm font-medium leading-relaxed mb-8">
+                                            <p className="text-white text-[13px] sm:text-sm font-normal leading-relaxed mb-8">
                                                 {service.description}
                                             </p>
                                             <ul className="space-y-3 sm:space-y-4 inline-block text-left">

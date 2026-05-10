@@ -176,7 +176,7 @@ export default function Hero() {
                                     <span className="text-[10px] font-bold text-green-500 uppercase tracking-wider">available for new projects · 2026</span>
                                 </div>
 
-                                <h1 className="text-[32px] sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6">
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
                                     <motion.span
                                         initial={{ x: -20, opacity: 0 }}
                                         animate={{ x: 0, opacity: 1 }}
@@ -199,7 +199,7 @@ export default function Hero() {
                                     >that ship.</motion.span>
                                 </h1>
 
-                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
+                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -250,13 +250,13 @@ export default function Hero() {
                                     <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">available for new projects · 2026</span>
                                 </div>
 
-                                <h1 className="text-[32px] sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6">
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
                                     We build <br />
                                     <span className="bg-gradient-to-r from-blue-400 to-brand-purple bg-clip-text text-transparent">AI products</span> <br />
                                     that ship.
                                 </h1>
 
-                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
+                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -319,14 +319,14 @@ export default function Hero() {
                                     <span className="text-[10px] font-bold text-brand-purple uppercase tracking-wider">available for new projects · 2026</span>
                                 </div>
 
-                                <h1 className="text-[32px] sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6">
+                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
                                     We build <br />
                                     <span className="bg-gradient-to-r from-brand-purple to-blue-400 bg-clip-text text-transparent">Tablet Apps</span> <br />
                                     that ship.
                                 </h1>
 
-                                <p className="text-brand-gray text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-medium">
-                                    Designing for the next generation of portable productivity. We create experiences that feel native and powerful on every device.
+                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
+                                    A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
                                 <div className="flex flex-col sm:flex-row gap-4 mb-6 lg:mb-10">

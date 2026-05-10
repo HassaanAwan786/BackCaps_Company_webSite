@@ -178,7 +178,7 @@ export default function Header() {
                                                     <span className="w-8 h-[1px] bg-brand-purple/30"></span>
                                                     {category.title}
                                                 </h3>
-                                                <p className="text-brand-gray text-base font-medium max-w-md">
+                                                <p className="text-white text-base font-normal max-w-md">
                                                     {category.description}
                                                 </p>
                                             </motion.div>
@@ -231,7 +231,7 @@ export default function Header() {
                                             ))}
                                         </div>
                                         <div className="space-y-1">
-                                            <p className="text-white text-sm font-bold">Trusted by global innovators</p>
+                                            <p className="text-white text-sm font-normal">Trusted by global innovators</p>
                                             <p className="text-brand-gray text-[10px] font-black uppercase tracking-[0.2em]">
                                                 40+ projects shipped successfully
                                             </p>

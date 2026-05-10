@@ -14,24 +14,24 @@ const CallToAction = () => {
                 {/* Background Ambient Glow */}
                 <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[600px] h-[300px] bg-blue-600/10 blur-[120px] rounded-full -translate-y-1/2" />
                 
-                <motion.h2 
-                    initial={{ opacity: 0, y: 20 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true }}
-                    transition={{ delay: 0.2, duration: 0.6 }}
-                    className="text-5xl sm:text-7xl lg:text-8xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-5xl mb-10"
-                >
-                    Let's Build<br />
-                    Something Great<br />
-                    Together
-                </motion.h2>
+                    <motion.h2 
+                        initial={{ opacity: 0, y: 20 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        viewport={{ once: true }}
+                        transition={{ delay: 0.2, duration: 0.6 }}
+                        className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-5xl mb-10 font-display"
+                    >
+                        Let's Build<br />
+                        Something Great<br />
+                        Together
+                    </motion.h2>
                 
                 <motion.p 
                     initial={{ opacity: 0, y: 20 }}
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.6 }}
-                    className="text-gray-400 text-sm sm:text-lg max-w-2xl mb-14 font-medium leading-relaxed"
+                    className="text-white text-sm sm:text-lg max-w-2xl mb-14 font-normal leading-relaxed"
                 >
                     Ready to turn your vision into reality? Whether you're launching a startup or scaling an enterprise, we're here to build something extraordinary with you.
                 </motion.p>
