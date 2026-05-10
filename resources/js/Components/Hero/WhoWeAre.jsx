@@ -136,7 +136,7 @@ const WhoWeAre = () => {
                 <div className="space-y-24 sm:space-y-28">
                     {pillars.map((pillar, i) => (
                         <React.Fragment key={i}>
-                            <div className={`flex flex-col ${pillar.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-32`}>
+                            <div className={`flex flex-col ${pillar.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-48`}>
                                 {/* Text Content */}
                                 <motion.div
                                     initial={{ opacity: 0, x: pillar.reverse ? 50 : -50 }}
@@ -147,7 +147,7 @@ const WhoWeAre = () => {
                                     <h3 className="text-xl sm:text-4xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-none font-display">
                                         {pillar.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal mb-8 sm:mb-10 max-w-xl">
+                                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal mb-8 sm:mb-10 max-w-md">
                                         {pillar.description}
                                     </p>
 
@@ -187,11 +187,11 @@ const WhoWeAre = () => {
 
                                         {/* Secondary Overlapping Image */}
                                         <motion.div
-                                            initial={{ opacity: 0, scale: 0.8, x: pillar.reverse ? -20 : 20 }}
+                                            initial={{ opacity: 0, scale: 0.8, x: pillar.reverse ? 50 : -50 }}
                                             whileInView={{ opacity: 1, scale: 1, x: 0 }}
                                             viewport={{ once: true }}
                                             transition={{ delay: 0.4 }}
-                                            className={`absolute ${pillar.reverse ? '-right-4 sm:-right-8' : '-left-4 sm:-left-8'} top-1/2 -translate-y-1/2 w-1/2 aspect-square rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-xl z-10`}
+                                            className={`absolute ${pillar.reverse ? 'right-0 translate-x-1/2' : 'left-0 -translate-x-1/2'} top-1/2 -translate-y-1/2 w-1/2 aspect-square rounded-3xl overflow-hidden border-4 sm:border-8 border-white shadow-2xl z-10`}
                                         >
                                             <img
                                                 src={pillar.secondaryImage}
