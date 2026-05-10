@@ -133,7 +133,7 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Pillars Content */}
-                <div className="space-y-24 sm:space-y-40">
+                <div className="space-y-24 sm:space-y-28">
                     {pillars.map((pillar, i) => (
                         <React.Fragment key={i}>
                             <div className={`flex flex-col ${pillar.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-32`}>
@@ -144,7 +144,7 @@ const WhoWeAre = () => {
                                     viewport={{ once: true, margin: "-100px" }}
                                     className="flex-1 text-left"
                                 >
-                                    <h3 className="text-xl sm:text-2xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-none font-display">
+                                    <h3 className="text-xl sm:text-4xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-none font-display">
                                         {pillar.title}
                                     </h3>
                                     <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal mb-8 sm:mb-10 max-w-xl">

@@ -54,27 +54,23 @@ const TechHeadline = () => {
             </div>
 
             {/* Bottom Row: Stats - Full Width Responsive Grid */}
-            <div className="w-full px-6 sm:px-12 py-10 sm:py-12">
-                <div className="grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-12 gap-x-8">
+            <div className="w-full px-6 sm:px-12 py-8 sm:py-10">
+                <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-y-10 gap-x-8">
                     {stats.map((stat, i) => (
                         <div key={i} className="flex flex-col items-center text-center relative group">
                             {/* Vertical Divider Logic */}
                             {i !== 0 && (
-                                <div className={`hidden lg:block absolute left-[-16px] top-1/2 -translate-y-1/2 w-[1px] h-20 bg-white/10`} />
+                                <div className={`hidden lg:block absolute left-[-16px] top-1/2 -translate-y-1/2 w-[1px] h-12 bg-white/5`} />
                             )}
-                            {/* Tablet Divider Logic (shows for 2nd and 3rd in 3rd-col layout, etc.) */}
-                            {i % 3 !== 0 && (
-                                <div className="hidden md:block lg:hidden absolute left-[-16px] top-1/2 -translate-y-1/2 w-[1px] h-16 bg-white/10" />
-                            )}
-
+                            
                             <motion.div
-                                initial={{ opacity: 0, scale: 0.8 }}
-                                whileInView={{ opacity: 1, scale: 1 }}
+                                initial={{ opacity: 0, y: 20 }}
+                                whileInView={{ opacity: 1, y: 0 }}
                                 viewport={{ once: true }}
-                                transition={{ delay: i * 0.1, duration: 0.5, type: "spring" }}
-                                className="mb-3"
+                                transition={{ delay: i * 0.1, duration: 0.5 }}
+                                className="mb-2"
                             >
-                                <div className="text-4xl sm:text-5xl lg:text-6xl font-black text-white tracking-tighter block group-hover:text-[#2563eb] transition-colors duration-300">
+                                <div className="text-2xl sm:text-3xl lg:text-4xl font-black text-white tracking-tighter block group-hover:text-[#2563eb] transition-colors duration-300 font-display">
                                     <Counter
                                         value={stat.value}
                                         prefix={stat.prefix}
@@ -85,7 +81,7 @@ const TechHeadline = () => {
                                     />
                                 </div>
                             </motion.div>
-                            <span className="text-[11px] sm:text-sm font-black text-brand-gray uppercase tracking-[0.25em] opacity-40 group-hover:opacity-100 group-hover:tracking-[0.3em] transition-all duration-300 leading-tight">
+                            <span className="text-[9px] sm:text-[10px] font-black text-brand-gray uppercase tracking-[0.3em] opacity-40 group-hover:opacity-100 group-hover:text-white transition-all duration-300 leading-tight">
                                 {stat.label}
                             </span>
                         </div>
