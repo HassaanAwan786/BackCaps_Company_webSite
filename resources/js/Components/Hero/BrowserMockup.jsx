@@ -196,7 +196,7 @@ const BrowserMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup
                     <motion.div
                         animate={{ x: [0, 10, 0] }}
                         transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                        className="absolute top-12 -right-6 px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-purple/30 backdrop-blur-xl shadow-2xl z-30"
+                        className="absolute -top-12 -right-6 px-4 py-3 rounded-xl bg-brand-dark/90 border border-brand-purple/30 backdrop-blur-xl shadow-2xl z-30"
                     >
                         <div className="flex items-center gap-3">
                             <div className="w-8 h-8 rounded-lg bg-brand-purple/20 flex items-center justify-center">
