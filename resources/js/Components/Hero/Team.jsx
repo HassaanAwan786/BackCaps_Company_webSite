@@ -230,11 +230,13 @@ const Team = () => {
         }
     ];
 
+    
+
     const stats = [
-        { label: "Team Members", value: "20+", icon: "👥" },
-        { label: "Years of Experience", value: "10+", icon: "💼" },
-        { label: "Projects Delivered", value: "250+", icon: "🚀" },
-        { label: "Client Satisfaction", value: "98%", icon: "❤️" }
+        { label: "Team Members", value: "20+", icon: "/assets/Website icons/team-members.svg" },
+        { label: "Years of Experience", value: "10+", icon: "/assets/Website icons/experience.svg" },
+        { label: "Projects Delivered", value: "250+", icon: "/assets/Website icons/projects delivered.svg" },
+        { label: "Client Satisfaction", value: "98%", icon: "/assets/Website icons/client satisfaction.svg" }
     ];
 
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -422,8 +424,8 @@ const Team = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                         {stats.map((stat, index) => (
                             <div key={index} className="flex items-center gap-6 sm:gap-8 group">
-                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-center text-2xl sm:text-3xl group-hover:border-blue-600/50 group-hover:bg-blue-600/5 transition-all duration-700 shadow-2xl shrink-0">
-                                    {stat.icon}
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-center group-hover:border-blue-600/50 group-hover:bg-blue-600/5 transition-all duration-700 shadow-2xl shrink-0 p-3">
+                                    <img src={stat.icon} alt={stat.label} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                 </div>
                                 <div>
                                     <div className="text-2xl sm:text-4xl font-black text-white mb-1 tracking-tight group-hover:text-blue-500 transition-colors whitespace-nowrap">{stat.value}</div>
