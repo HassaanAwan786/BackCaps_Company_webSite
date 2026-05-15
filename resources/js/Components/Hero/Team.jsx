@@ -132,24 +132,44 @@ const Team = () => {
     ];
 
     const team = [
+        
         {
-            name: "Waqar Ahmed",
-            role: "Mobile App Team Lead",
-            experience: "8+ Years",
-            projectsCount: "45+",
-            quote: "Great mobile applications are not just built with code—they are crafted with vision, precision, and a deep understanding of user experience.",
-            about: "Waqar Ahmed is a dedicated Mobile App Team Lead focused on building scalable, user-friendly, and high-performance applications. With strong expertise in modern frameworks and clean architecture, he leads teams to deliver reliable and impactful digital products. His approach blends technical excellence with a clear understanding of user needs.",
-            education: "BS Software Engineering",
-            expertise: ["Mobile Frameworks", "Clean Architecture", "Team Leadership", "Performance Optimization", "User Experience"],
-            achievements: ["Led 15+ high-performance app launches", "Architected scalable mobile solutions", "Mentored 20+ mobile developers"],
+            name: "Zohaib Ahmed",
+            role: "CEO | Founder  ",
+            experience: "7+ Years",
+            projectsCount: "50+",
+            quote: "Software is about more than just functionality—it’s about how it feels to use. A great app should work so naturally that the user never thinks about the complexity behind it.",
+            about: "Zohaib Ahmed turns clean design into functional, high-quality products. As a SwiftUI and cross-platform mobile Developer with a strong foundation in Software Engineering, he bridges the gap between polished UI/UX and solid backend logic. He prioritizes seamless user experiences.",
+            education: "Software Engineering",
+            expertise: ["SwiftUI", "Xcode", "Cross-Platform Mobile", "UI/UX Design", "Figma", "Data Structures"],
+            achievements: ["Developed 20+ iOS applications", "Instructed Data Structures labs", "Built complex logistics platforms"],
             workSamples: [
-                { title: "Enterprise Mobile ERP", type: "Mobile", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop" },
-                { title: "FinTech App", type: "Finance", image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop" },
-                { title: "Health Monitoring System", type: "Health", image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop" }
+                { title: "SwiftUI Logistics App", type: "iOS", image: "https://images.unsplash.com/photo-1512428559083-a40ce9033afb?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Cross-Platform Restaurant Hub", type: "Mobile", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop" },
+                { title: "iOS Fitness Tracker", type: "iOS", image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "/assets/images/team/portfolio/waqar_img.jpeg",
-            color: "text-blue-500"
+            image: "/assets/images/team/portfolio/zohaib_img.jpeg",
+            color: "text-blue-600"
+        },
+        {
+            name: "Muhammad Hassaan",
+            role: "COO | Founder | System Architect",
+            experience: "4+ Years",
+            projectsCount: "20+",
+            quote:"At the intersection of operations and engineering, I don’t just write code—I build systems that scale and companies that trust them. As COO and Co-Founder, I ensure every line of code aligns with business goals, every architecture supports growth, and every client experience feels seamless. From LLM integrations to backend resilience, I lead with structure, precision, and a designer’s eye for how software should feel to use.",
+            about: "Hassan is a Software Engineering graduate who thinks in systems and designs with intention.With a 3x Chancellor's Roll of Honor and Bronze Medal, he brings technical depth and architectural clarity to every project. He has hands-on experience with LLMs and chatbots, but his true focus lies in clean architecture, thoughtful design, and full-stack development. He maintains a bird's eye view of the entire project lifecycle—from database schema and backend logic to frontend polish and user flow.Whether he's structuring a ReactJS frontend, building out Node.js/Express backends, or ensuring design consistency across features, Hassan prioritizes scalability, maintainability, and visual quality. His approach blends the precision of a system architect with the intuition of a designer who cares how things feel to use.",
+            education: "Software Engineering",
+            expertise: [ "React.js","Node.js","Express.js","AI Automation", "MySQL", "System Architecture", "Cloud Infrastructure"],
+            achievements: ["Built 10+ core backend services", "Optimized database queries by 60%", "Improved server uptime to 80.9%"],
+            workSamples: [
+                { title: "Core API Infrastructure", type: "Backend", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Database Migration Engine", type: "System", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1000&auto=format&fit=crop" },
+                { title: "High-Traffic Auth Service", type: "Security", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" }
+            ],
+            socials: { linkedin: "#", twitter: "#", github: "#" },
+            image: "/assets/images/team/portfolio/hassan_img.jpeg",
+            color: "text-blue-400"
         },
         {
             name: "Syed Ibnay Hussain",
@@ -190,50 +210,33 @@ const Team = () => {
             color: "text-pink-500"
         },
         {
-            name: "Zohaib Ahmed",
-            role: "SwiftUI & Mobile Developer",
-            experience: "7+ Years",
-            projectsCount: "50+",
-            quote: "Software is about more than just functionality—it’s about how it feels to use. A great app should work so naturally that the user never thinks about the complexity behind it.",
-            about: "Zohaib Ahmed turns clean design into functional, high-quality products. As a SwiftUI and cross-platform mobile Developer with a strong foundation in Software Engineering, he bridges the gap between polished UI/UX and solid backend logic. He prioritizes seamless user experiences.",
-            education: "Software Engineering",
-            expertise: ["SwiftUI", "Xcode", "Cross-Platform Mobile", "UI/UX Design", "Figma", "Data Structures"],
-            achievements: ["Developed 20+ iOS applications", "Instructed Data Structures labs", "Built complex logistics platforms"],
+            name: "Waqar Ahmed",
+            role: "Mobile App Team Lead",
+            experience: "8+ Years",
+            projectsCount: "45+",
+            quote: "Great mobile applications are not just built with code—they are crafted with vision, precision, and a deep understanding of user experience.",
+            about: "Waqar Ahmed is a dedicated Mobile App Team Lead focused on building scalable, user-friendly, and high-performance applications. With strong expertise in modern frameworks and clean architecture, he leads teams to deliver reliable and impactful digital products. His approach blends technical excellence with a clear understanding of user needs.",
+            education: "BS Software Engineering",
+            expertise: ["Mobile Frameworks", "Clean Architecture", "Team Leadership", "Performance Optimization", "User Experience"],
+            achievements: ["Led 15+ high-performance app launches", "Architected scalable mobile solutions", "Mentored 20+ mobile developers"],
             workSamples: [
-                { title: "SwiftUI Logistics App", type: "iOS", image: "https://images.unsplash.com/photo-1512428559083-a40ce9033afb?q=80&w=1000&auto=format&fit=crop" },
-                { title: "Cross-Platform Restaurant Hub", type: "Mobile", image: "https://images.unsplash.com/photo-1558655146-d09347e92766?q=80&w=1000&auto=format&fit=crop" },
-                { title: "iOS Fitness Tracker", type: "iOS", image: "https://images.unsplash.com/photo-1510017803434-a899398421b3?q=80&w=1000&auto=format&fit=crop" }
+                { title: "Enterprise Mobile ERP", type: "Mobile", image: "https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?q=80&w=1000&auto=format&fit=crop" },
+                { title: "FinTech App", type: "Finance", image: "https://images.unsplash.com/photo-1556742044-3c52d6e88c62?q=80&w=1000&auto=format&fit=crop" },
+                { title: "Health Monitoring System", type: "Health", image: "https://images.unsplash.com/photo-1505751172876-fa1923c5c528?q=80&w=1000&auto=format&fit=crop" }
             ],
             socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "/assets/images/team/portfolio/zohaib_img.jpeg",
-            color: "text-blue-600"
-        },
-        {
-            name: "Muhammad Hassan",
-            role: "Full-Stack Developer | System Architect | Design-Focused Engineer",
-            experience: "4+ Years",
-            projectsCount: "25+",
-            quote: "For me, great software starts with great structure—and great structure deserves great design. I build full-stack applications with a focus on architecture that lasts and interfaces that feel right. Whether it's integrating an LLM chatbot or designing a seamless user journey, I keep the bird's eye view while sweating the small details. Code works. Systems scale. And design makes it all worth using.",
-            about: "Hassan is a Software Engineering graduate who thinks in systems and designs with intention.With a 3x Chancellor's Roll of Honor and Bronze Medal, he brings technical depth and architectural clarity to every project. He has hands-on experience with LLMs and chatbots, but his true focus lies in clean architecture, thoughtful design, and full-stack development. He maintains a bird's eye view of the entire project lifecycle—from database schema and backend logic to frontend polish and user flow.Whether he's structuring a ReactJS frontend, building out Node.js/Express backends, or ensuring design consistency across features, Hassan prioritizes scalability, maintainability, and visual quality. His approach blends the precision of a system architect with the intuition of a designer who cares how things feel to use.",
-            education: "Computer Science Degree",
-            expertise: ["Node.js", "Python", "PostgreSQL", "System Architecture", "Cloud Infrastructure"],
-            achievements: ["Built 10+ core backend services", "Optimized database queries by 60%", "Improved server uptime to 99.9%"],
-            workSamples: [
-                { title: "Core API Infrastructure", type: "Backend", image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc48?q=80&w=1000&auto=format&fit=crop" },
-                { title: "Database Migration Engine", type: "System", image: "https://images.unsplash.com/photo-1544383835-bda2bc66a55d?q=80&w=1000&auto=format&fit=crop" },
-                { title: "High-Traffic Auth Service", type: "Security", image: "https://images.unsplash.com/photo-1550751827-4bd374c3f58b?q=80&w=1000&auto=format&fit=crop" }
-            ],
-            socials: { linkedin: "#", twitter: "#", github: "#" },
-            image: "/assets/images/team/portfolio/hassan_img.jpeg",
-            color: "text-blue-400"
+            image: "/assets/images/team/portfolio/waqar_img.jpeg",
+            color: "text-blue-500"
         }
     ];
 
+    
+
     const stats = [
-        { label: "Team Members", value: "20+", icon: "👥" },
-        { label: "Years of Experience", value: "10+", icon: "💼" },
-        { label: "Projects Delivered", value: "250+", icon: "🚀" },
-        { label: "Client Satisfaction", value: "98%", icon: "❤️" }
+        { label: "Team Members", value: "20+", icon: "/assets/Website icons/team-members.svg" },
+        { label: "Years of Experience", value: "10+", icon: "/assets/Website icons/experience.svg" },
+        { label: "Projects Delivered", value: "250+", icon: "/assets/Website icons/projects delivered.svg" },
+        { label: "Client Satisfaction", value: "98%", icon: "/assets/Website icons/client satisfaction.svg" }
     ];
 
     const [activeTestimonial, setActiveTestimonial] = useState(0);
@@ -421,8 +424,8 @@ const Team = () => {
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
                         {stats.map((stat, index) => (
                             <div key={index} className="flex items-center gap-6 sm:gap-8 group">
-                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-center text-2xl sm:text-3xl group-hover:border-blue-600/50 group-hover:bg-blue-600/5 transition-all duration-700 shadow-2xl shrink-0">
-                                    {stat.icon}
+                                <div className="w-14 h-14 sm:w-16 sm:h-16 rounded-xl sm:rounded-2xl border border-white/10 flex items-center justify-center group-hover:border-blue-600/50 group-hover:bg-blue-600/5 transition-all duration-700 shadow-2xl shrink-0 p-3">
+                                    <img src={stat.icon} alt={stat.label} className="w-full h-full object-contain opacity-80 group-hover:opacity-100 transition-opacity" />
                                 </div>
                                 <div>
                                     <div className="text-2xl sm:text-4xl font-black text-white mb-1 tracking-tight group-hover:text-blue-500 transition-colors whitespace-nowrap">{stat.value}</div>

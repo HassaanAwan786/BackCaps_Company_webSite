@@ -4,16 +4,20 @@ import Counter from './Counter';
 
 const TechHeadline = () => {
     const techStack = [
-        { name: 'Python', icon: '🐍' },
-        { name: 'Next.js', icon: '▲' },
-        { name: 'PostgreSQL', icon: '🐘' },
-        { name: 'Node.js', icon: '🟢' },
-        { name: 'AWS', icon: '☁️' },
-        { name: 'React', icon: '⚛️' },
-        { name: 'TypeScript', icon: '🔷' },
-        { name: 'Docker', icon: '🐳' },
-        { name: 'Tailwind', icon: '🌊' },
-        { name: 'Redis', icon: '📦' }
+        { name: 'Python', icon: '/assets/Website icons/python.png' },
+        { name: 'Figma', icon: '/assets/Website icons/figma.svg' },
+        { name: 'PostgreSQL', icon: '/assets/Website icons/postgresql.svg' },
+        { name: 'MongoDB', icon: '/assets/Website icons/mongodb.svg' },
+        { name: 'AWS', icon: '/assets/Website icons/aws.svg' },
+        { name: 'Docker', icon: '/assets/Website icons/docker.svg' },
+        { name: 'Tailwind', icon: '/assets/Website icons/tailwind.svg' },
+        { name: 'Redis', icon: '/assets/Website icons/redis.svg' },
+        { name: 'GraphQL', icon: '/assets/Website icons/graphQL.svg' },
+        { name: 'Prisma', icon: '/assets/Website icons/prisma.svg' },
+        { name: 'Stripe', icon: '/assets/Website icons/stripe.svg' },
+        { name: 'Vercel', icon: '/assets/Website icons/vercel.svg' },
+        { name: 'GitHub', icon: '/assets/Website icons/github.png' },
+        { name: 'Kubernetes', icon: null, emoji: '☸️' }
     ];
 
     const stats = [
@@ -44,9 +48,17 @@ const TechHeadline = () => {
                     >
                         {[...techStack, ...techStack, ...techStack].map((tech, i) => (
                             <div key={i} className="flex items-center gap-3 group cursor-default">
-                                <span className="text-lg sm:text-xl opacity-70 group-hover:opacity-100 transition-opacity">{tech.icon}</span>
-                                <span className="text-[10px] sm:text-sm font-bold text-white/30 group-hover:text-white/80 uppercase tracking-widest transition-colors">{tech.name}</span>
-                                <div className="w-1 h-1 rounded-full bg-white/10 mx-2" />
+                                {tech.icon ? (
+                                    <img
+                                        src={tech.icon}
+                                        alt={tech.name}
+                                        className="w-6 h-6 sm:w-8 sm:h-8 object-contain opacity-70 group-hover:opacity-100 transition-opacity"
+                                    />
+                                ) : (
+                                    <span className="text-xl sm:text-3xl opacity-70 group-hover:opacity-100 transition-opacity">{tech.emoji}</span>
+                                )}
+                                <span className="text-xs sm:text-base font-bold text-white/30 group-hover:text-white/80 uppercase tracking-widest transition-colors">{tech.name}</span>
+                                <div className="w-1.5 h-1.5 rounded-full bg-white/10 mx-2" />
                             </div>
                         ))}
                     </motion.div>

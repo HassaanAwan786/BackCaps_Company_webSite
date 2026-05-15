@@ -85,13 +85,14 @@ const Services = () => {
             ]
         },
         {
-            title: "Cloud Infrastructure",
+            title: "LOADERS",
             category: 'service',
             expertise: "DevOps & Scaling",
             stats: "99.9% Uptime",
-            description: "Scalable and secure cloud hosting, DevOps, and infrastructure management solutions.",
-            items: ["AWS/Azure Management", "CI/CD Pipelines", "Kubernetes Orchestration", "Server Migration"],
+            description: "Enterprise logistics platform for HTV fleet management — company fleet registration, multi-order dispatch, driver hiring, and real-time cargo tracking system..",
+            items: ["Fleet & Company Registration", "Multi-Order Bulk Dispatch", "Live Cargo Trading System", "Driver Hiring & Tracking"],
             bg: "bg-gradient-to-br from-orange-600/10 via-orange-600/5 to-transparent border-orange-500/20",
+            bgImage: "/assets/Website icons/LOADERS.png",
             image: "/assets/images/macbook.png",
             icon: "/assets/images/macbook_logo.png",
             techIcons: [
@@ -101,13 +102,14 @@ const Services = () => {
             ]
         },
         {
-            title: "Cyber Security",
+            title: "KariGhar",
             category: 'service',
             expertise: "Security Audits",
             stats: "Zero Breaches",
-            description: "Enterprise-grade security audits, threat protection, and vulnerability assessments.",
-            items: ["Security Audits", "Penetration Testing", "Encryption Solutions", "Threat Monitoring"],
+            description: "On-demand home services marketplace — plumbers, electricians, mechanics, cleaners, AC techs, carpenters & more.",
+            items: ["Multi-Category Service Providers", "Customer Booking Portal", "Appointment Scheduling System", "Availability Management"],
             bg: "bg-gradient-to-br from-red-600/10 via-red-600/5 to-transparent border-red-500/20",
+            bgImage: "/assets/Website icons/KariGhar.png",
             image: "/assets/images/ai.png",
             icon: "/assets/images/ai_logo.png",
             techIcons: [
@@ -116,13 +118,14 @@ const Services = () => {
             ]
         },
         {
-            title: "Digital Marketing",
+            title: "3D-Print",
             category: 'service',
             expertise: "Growth Hacking",
             stats: "3x ROI",
-            description: "Data-driven marketing strategies to increase your online presence and conversion rates.",
-            items: ["SEO Optimization", "Social Media Management", "Content Strategy", "PPC Campaigns"],
+            description: "Industrial 3D printing lab with Bambu Lab H2, P2S & more — custom prints on demand, dedicated medical devices, toys, and industrial components manufacturing.",
+            items: ["On-Demand Custom Printing", "Medical Industry Products", "Toys & Industrial Components", "High-Precision Bambu Lab Fleet"],
             bg: "bg-gradient-to-br from-green-600/10 via-green-600/5 to-transparent border-green-500/20",
+            bgImage: "/assets/Website icons/3d.png",
             image: "/assets/images/studio.png",
             icon: "/assets/images/studio_logo.png",
             techIcons: [
@@ -198,6 +201,14 @@ const Services = () => {
                                     onClick={() => isMobile && setFlippedCard(isFlipped ? null : index)}
                                     className={`${service.bg} ${service.className || ''} rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden group lg:min-h-[380px] border flex flex-col lg:flex-row gap-8 lg:gap-10 items-start text-left transition-all duration-500 hover:scale-[1.01] lg:hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-600/10 cursor-pointer lg:cursor-default`}
                                 >
+                                    {/* Background Image */}
+                                    {service.bgImage && (
+                                        <img
+                                            src={service.bgImage}
+                                            alt=""
+                                            className="absolute inset-0 w-full h-full object-cover opacity-10 lg:group-hover:opacity-100 transition-opacity duration-700 pointer-events-none select-none z-0"
+                                        />
+                                    )}
                                     {/* Mobile Flip Indicator */}
                                     {isMobile && (
                                         <div className="absolute top-6 right-6 text-[8px] font-black uppercase tracking-widest text-blue-600/50">
@@ -210,7 +221,7 @@ const Services = () => {
                                         {/* Default Screen */}
                                         <div className={`transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] 
                                             ${isFlipped ? 'opacity-0 -translate-y-12 scale-95 blur-sm' : 'opacity-100 translate-y-0 scale-100'}
-                                            lg:group-hover:opacity-0 lg:group-hover:-translate-y-12 lg:group-hover:scale-95 lg:group-hover:blur-sm`}>
+                                            ${service.bgImage ? 'lg:group-hover:opacity-0 lg:group-hover:scale-95' : 'lg:group-hover:opacity-0 lg:group-hover:-translate-y-12 lg:group-hover:scale-95 lg:group-hover:blur-sm'}`}>
                                             <div className="flex items-center gap-4 mb-8">
                                                 <div className="flex-shrink-0 flex items-center justify-center">
                                                     <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
@@ -233,35 +244,46 @@ const Services = () => {
                                         </div>
 
                                         {/* Hover/Flip Screen - Insights Dashboard */}
-                                        <div className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col justify-center
-                                            ${isFlipped ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none'}
-                                            lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto`}>
-                                            <div className="flex items-center gap-3 mb-6">
-                                                <div className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
-                                                    <img src={service.icon} alt="" width={24} height={24} className="brightness-125" />
-                                                </div>
-                                                <h4 className="text-lg font-black text-white uppercase tracking-widest">Insights</h4>
+                                        {service.bgImage ? (
+                                            /* Custom hover for bgImage cards (LOADERS) — only show Explore Solutions */
+                                            <div className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col justify-end items-center pb-4 z-40 
+                                                ${isFlipped ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-6 pointer-events-none'}
+                                                lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto`}>
+                                                <button className="w-fit px-8 py-3 bg-blue-500/90 hover:bg-white/90 text-black text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-lg shadow-black/20 active:scale-95 backdrop-blur-sm -mt-8 ">
+                                                    Explore Solutions
+                                                </button>
                                             </div>
+                                        ) : (
+                                            <div className={`absolute inset-0 transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] flex flex-col justify-center
+                                                ${isFlipped ? 'opacity-100 translate-y-0 pointer-events-auto' : 'opacity-0 translate-y-12 pointer-events-none'}
+                                                lg:group-hover:opacity-100 lg:group-hover:translate-y-0 lg:group-hover:pointer-events-auto`}>
+                                                <div className="flex items-center gap-3 mb-6">
+                                                    <div className="w-10 h-10 rounded-full bg-blue-600/20 border border-blue-500/30 flex items-center justify-center">
+                                                        <img src={service.icon} alt="" width={24} height={24} className="brightness-125" />
+                                                    </div>
+                                                    <h4 className="text-lg font-black text-white  tracking-widest">Insights</h4>
+                                                </div>
 
-                                            <div className="space-y-6 mb-8">
-                                                <div>
-                                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Expertise</p>
-                                                    <p className="text-lg font-black text-blue-400 uppercase">{service.expertise}</p>
+                                                <div className="space-y-6 mb-8">
+                                                    <div>
+                                                        <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Expertise</p>
+                                                        <p className="text-lg font-black text-blue-400 uppercase">{service.expertise}</p>
+                                                    </div>
+                                                    <div>
+                                                        <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Key Result</p>
+                                                        <p className="text-lg font-black text-white uppercase">{service.stats}</p>
+                                                    </div>
                                                 </div>
-                                                <div>
-                                                    <p className="text-[10px] text-gray-500 uppercase tracking-[0.2em] mb-1">Key Result</p>
-                                                    <p className="text-lg font-black text-white uppercase">{service.stats}</p>
-                                                </div>
+
+                                                <button className="w-fit px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 active:scale-95">
+                                                    Explore Solutions
+                                                </button>
                                             </div>
-
-                                            <button className="w-fit px-8 py-3 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-lg shadow-blue-600/20 active:scale-95">
-                                                Explore Solutions
-                                            </button>
-                                        </div>
+                                        )}
                                     </div>
 
                                     {/* Visual Side */}
-                                    <div className="flex-1 w-full relative min-h-[200px] sm:min-h-[250px] lg:min-h-full self-stretch mt-6 lg:mt-0">
+                                    <div className={`flex-1 w-full relative min-h-[200px] sm:min-h-[250px] lg:min-h-full self-stretch mt-6 lg:mt-0 transition-all duration-700 ${service.bgImage ? (isFlipped ? 'opacity-0 scale-95' : 'lg:group-hover:opacity-0 lg:group-hover:scale-95') : ''}`}>
                                         <div className={`absolute inset-0 flex ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'items-end' : 'items-center'} justify-center transition-opacity duration-500 ${isFlipped ? 'opacity-20' : 'opacity-100'}`}>
                                             <motion.div
                                                 initial={{ scale: 0.8, opacity: 0, y: 20 }}
