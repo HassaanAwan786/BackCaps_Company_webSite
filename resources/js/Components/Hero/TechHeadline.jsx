@@ -4,7 +4,7 @@ import Counter from './Counter';
 
 const TechHeadline = () => {
     const techStack = [
-        { name: 'Python', icon: null, emoji: '🐍' },
+        { name: 'Python', icon: '/assets/Website icons/python.png' },
         { name: 'Figma', icon: '/assets/Website icons/figma.svg' },
         { name: 'PostgreSQL', icon: '/assets/Website icons/postgresql.svg' },
         { name: 'MongoDB', icon: '/assets/Website icons/mongodb.svg' },
@@ -15,8 +15,8 @@ const TechHeadline = () => {
         { name: 'GraphQL', icon: '/assets/Website icons/graphQL.svg' },
         { name: 'Prisma', icon: '/assets/Website icons/prisma.svg' },
         { name: 'Stripe', icon: '/assets/Website icons/stripe.svg' },
-        { name: 'Vercel', icon: '/assets/Website icons/vercel.jpeg' },
-        { name: 'GitHub', icon: '/assets/Website icons/github.svg' },
+        { name: 'Vercel', icon: '/assets/Website icons/vercel.svg' },
+        { name: 'GitHub', icon: '/assets/Website icons/github.png' },
         { name: 'Kubernetes', icon: null, emoji: '☸️' }
     ];
 
