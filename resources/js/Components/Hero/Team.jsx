@@ -154,7 +154,7 @@ const Team = () => {
         },
         {
             name: "Muhammad Hassaan",
-            role: "COO | Founder | Sys Architect",
+            role: "COO | Founder | System Architect",
             experience: "4+ Years",
             projectsCount: "20+",
             quote:"At the intersection of operations and engineering, I don’t just write code—I build systems that scale and companies that trust them. As COO and Co-Founder, I ensure every line of code aligns with business goals, every architecture supports growth, and every client experience feels seamless. From LLM integrations to backend resilience, I lead with structure, precision, and a designer’s eye for how software should feel to use.",

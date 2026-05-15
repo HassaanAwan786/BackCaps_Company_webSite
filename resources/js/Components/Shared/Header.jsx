@@ -43,20 +43,20 @@ export default function Header() {
             title: "Project Based",
             description: "High-impact, end-to-end digital solutions for your vision.",
             items: [
-                { title: "Web Development", desc: "Custom websites and applications built for performance and scale.", icon: "🌐" },
-                { title: "Mobile Apps", desc: "High-performance iOS and Android experiences with native speed.", icon: "📱" },
-                { title: "UI/UX Design", desc: "User-centric design systems and interactive prototyping.", icon: "✨" },
-                { title: "Artificial Intelligence", desc: "Intelligent automation and predictive analytics solutions.", icon: "🤖" }
+                { title: "Web Development", desc: "Custom websites and applications built for performance and scale.", icon: "/assets/Website icons/web-development.svg" },
+                { title: "Mobile Apps", desc: "High-performance iOS and Android experiences with native speed.", icon: "/assets/Website icons/app-development.svg" },
+                { title: "UI/UX Design", desc: "User-centric design systems and interactive prototyping.", icon: "/assets/Website icons/ux-design.svg" },
+                { title: "Artificial Intelligence", desc: "Intelligent automation and predictive analytics solutions.", icon: "/assets/Website icons/artificial-intelligence.svg" }
             ]
         },
         service: {
             title: "Service Based",
             description: "Continuous expertise and specialized technology support.",
             items: [
-                { title: "Cloud Infrastructure", desc: "Managed hosting, DevOps, and automated scaling solutions.", icon: "☁️" },
-                { title: "Cyber Security", desc: "Enterprise-grade security audits and vulnerability assessments.", icon: "🛡️" },
-                { title: "Digital Marketing", desc: "Data-driven strategies for growth and conversion optimization.", icon: "📈" },
-                { title: "Tech Consulting", desc: "Strategic technology roadmaps and architecture reviews.", icon: "💎" }
+                { title: "Cloud Infrastructure", desc: "Managed hosting, DevOps, and automated scaling solutions.", icon: "/assets/Website icons/cloud-infrastructure.svg" },
+                { title: "Cyber Security", desc: "Enterprise-grade security audits and vulnerability assessments.", icon: "/assets/Website icons/cyber-security.svg" },
+                { title: "Digital Marketing", desc: "Data-driven strategies for growth and conversion optimization.", icon: "/assets/Website icons/digital marketing.svg" },
+                { title: "Tech Consulting", desc: "Strategic technology roadmaps and architecture reviews.", icon: "/assets/Website icons/tech consulting.svg" }
             ]
         }
     };
@@ -197,8 +197,8 @@ export default function Header() {
                                                         transition={{ delay: 0.2 + (idx * 0.05) + (catIdx * 0.2) }}
                                                         className="group/item flex items-center gap-6 p-5 rounded-[2rem] hover:bg-white/[0.03] border border-transparent hover:border-white/5 transition-all duration-500"
                                                     >
-                                                        <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center text-2xl group-hover/item:bg-brand-purple/20 group-hover/item:border-brand-purple/30 group-hover/item:scale-110 transition-all duration-500 shadow-xl">
-                                                            {item.icon}
+                                                        <div className="w-16 h-16 rounded-2xl bg-white/5 border border-white/10 flex items-center justify-center group-hover/item:bg-brand-purple/20 group-hover/item:border-brand-purple/30 group-hover/item:scale-110 transition-all duration-500 shadow-xl p-3">
+                                                            <img src={item.icon} alt={item.title} className="w-full h-full object-contain" />
                                                         </div>
                                                         <div className="space-y-1.5 flex-1">
                                                             <div className="flex items-center justify-between">
@@ -311,7 +311,7 @@ export default function Header() {
                                                                 onClick={() => setIsMobileMenuOpen(false)}
                                                                 className="flex items-center gap-3 group"
                                                             >
-                                                                <span className="text-lg">{item.icon}</span>
+                                                                <img src={item.icon} alt={item.title} className="w-5 h-5 object-contain" />
                                                                 <span className="text-white/70 group-hover:text-white transition-colors font-bold text-sm">{item.title}</span>
                                                             </a>
                                                         ))}
