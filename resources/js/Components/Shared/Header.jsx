@@ -75,9 +75,13 @@ export default function Header() {
                             : 'bg-[#0c0c14]/80 backdrop-blur-2xl border border-white/10 sm:rounded-[2.5rem] shadow-2xl max-w-7xl sm:max-w-7xl'}`}
                 >
                     <div className="flex items-center gap-2">
-                        <Link href="/" className="flex items-center group">
-                            <span className="text-2xl font-bold tracking-tighter text-white">Back</span>
-                            <span className="text-2xl font-bold tracking-tighter text-brand-purple">Caps</span>
+                        <Link href="/" className="flex items-center gap-2 group">
+                            <img
+                                src="/assets/Website icons/Backcaps.jpeg"
+                                alt="BackCaps Logo"
+                                className="w-12 h-12 object-contain rounded-full"
+                            />
+                            <span className="text-2xl font-bold tracking-tighter"><span className="text-white">Back</span><span className="text-brand-purple">Caps</span></span>
                         </Link>
                     </div>
 
