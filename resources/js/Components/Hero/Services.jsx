@@ -85,7 +85,7 @@ const Services = () => {
             ]
         },
         {
-            title: "Cloud Infrastructure",
+            title: "LOADERS",
             category: 'service',
             expertise: "DevOps & Scaling",
             stats: "99.9% Uptime",
@@ -101,7 +101,7 @@ const Services = () => {
             ]
         },
         {
-            title: "Cyber Security",
+            title: "KariGhar",
             category: 'service',
             expertise: "Security Audits",
             stats: "Zero Breaches",

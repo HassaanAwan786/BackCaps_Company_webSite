@@ -15,7 +15,7 @@ const TechHeadline = () => {
         { name: 'GraphQL', icon: '/assets/Website icons/graphQL.svg' },
         { name: 'Prisma', icon: '/assets/Website icons/prisma.svg' },
         { name: 'Stripe', icon: '/assets/Website icons/stripe.svg' },
-        { name: 'Vercel', icon: '/assets/Website icons/vercel.svg' },
+        { name: 'Vercel', icon: '/assets/Website icons/vercel.jpeg' },
         { name: 'GitHub', icon: '/assets/Website icons/github.svg' },
         { name: 'Kubernetes', icon: null, emoji: '☸️' }
     ];
