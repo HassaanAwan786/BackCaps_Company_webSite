@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
+import { router } from '@inertiajs/react';
 
 const TeamModal = ({ member, onClose }) => {
     return (
@@ -86,7 +87,13 @@ const TeamModal = ({ member, onClose }) => {
                                 </p>
 
                                 <button
-                                    onClick={() => console.log("Navigate to full profile page")}
+                                    onClick={() => {
+                                        if (member.name === "Syed Ibnay Hussain") {
+                                            router.visit(route('team.ibnay-hussain'));
+                                        } else {
+                                            console.log("Navigate to full profile page for", member.name);
+                                        }
+                                    }}
                                     className="px-10 py-5 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 group flex items-center gap-3"
                                 >
                                     <span>View Full Profile</span>

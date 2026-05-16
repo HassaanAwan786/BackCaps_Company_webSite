@@ -22,6 +22,10 @@ Route::get('/', function () {
     ]);
 });
 
+Route::get('/team/ibnay-hussain', function () {
+    return Inertia::render('Team/IbnayHussain');
+})->name('team.ibnay-hussain');
+
 /*
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
