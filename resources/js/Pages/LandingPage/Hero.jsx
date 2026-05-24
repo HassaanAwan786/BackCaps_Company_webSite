@@ -60,7 +60,7 @@ export default function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % 3);
-        }, 12000);
+        }, 20000);
 
         const handleScroll = () => {
             if (window.scrollY > 100) {
