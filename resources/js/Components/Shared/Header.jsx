@@ -94,7 +94,7 @@ export default function Header() {
                             >
                                 <a
                                     href={link.href}
-                                    className={`text-sm uppercase tracking-widest font-bold transition-colors flex items-center gap-1.5 ${isServicesOpen && link.hasDropdown ? 'text-brand-purple' : 'text-brand-gray hover:text-white'}`}
+                                    className={`text-xs sm:text-sm uppercase tracking-widest font-bold transition-colors flex items-center gap-1.5 ${isServicesOpen && link.hasDropdown ? 'text-brand-purple' : 'text-brand-gray hover:text-white'}`}
                                 >
                                     {link.name}
                                     {link.hasDropdown && (
@@ -114,7 +114,7 @@ export default function Header() {
                     </nav>
 
                     <div className="flex items-center gap-4">
-                        <a href="#hire" className="hidden sm:block px-6 py-2 rounded-full border border-brand-purple/50 bg-brand-purple/10 text-brand-purple hover:bg-brand-purple hover:text-white transition-all duration-300 text-xs font-bold uppercase tracking-widest">
+                        <a href="#hire" className="hidden sm:block px-6 py-2 rounded-full border border-brand-purple/50 bg-brand-purple/10 text-brand-purple hover:bg-brand-purple hover:text-white transition-all duration-300 text-xs sm:text-sm font-bold uppercase tracking-widest">
                             hire us
                         </a>
 
@@ -178,11 +178,11 @@ export default function Header() {
                                                 transition={{ delay: 0.1 + (catIdx * 0.1) }}
                                                 className="space-y-3"
                                             >
-                                                <h3 className="text-brand-purple text-[11px] font-black uppercase tracking-[0.3em] flex items-center gap-3">
+                                                <h3 className="text-brand-purple text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] flex items-center gap-3">
                                                     <span className="w-8 h-[1px] bg-brand-purple/30"></span>
                                                     {category.title}
                                                 </h3>
-                                                <p className="text-white text-base font-normal max-w-md">
+                                                <p className="text-white text-sm sm:text-base font-light leading-relaxed max-w-md">
                                                     {category.description}
                                                 </p>
                                             </motion.div>
@@ -202,14 +202,14 @@ export default function Header() {
                                                         </div>
                                                         <div className="space-y-1.5 flex-1">
                                                             <div className="flex items-center justify-between">
-                                                                <h4 className="text-white font-bold text-lg group-hover/item:text-brand-purple transition-colors duration-300">
+                                                                <h4 className="text-white text-base sm:text-lg font-bold tracking-tight group-hover/item:text-brand-purple transition-colors duration-300">
                                                                     {item.title}
                                                                 </h4>
                                                                 <span className="opacity-0 group-hover/item:opacity-100 group-hover/item:translate-x-0 -translate-x-4 transition-all duration-500 text-brand-purple text-xl">
                                                                     &rarr;
                                                                 </span>
                                                             </div>
-                                                            <p className="text-brand-gray text-[13px] leading-relaxed group-hover/item:text-white/70 transition-colors duration-300 line-clamp-2">
+                                                            <p className="text-brand-gray text-xs sm:text-sm font-light leading-relaxed group-hover/item:text-white/70 transition-colors duration-300 line-clamp-2">
                                                                 {item.desc}
                                                             </p>
                                                         </div>
@@ -235,14 +235,14 @@ export default function Header() {
                                             ))}
                                         </div>
                                         <div className="space-y-1">
-                                            <p className="text-white text-sm font-normal">Trusted by global innovators</p>
-                                            <p className="text-brand-gray text-[10px] font-black uppercase tracking-[0.2em]">
+                                            <p className="text-white text-sm sm:text-base font-light">Trusted by global innovators</p>
+                                            <p className="text-brand-gray text-[10px] sm:text-xs font-black uppercase tracking-[0.2em]">
                                                 40+ projects shipped successfully
                                             </p>
                                         </div>
                                     </div>
                                     <a href="#contact" className="group/btn relative px-8 py-4 rounded-full overflow-hidden bg-white/5 border border-white/10 transition-all duration-500 hover:border-brand-purple/50">
-                                        <span className="relative z-10 text-white text-xs font-black uppercase tracking-[0.2em] flex items-center gap-3">
+                                        <span className="relative z-10 text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] flex items-center gap-3">
                                             Start your journey <span className="group-hover/btn:translate-x-2 transition-transform duration-300">&rarr;</span>
                                         </span>
                                         <div className="absolute inset-0 bg-brand-purple/10 translate-y-full group-hover/btn:translate-y-0 transition-transform duration-500"></div>

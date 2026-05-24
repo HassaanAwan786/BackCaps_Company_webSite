@@ -150,14 +150,14 @@ const Services = () => {
                 <div className="text-center mb-16">
                     <div className="flex items-center justify-center gap-3 mb-6">
                         <div className="h-[2px] w-8 bg-blue-600" />
-                        <span className="text-[10px] font-black text-gray-500 uppercase tracking-[0.3em]">Our Services</span>
+                        <span className="text-[10px] sm:text-xs font-black text-gray-500 uppercase tracking-[0.2em]">Our Services</span>
                     </div>
 
-                    <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-tight max-w-4xl mx-auto mb-8 font-display">
+                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-4xl mx-auto mb-8 font-display">
                         We Build Digital <br /> Solutions That <span className="text-blue-600">Drive Results.</span>
                     </h2>
 
-                    <p className="text-white text-xl sm:text-base max-w-2xl mx-auto font-normal leading-relaxed">
+                    <p className="text-white text-base sm:text-lg lg:text-xl max-w-2xl mx-auto font-light leading-relaxed">
                         Our team blends design with technology to deliver exceptional and functional digital solutions.
                     </p>
                 </div>
@@ -166,13 +166,13 @@ const Services = () => {
                     <div className="bg-white/5 border border-white/10 p-1 sm:p-1.5 rounded-full flex items-center shadow-inner max-w-[95%] sm:max-w-none mx-auto">
                         <button
                             onClick={() => setActiveTab('project')}
-                            className={`px-4 sm:px-8 py-2 sm:py-3 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.1em] transition-all duration-300 ${activeTab === 'project' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-gray-500 hover:text-white'}`}
+                            className={`px-4 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest transition-all duration-300 ${activeTab === 'project' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-gray-500 hover:text-white'}`}
                         >
                             Project-Based
                         </button>
                         <button
                             onClick={() => setActiveTab('service')}
-                            className={`px-4 sm:px-8 py-2 sm:py-3 rounded-full text-[10px] sm:text-xs font-black uppercase tracking-[0.1em] transition-all duration-300 ${activeTab === 'service' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-gray-500 hover:text-white'}`}
+                            className={`px-4 sm:px-8 py-2 sm:py-3 rounded-full text-xs sm:text-sm font-bold uppercase tracking-widest transition-all duration-300 ${activeTab === 'service' ? 'bg-blue-600 text-white shadow-lg shadow-blue-600/20' : 'text-gray-500 hover:text-white'}`}
                         >
                             Service-Based
                         </button>

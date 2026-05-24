@@ -295,15 +295,15 @@ const Team = () => {
                     <div className="max-w-2xl">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-[2px] w-8 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]" />
-                            <span className="text-[10px] font-black text-blue-500 uppercase tracking-[0.3em]">Our Elite Collective</span>
+                            <span className="text-[10px] sm:text-xs font-black text-blue-500 uppercase tracking-[0.2em]">Our Elite Collective</span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-tight mb-8 font-display">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8 font-display">
                             Meet the Minds <br /> Behind <span className="text-blue-600">The Magic.</span>
                         </h2>
-                        <p className="text-white text-sm sm:text-base font-normal leading-relaxed mb-8 max-w-lg">
+                        <p className="text-white text-base sm:text-lg lg:text-xl font-light leading-relaxed mb-8 max-w-lg">
                             We're a team of designers, developers, and strategists passionate about building digital experiences that drive real results.
                         </p>
-                        <button className="flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-full transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 group">
+                        <button className="flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 group">
                             <span>Work With Us</span>
                             <svg className="w-4 h-4 transform group-hover:translate-x-1 transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M17 8l4 4m0 0l-4 4m4-4H3" />
