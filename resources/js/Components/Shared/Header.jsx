@@ -43,20 +43,20 @@ export default function Header() {
             title: "Project Based",
             description: "High-impact, end-to-end digital solutions for your vision.",
             items: [
-                { title: "Web Development", desc: "Custom websites and applications built for performance and scale.", icon: "/assets/Website icons/web-development.svg" },
-                { title: "Mobile Apps", desc: "High-performance iOS and Android experiences with native speed.", icon: "/assets/Website icons/app-development.svg" },
-                { title: "UI/UX Design", desc: "User-centric design systems and interactive prototyping.", icon: "/assets/Website icons/ux-design.svg" },
-                { title: "Artificial Intelligence", desc: "Intelligent automation and predictive analytics solutions.", icon: "/assets/Website icons/artificial-intelligence.svg" }
+                { title: "Web Development", desc: "Custom websites and applications built for performance and scale.", icon: "/assets/Website%20icons/web-development.svg" },
+                { title: "Mobile Apps", desc: "High-performance iOS and Android experiences with native speed.", icon: "/assets/Website%20icons/app-development.svg" },
+                { title: "UI/UX Design", desc: "User-centric design systems and interactive prototyping.", icon: "/assets/Website%20icons/ux-design.svg" },
+                { title: "Artificial Intelligence", desc: "Intelligent automation and predictive analytics solutions.", icon: "/assets/Website%20icons/artificial-intelligence.svg" }
             ]
         },
         service: {
             title: "Service Based",
             description: "Continuous expertise and specialized technology support.",
             items: [
-                { title: "Cloud Infrastructure", desc: "Managed hosting, DevOps, and automated scaling solutions.", icon: "/assets/Website icons/cloud-infrastructure.svg" },
-                { title: "Cyber Security", desc: "Enterprise-grade security audits and vulnerability assessments.", icon: "/assets/Website icons/cyber-security.svg" },
-                { title: "Digital Marketing", desc: "Data-driven strategies for growth and conversion optimization.", icon: "/assets/Website icons/digital marketing.svg" },
-                { title: "Tech Consulting", desc: "Strategic technology roadmaps and architecture reviews.", icon: "/assets/Website icons/tech consulting.svg" }
+                { title: "Cloud Infrastructure", desc: "Managed hosting, DevOps, and automated scaling solutions.", icon: "/assets/Website%20icons/cloud-infrastructure.svg" },
+                { title: "Cyber Security", desc: "Enterprise-grade security audits and vulnerability assessments.", icon: "/assets/Website%20icons/cyber-security.svg" },
+                { title: "Digital Marketing", desc: "Data-driven strategies for growth and conversion optimization.", icon: "/assets/Website%20icons/digital marketing.svg" },
+                { title: "Tech Consulting", desc: "Strategic technology roadmaps and architecture reviews.", icon: "/assets/Website%20icons/tech consulting.svg" }
             ]
         }
     };
@@ -77,7 +77,7 @@ export default function Header() {
                     <div className="flex items-center gap-2">
                         <Link href="/" className="flex items-center gap-2 group">
                             <img
-                                src="/assets/Website icons/Backcaps.jpeg"
+                                src="/assets/Website%20icons/Backcaps.jpeg"
                                 alt="BackCaps Logo"
                                 className="w-12 h-12 object-contain rounded-full"
                             />
