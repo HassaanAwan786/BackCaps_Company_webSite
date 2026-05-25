@@ -150,13 +150,13 @@ const Footer = () => {
                         <h3 className="text-white text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-3 font-display">Stay Updated</h3>
                         <p className="text-white text-sm sm:text-base font-light leading-relaxed">Subscribe to our newsletter for the latest updates and digital insights from the frontier of tech.</p>
                     </div>
-                    <div className="flex w-full lg:w-auto max-w-md gap-3">
+                    <div className="flex flex-col sm:flex-row w-full lg:w-auto max-w-md gap-3">
                         <input
                             type="email"
                             placeholder="Enter your email"
-                            className="flex-1 bg-white border border-transparent rounded-xl px-6 py-4 text-black text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
+                            className="flex-1 w-full bg-white border border-transparent rounded-xl px-6 py-4 text-black text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
                         />
-                        <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95">
+                        <button className="w-full sm:w-auto px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 whitespace-nowrap">
                             Subscribe
                         </button>
                     </div>
