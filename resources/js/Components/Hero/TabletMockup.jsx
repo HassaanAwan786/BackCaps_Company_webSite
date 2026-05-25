@@ -61,21 +61,21 @@ const TabletMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup,
                                     </div>
 
                                     <div className="grid grid-cols-2 gap-4 sm:gap-6 flex-1">
-                                        <div className="p-6 rounded-[2rem] bg-white/5 border border-white/10 flex flex-col justify-between shadow-xl">
+                                        <div className="p-4 sm:p-6 rounded-[2rem] bg-white/5 border border-white/10 flex flex-col justify-between shadow-xl">
                                             <span className="text-[10px] text-brand-gray uppercase font-bold tracking-widest">Efficiency</span>
-                                            <div className="text-4xl sm:text-5xl font-black text-white">98.4<span className="text-brand-purple">%</span></div>
+                                            <div className="text-3xl sm:text-4xl lg:text-5xl font-black text-white">98.4<span className="text-brand-purple">%</span></div>
                                             <div className="h-2 w-full bg-white/10 rounded-full overflow-hidden">
                                                 <motion.div initial={{ width: 0 }} animate={{ width: "98.4%" }} transition={{ duration: 1.5 }} className="h-full bg-gradient-to-r from-brand-purple to-blue-500" />
                                             </div>
                                         </div>
                                         <div className="grid grid-rows-2 gap-4 sm:gap-6">
-                                            <div className="p-5 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-between">
-                                                <span className="text-[10px] text-brand-gray font-bold uppercase tracking-widest">Tasks</span>
-                                                <span className="text-xl font-bold text-white">42</span>
+                                            <div className="p-3 sm:p-5 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-between">
+                                                <span className="text-[8px] sm:text-[10px] text-brand-gray font-bold uppercase tracking-widest">Tasks</span>
+                                                <span className="text-base sm:text-xl font-bold text-white">42</span>
                                             </div>
-                                            <div className="p-5 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-between">
-                                                <span className="text-[10px] text-brand-gray font-bold uppercase tracking-widest">Uptime</span>
-                                                <span className="text-xl font-bold text-green-500">99.9</span>
+                                            <div className="p-3 sm:p-5 rounded-[1.5rem] bg-white/5 border border-white/10 flex items-center justify-between">
+                                                <span className="text-[8px] sm:text-[10px] text-brand-gray font-bold uppercase tracking-widest">Uptime</span>
+                                                <span className="text-base sm:text-xl font-bold text-green-500">99.9</span>
                                             </div>
                                         </div>
                                     </div>

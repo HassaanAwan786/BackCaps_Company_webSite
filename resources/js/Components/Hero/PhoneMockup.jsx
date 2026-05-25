@@ -22,7 +22,7 @@ const PhoneMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup, 
                         <motion.div
                             animate={{ y: [0, -10, 0] }}
                             transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-                            className="absolute top-12 md:top-24 -right-4 md:-right-8 px-4 py-2 rounded-full bg-brand-purple text-white text-[10px] md:text-sm font-bold uppercase shadow-[0_10px_30px_rgba(21,93,252,0.3)] w-28 md:w-36 text-end z-10"
+                            className="absolute top-12 md:top-24 -right-16 md:-right-8 px-4 py-2 rounded-full bg-brand-purple text-white text-[10px] md:text-sm font-bold uppercase shadow-[0_10px_30px_rgba(21,93,252,0.3)] w-28 md:w-36 text-end z-10"
                         >
                             6 weeks
                         </motion.div>
@@ -31,7 +31,7 @@ const PhoneMockup = ({ rotateX, rotateY, isHoveringMockup, setIsHoveringMockup, 
                         <motion.div
                             animate={{ y: [0, 10, 0] }}
                             transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                            className="absolute bottom-12 md:bottom-24 -left-2 md:-left-4 px-4 py-2 rounded-full bg-green-500/90 text-brand-dark text-[10px] md:text-sm font-bold uppercase shadow-[0_10px_30px_rgba(34,197,94,0.3)] w-28 md:w-36 text-start z-10"
+                            className="absolute bottom-12 md:bottom-24 -left-12 md:-left-4 px-4 py-2 rounded-full bg-green-500/90 text-brand-dark text-[10px] md:text-sm font-bold uppercase shadow-[0_10px_30px_rgba(34,197,94,0.3)] w-28 md:w-36 text-start z-10"
                         >
                             +340%
                         </motion.div>

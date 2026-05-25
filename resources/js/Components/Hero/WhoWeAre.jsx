@@ -133,10 +133,10 @@ const WhoWeAre = () => {
                 </div>
 
                 {/* Pillars Content */}
-                <div className="space-y-24 sm:space-y-28">
+                <div className="space-y-16 sm:space-y-20">
                     {pillars.map((pillar, i) => (
                         <React.Fragment key={i}>
-                            <div className={`flex flex-col ${pillar.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-16 lg:gap-48`}>
+                            <div className={`flex flex-col ${pillar.reverse ? 'lg:flex-row-reverse' : 'lg:flex-row'} items-center gap-12 lg:gap-24`}>
                                 {/* Text Content */}
                                 <motion.div
                                     initial={{ opacity: 0, x: pillar.reverse ? 50 : -50 }}
@@ -173,7 +173,7 @@ const WhoWeAre = () => {
                                     initial={{ opacity: 0, scale: 0.95 }}
                                     whileInView={{ opacity: 1, scale: 1 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    className="flex-1 w-full relative"
+                                    className={`flex-1 relative ${pillar.reverse ? 'w-[80%] sm:w-full mr-auto' : 'w-[80%] sm:w-full ml-auto'}`}
                                 >
                                     <div className="relative aspect-[4/3] w-full">
                                         {/* Main Image */}
