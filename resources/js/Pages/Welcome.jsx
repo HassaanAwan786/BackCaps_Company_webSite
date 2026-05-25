@@ -12,7 +12,7 @@ import Footer from '@/Components/Hero/Footer';
 export default function Welcome({ auth, timeSlots }) {
     return (
         <GeneralLayout>
-            <Head title="Premium Product Engineers" />
+            <Head title="Home" />
 
             <Hero />
             <TechHeadline />
