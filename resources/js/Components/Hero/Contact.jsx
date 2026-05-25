@@ -94,24 +94,24 @@ const Contact = ({ timeSlots = [] }) => {
                     <div className="lg:col-span-8">
                         <div className="flex items-center gap-3 mb-6">
                             <div className="h-[2px] w-8 bg-blue-600" />
-                            <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Ready to start?</span>
+                            <span className="text-[10px] sm:text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Ready to start?</span>
                         </div>
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tighter leading-none mb-8 font-display">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9] mb-8 font-display">
                             Let's Build <br /> <span className="text-blue-600">Something Great</span> <br /> Together.
                         </h2>
-                        <p className="text-gray-900 text-sm sm:text-base font-normal leading-relaxed max-w-xl mb-10">
+                        <p className="text-gray-900 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-xl mb-10">
                             We're currently accepting new projects for {monthNames[currentMonth]} {currentYear}. Let's discuss how we can scale your vision through premium design and engineering.
                         </p>
                         <div className="flex flex-wrap gap-4">
                             <button 
                                 onClick={() => document.getElementById('calendar-section').scrollIntoView({ behavior: 'smooth' })}
-                                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 flex items-center gap-3"
+                                className="px-8 py-4 bg-blue-600 hover:bg-blue-700 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 flex items-center gap-3"
                             >
                                 <span className="text-lg">📅</span> Schedule a Meeting
                             </button>
                             <a 
                                 href="tel:+447000000000"
-                                className="px-8 py-4 bg-gray-50 border border-gray-200 hover:border-blue-600 text-gray-900 text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-3 group"
+                                className="px-8 py-4 bg-gray-50 border border-gray-200 hover:border-blue-600 text-gray-900 text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl transition-all duration-300 active:scale-95 flex items-center gap-3 group"
                             >
                                 <span className="text-lg group-hover:rotate-12 transition-transform">📞</span> Quick Call Request
                             </a>
@@ -124,7 +124,7 @@ const Contact = ({ timeSlots = [] }) => {
                             {/* Decorative Glow */}
                             <div className="absolute top-0 right-0 w-32 h-32 bg-blue-600/10 blur-[50px] rounded-full group-hover:bg-blue-600/20 transition-colors duration-500" />
                             
-                            <h3 className="text-white text-xs font-black uppercase tracking-[0.3em] mb-8 relative z-10">Agency Details</h3>
+                            <h3 className="text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-8 relative z-10">Agency Details</h3>
                             <div className="space-y-8 flex-1 relative z-10">
                                 <div className="flex gap-4">
                                     <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-sm border border-white/10">📍</div>

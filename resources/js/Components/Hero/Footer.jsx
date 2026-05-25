@@ -78,10 +78,10 @@ const Footer = () => {
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-12 gap-12 mb-8">
                     {/* Brand Info */}
                     <div className="lg:col-span-5">
-                        <div className="text-2xl font-black text-white mb-8 tracking-tighter uppercase font-display">
+                        <div className="text-3xl sm:text-4xl font-black text-white mb-8 tracking-tighter uppercase font-display">
                             Back<span className="text-blue-600">Caps</span>
                         </div>
-                        <p className="text-white text-sm font-normal leading-relaxed mb-8 max-w-sm">
+                        <p className="text-white text-sm sm:text-base font-light leading-relaxed mb-8 max-w-sm">
                             Transforming ideas into powerful digital solutions through innovation, expertise, and passion. We build the future of the web.
                         </p>
                         <div className="space-y-4">
@@ -103,11 +103,11 @@ const Footer = () => {
                     {/* Link Columns */}
                     <div className="lg:col-span-7 grid grid-cols-2 sm:grid-cols-3 gap-8">
                         <div>
-                            <h4 className="text-white text-xs font-black uppercase tracking-[0.4em] mb-10">Company</h4>
+                            <h4 className="text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-10">Company</h4>
                             <ul className="space-y-4">
                                 {footerLinks.company.map((link, i) => (
                                     <li key={i}>
-                                        <a href={link.href} className="text-gray-400 text-[11px] font-bold uppercase tracking-widest hover:text-blue-500 transition-all duration-300 flex items-center gap-2 group">
+                                        <a href={link.href} className="text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-blue-500 transition-all duration-300 flex items-center gap-2 group">
                                             <span className="w-1 h-1 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                                             {link.name}
                                         </a>
@@ -116,11 +116,11 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-white text-xs font-black uppercase tracking-[0.4em] mb-10">Services</h4>
+                            <h4 className="text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-10">Services</h4>
                             <ul className="space-y-4">
                                 {footerLinks.services.map((link, i) => (
                                     <li key={i}>
-                                        <a href={link.href} className="text-gray-400 text-[11px] font-bold uppercase tracking-widest hover:text-blue-500 transition-all duration-300 flex items-center gap-2 group">
+                                        <a href={link.href} className="text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-blue-500 transition-all duration-300 flex items-center gap-2 group">
                                             <span className="w-1 h-1 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                                             {link.name}
                                         </a>
@@ -129,11 +129,11 @@ const Footer = () => {
                             </ul>
                         </div>
                         <div>
-                            <h4 className="text-white text-xs font-black uppercase tracking-[0.4em] mb-10">Resources</h4>
+                            <h4 className="text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-10">Resources</h4>
                             <ul className="space-y-4">
                                 {footerLinks.resources.map((link, i) => (
                                     <li key={i}>
-                                        <a href={link.href} className="text-gray-400 text-[11px] font-bold uppercase tracking-widest hover:text-blue-500 transition-all duration-300 flex items-center gap-2 group">
+                                        <a href={link.href} className="text-gray-400 text-xs font-bold uppercase tracking-widest hover:text-blue-500 transition-all duration-300 flex items-center gap-2 group">
                                             <span className="w-1 h-1 bg-blue-600 rounded-full opacity-0 group-hover:opacity-100 transition-opacity" />
                                             {link.name}
                                         </a>
@@ -147,8 +147,8 @@ const Footer = () => {
                 {/* Middle Section: Newsletter */}
                 <div className="py-16 border-y border-white flex flex-col lg:flex-row justify-between items-center gap-12 mb-8">
                     <div className="max-w-lg text-center lg:text-left">
-                        <h3 className="text-white text-3xl sm:text-4xl font-black uppercase tracking-tight mb-3 font-display">Stay Updated</h3>
-                        <p className="text-white text-sm sm:text-base font-normal leading-relaxed">Subscribe to our newsletter for the latest updates and digital insights from the frontier of tech.</p>
+                        <h3 className="text-white text-3xl sm:text-4xl font-black uppercase tracking-tighter mb-3 font-display">Stay Updated</h3>
+                        <p className="text-white text-sm sm:text-base font-light leading-relaxed">Subscribe to our newsletter for the latest updates and digital insights from the frontier of tech.</p>
                     </div>
                     <div className="flex w-full lg:w-auto max-w-md gap-3">
                         <input
@@ -156,7 +156,7 @@ const Footer = () => {
                             placeholder="Enter your email"
                             className="flex-1 bg-white border border-transparent rounded-xl px-6 py-4 text-black text-sm font-bold focus:outline-none focus:ring-2 focus:ring-blue-600 transition-all"
                         />
-                        <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-[10px] font-black uppercase tracking-[0.2em] rounded-xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95">
+                        <button className="px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-xl transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95">
                             Subscribe
                         </button>
                     </div>

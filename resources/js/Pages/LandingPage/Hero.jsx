@@ -60,7 +60,7 @@ export default function Hero() {
     useEffect(() => {
         const interval = setInterval(() => {
             setCurrentSlide((prev) => (prev + 1) % 3);
-        }, 12000);
+        }, 20000);
 
         const handleScroll = () => {
             if (window.scrollY > 100) {
@@ -173,10 +173,10 @@ export default function Hero() {
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-green-500"></span>
                                     </span>
-                                    <span className="text-[10px] font-bold text-green-500 uppercase tracking-wider">available for new projects · 2026</span>
+                                    <span className="text-[10px] sm:text-xs font-black text-green-500 uppercase tracking-[0.2em]">available for new projects · 2026</span>
                                 </div>
 
-                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
+                                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
                                     <motion.span
                                         initial={{ x: -20, opacity: 0 }}
                                         animate={{ x: 0, opacity: 1 }}
@@ -199,7 +199,7 @@ export default function Hero() {
                                     >that ship.</motion.span>
                                 </h1>
 
-                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
+                                <p className="text-white text-base sm:text-lg lg:text-xl max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -208,7 +208,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#work"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(21,93,252,0.3)] hover:shadow-[0_15px_40px_rgba(21,93,252,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(21,93,252,0.3)] hover:shadow-[0_15px_40px_rgba(21,93,252,0.4)] transition-all duration-300 text-xs sm:text-sm uppercase tracking-widest text-center"
                                     >
                                         view our work
                                     </motion.a>
@@ -216,7 +216,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#start"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm uppercase tracking-widest text-center"
                                     >
                                         start a project &rarr;
                                     </motion.a>
@@ -247,16 +247,16 @@ export default function Hero() {
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-blue-400 opacity-75"></span>
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-blue-500"></span>
                                     </span>
-                                    <span className="text-[10px] font-bold text-blue-500 uppercase tracking-wider">available for new projects · 2026</span>
+                                    <span className="text-[10px] sm:text-xs font-black text-blue-500 uppercase tracking-[0.2em]">available for new projects · 2026</span>
                                 </div>
 
-                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
+                                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
                                     We build <br />
                                     <span className="bg-gradient-to-r from-blue-400 to-brand-purple bg-clip-text text-transparent">AI products</span> <br />
                                     that ship.
                                 </h1>
 
-                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
+                                <p className="text-white text-base sm:text-lg lg:text-xl max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -265,7 +265,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#start"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-blue-600 text-white font-bold shadow-[0_10px_30px_rgba(37,99,235,0.3)] hover:shadow-[0_15px_40px_rgba(37,99,235,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-blue-600 text-white font-bold shadow-[0_10px_30px_rgba(37,99,235,0.3)] hover:shadow-[0_15px_40px_rgba(37,99,235,0.4)] transition-all duration-300 text-xs sm:text-sm uppercase tracking-widest text-center"
                                     >
                                         start a project &rarr;
                                     </motion.a>
@@ -273,14 +273,14 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#work"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm uppercase tracking-widest text-center"
                                     >
                                         view our work
                                     </motion.a>
                                 </div>
 
                                 <div className="flex flex-wrap items-center gap-4 sm:gap-6 mb-8">
-                                    <span className="text-[10px] text-brand-gray uppercase font-bold tracking-widest">trusted by</span>
+                                    <span className="text-[10px] sm:text-xs text-brand-gray uppercase font-black tracking-[0.2em]">trusted by</span>
                                     <div className="flex -space-x-3">
                                         {[1, 2, 3, 4, 5].map((i) => (
                                             <div key={i} className={`w-8 h-8 sm:w-10 sm:h-10 rounded-full border-2 border-brand-dark bg-gradient-to-br ${i % 2 === 0 ? 'from-blue-500 to-blue-700' : 'from-brand-purple to-blue-400'} flex items-center justify-center text-[8px] sm:text-[10px] font-bold text-white`}>
@@ -316,16 +316,16 @@ export default function Hero() {
                                         <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-brand-purple opacity-75"></span>
                                         <span className="relative inline-flex rounded-full h-2 w-2 bg-brand-purple"></span>
                                     </span>
-                                    <span className="text-[10px] font-bold text-brand-purple uppercase tracking-wider">available for new projects · 2026</span>
+                                    <span className="text-[10px] sm:text-xs font-black text-brand-purple uppercase tracking-[0.2em]">available for new projects · 2026</span>
                                 </div>
 
-                                <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
+                                <h1 className="text-5xl sm:text-6xl lg:text-7xl font-black text-white leading-[0.9] tracking-tighter mb-6 font-display">
                                     We build <br />
                                     <span className="bg-gradient-to-r from-brand-purple to-blue-400 bg-clip-text text-transparent">Tablet Apps</span> <br />
                                     that ship.
                                 </h1>
 
-                                <p className="text-white text-base lg:text-lg max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
+                                <p className="text-white text-base sm:text-lg lg:text-xl max-w-xl mb-6 lg:mb-10 leading-relaxed font-light">
                                     A tight-knit team of engineers and designers who obsess over product quality — from the first wireframe to production-scale deployment.
                                 </p>
 
@@ -334,7 +334,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#start"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(21,93,252,0.3)] hover:shadow-[0_15px_40px_rgba(21,93,252,0.4)] transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl bg-brand-purple text-white font-bold shadow-[0_10px_30px_rgba(21,93,252,0.3)] hover:shadow-[0_15px_40px_rgba(21,93,252,0.4)] transition-all duration-300 text-xs sm:text-sm uppercase tracking-widest text-center"
                                     >
                                         start a project &rarr;
                                     </motion.a>
@@ -342,7 +342,7 @@ export default function Hero() {
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                         href="#work"
-                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-sm uppercase tracking-widest text-center"
+                                        className="w-full sm:w-auto px-10 py-4 rounded-xl border border-white/20 font-bold bg-white/5 backdrop-blur-sm hover:bg-white/10 transition-all duration-300 text-xs sm:text-sm uppercase tracking-widest text-center"
                                     >
                                         view our work
                                     </motion.a>

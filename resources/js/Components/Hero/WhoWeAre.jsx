@@ -65,7 +65,7 @@ const WhoWeAre = () => {
                         initial={{ opacity: 0, y: 10 }}
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
-                        className="text-[10px] font-black text-blue-600 uppercase tracking-[0.3em] block mb-4"
+                        className="text-[10px] sm:text-xs font-black text-blue-600 uppercase tracking-[0.2em] block mb-4"
                     >
                         Premium Digital Agency
                     </motion.span>
@@ -77,7 +77,7 @@ const WhoWeAre = () => {
                         transition={{ delay: 0.1 }}
                         className="flex flex-col items-center mb-6 sm:mb-10"
                     >
-                        <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 uppercase tracking-tighter leading-[0.8] mb-2 font-display">
+                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9] mb-2 font-display">
                             Who
                         </h2>
                         <div className="flex items-center gap-4 sm:gap-12">
@@ -95,7 +95,7 @@ const WhoWeAre = () => {
                             </motion.div>
 
                             <div className="bg-[#1d4ed8] px-6 py-2 sm:px-8 sm:py-3 rounded-xl transform -rotate-1">
-                                <span className="text-3xl sm:text-4xl lg:text-5xl font-black text-white uppercase tracking-tighter leading-none font-display">
+                                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] font-display">
                                     We Are
                                 </span>
                             </div>
@@ -120,7 +120,7 @@ const WhoWeAre = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-600 text-sm sm:text-lg leading-relaxed font-normal max-w-2xl mx-auto"
+                        className="text-gray-600 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto"
                     >
                         For a decade, we've partnered with ambitious startups and Fortune 500s to design, develop, and scale world-class digital products. Our team doesn't just build software—we architect solutions that redefine industries.
                     </motion.p>
@@ -129,7 +129,7 @@ const WhoWeAre = () => {
                 {/* Pillars Section Label */}
                 <div className="flex items-center gap-4 mb-12 sm:mb-20">
                     <div className="h-[2px] w-12 bg-blue-600" />
-                    <span className="text-[10px] font-black text-gray-400 uppercase tracking-[0.3em]">Our Pillars</span>
+                    <span className="text-[10px] sm:text-xs font-black text-gray-400 uppercase tracking-[0.2em]">Our Pillars</span>
                 </div>
 
                 {/* Pillars Content */}
@@ -144,10 +144,10 @@ const WhoWeAre = () => {
                                     viewport={{ once: true, margin: "-100px" }}
                                     className="flex-1 text-left"
                                 >
-                                    <h3 className="text-xl sm:text-4xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-none font-display">
+                                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-[0.9] font-display">
                                         {pillar.title}
                                     </h3>
-                                    <p className="text-gray-600 text-sm sm:text-base leading-relaxed font-normal mb-8 sm:mb-10 max-w-md">
+                                    <p className="text-gray-600 text-sm sm:text-base font-light leading-relaxed mb-8 sm:mb-10 max-w-md">
                                         {pillar.description}
                                     </p>
 
@@ -159,7 +159,7 @@ const WhoWeAre = () => {
                                                 whileInView={{ opacity: 1, x: 0 }}
                                                 viewport={{ once: true }}
                                                 transition={{ delay: 0.1 * idx }}
-                                                className="flex items-center gap-3 text-gray-700 font-normal text-sm"
+                                                className="flex items-center gap-3 text-gray-700 font-light text-sm sm:text-base"
                                             >
                                                 <CheckIcon />
                                                 {feature}
