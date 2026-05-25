@@ -362,7 +362,18 @@ const Team = () => {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -50 }}
                             transition={{ duration: 0.8, ease: [0.23, 1, 0.32, 1] }}
-                            className={`grid grid-cols-1 ${itemsPerPage === 5 ? 'lg:grid-cols-5' : ''} gap-6`}
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const swipe = Math.abs(offset.x) * velocity.x;
+                                if (swipe < -10000) {
+                                    setActivePage(prev => (prev + 1) % totalPages);
+                                } else if (swipe > 10000) {
+                                    setActivePage(prev => (prev - 1 + totalPages) % totalPages);
+                                }
+                            }}
+                            className={`grid grid-cols-1 ${itemsPerPage === 5 ? 'lg:grid-cols-5' : ''} gap-6 touch-pan-y`}
                         >
                             {team.slice(activePage * itemsPerPage, (activePage + 1) * itemsPerPage).map((member) => (
                                 <motion.div

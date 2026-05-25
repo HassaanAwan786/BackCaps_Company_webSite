@@ -134,6 +134,11 @@ export default function Hero() {
     const handleNextSlide = () => setCurrentSlide(prev => (prev + 1) % 3);
     const handlePrevSlide = () => setCurrentSlide(prev => (prev - 1 + 3) % 3);
 
+    const swipeConfidenceThreshold = 10000;
+    const swipePower = (offset, velocity) => {
+        return Math.abs(offset) * velocity;
+    };
+
     return (
         <div
             ref={containerRef}
@@ -159,7 +164,15 @@ export default function Hero() {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -100 }}
                             transition={{ duration: 0.8, ease: "easeInOut" }}
-                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const swipe = swipePower(offset.x, velocity.x);
+                                if (swipe < -swipeConfidenceThreshold) handleNextSlide();
+                                else if (swipe > swipeConfidenceThreshold) handlePrevSlide();
+                            }}
+                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full touch-pan-y"
                         >
                             {/* Hero Text */}
                             <motion.div
@@ -238,7 +251,15 @@ export default function Hero() {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -100 }}
                             transition={{ duration: 0.8, ease: "easeInOut" }}
-                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const swipe = swipePower(offset.x, velocity.x);
+                                if (swipe < -swipeConfidenceThreshold) handleNextSlide();
+                                else if (swipe > swipeConfidenceThreshold) handlePrevSlide();
+                            }}
+                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full touch-pan-y"
                         >
                             {/* Hero Text (Slide 2) */}
                             <div className="w-full lg:flex-1 text-left">
@@ -307,7 +328,15 @@ export default function Hero() {
                             animate={{ opacity: 1, x: 0 }}
                             exit={{ opacity: 0, x: -100 }}
                             transition={{ duration: 0.8, ease: "easeInOut" }}
-                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full"
+                            drag="x"
+                            dragConstraints={{ left: 0, right: 0 }}
+                            dragElastic={0.2}
+                            onDragEnd={(e, { offset, velocity }) => {
+                                const swipe = swipePower(offset.x, velocity.x);
+                                if (swipe < -swipeConfidenceThreshold) handleNextSlide();
+                                else if (swipe > swipeConfidenceThreshold) handlePrevSlide();
+                            }}
+                            className="flex flex-col lg:flex-row items-center justify-between md:gap-12 gap-0 w-full touch-pan-y"
                         >
                             {/* Hero Text (Slide 3) */}
                             <div className="w-full lg:flex-1 text-left">
