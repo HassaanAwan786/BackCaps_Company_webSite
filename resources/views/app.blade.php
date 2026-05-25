@@ -44,8 +44,8 @@
             <meta property="twitter:image" content="{{ asset('assets/images/who_1.png') }}">
 
             <!-- Favicon -->
-            <link rel="icon" type="image/png" href="{{ asset('assets/images/logo_icon.png') }}">
-            <link rel="apple-touch-icon" href="{{ asset('assets/images/logo_icon.png') }}">
+            <link rel="icon" type="image/jpeg" href="{{ asset('assets/Website icons/Backcaps.jpeg') }}">
+            <link rel="apple-touch-icon" href="{{ asset('assets/Website icons/Backcaps.jpeg') }}">
         @endif
 
         <!-- Fonts -->

@@ -142,30 +142,32 @@ const WhoWeAre = () => {
                                     initial={{ opacity: 0, x: pillar.reverse ? 50 : -50 }}
                                     whileInView={{ opacity: 1, x: 0 }}
                                     viewport={{ once: true, margin: "-100px" }}
-                                    className="flex-1 text-left"
+                                    className={`flex-1 text-left w-full ${pillar.reverse ? 'lg:flex lg:justify-end' : ''}`}
                                 >
-                                    <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-[0.9] font-display">
-                                        {pillar.title}
-                                    </h3>
-                                    <p className="text-gray-600 text-sm sm:text-base font-light leading-relaxed mb-8 sm:mb-10 max-w-md">
-                                        {pillar.description}
-                                    </p>
+                                    <div className="w-fit max-w-xl">
+                                        <h3 className="text-2xl sm:text-3xl lg:text-4xl font-black text-gray-900 uppercase tracking-tighter mb-6 sm:mb-8 leading-[0.9] font-display">
+                                            {pillar.title}
+                                        </h3>
+                                        <p className="text-gray-600 text-sm sm:text-base font-light leading-relaxed mb-8 sm:mb-10 max-w-md">
+                                            {pillar.description}
+                                        </p>
 
-                                    <ul className="space-y-4">
-                                        {pillar.features.map((feature, idx) => (
-                                            <motion.li
-                                                key={idx}
-                                                initial={{ opacity: 0, x: -10 }}
-                                                whileInView={{ opacity: 1, x: 0 }}
-                                                viewport={{ once: true }}
-                                                transition={{ delay: 0.1 * idx }}
-                                                className="flex items-center gap-3 text-gray-700 font-light text-sm sm:text-base"
-                                            >
-                                                <CheckIcon />
-                                                {feature}
-                                            </motion.li>
-                                        ))}
-                                    </ul>
+                                        <ul className="space-y-4">
+                                            {pillar.features.map((feature, idx) => (
+                                                <motion.li
+                                                    key={idx}
+                                                    initial={{ opacity: 0, x: -10 }}
+                                                    whileInView={{ opacity: 1, x: 0 }}
+                                                    viewport={{ once: true }}
+                                                    transition={{ delay: 0.1 * idx }}
+                                                    className="flex items-center gap-3 text-gray-700 font-light text-sm sm:text-base"
+                                                >
+                                                    <CheckIcon />
+                                                    {feature}
+                                                </motion.li>
+                                            ))}
+                                        </ul>
+                                    </div>
                                 </motion.div>
 
                                 {/* Image Content */}
