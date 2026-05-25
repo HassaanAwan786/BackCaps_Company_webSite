@@ -5,8 +5,8 @@
 @source '../**/*.jsx';
 
 @theme {
-    --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
-    --font-display: "Unbounded", sans-serif;
+    --font-sans: 'Rubik', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
+    --font-rubik: 'Rubik', sans-serif;
 
     --color-brand-purple: #155DFC;
     --color-brand-dark: #02020a;
