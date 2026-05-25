@@ -49,10 +49,44 @@ const Contact = ({ timeSlots = [] }) => {
     ];
 
     const socialLinks = [
-        { name: 'LinkedIn', desc: 'Case studies & updates', icon: '🔗' },
-        { name: 'Instagram', desc: 'Behind the scenes', icon: '📸' },
-        { name: 'X/Twitter', desc: 'Tech thoughts & news', icon: '🐦' },
-        { name: 'Facebook', desc: 'Community updates', icon: '👥' },
+        { 
+            name: 'LinkedIn', 
+            desc: 'Case studies & updates', 
+            icon: (
+                <svg className="w-5 h-5 text-white group-hover:text-blue-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M22.23 0H1.77C.8 0 0 .77 0 1.72v20.56C0 23.23.8 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.23 0 22.23 0zM7.12 20.45H3.56V9h3.56v11.45zM5.34 7.43c-1.14 0-2.06-.92-2.06-2.06 0-1.14.92-2.06 2.06-2.06 1.14 0 2.06.92 2.06 2.06 0 1.14-.92 2.06-2.06 2.06zm15.11 13.02h-3.56v-5.6c0-1.34-.03-3.06-1.86-3.06-1.86 0-2.14 1.45-2.14 2.96v5.7h-3.56V9h3.42v1.56h.05c.48-.91 1.65-1.86 3.4-1.86 3.63 0 4.31 2.39 4.31 5.5v6.25z"/>
+                </svg>
+            ) 
+        },
+        { 
+            name: 'Instagram', 
+            desc: 'Behind the scenes', 
+            icon: (
+                <svg className="w-5 h-5 text-white group-hover:text-blue-500 transition-colors" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" viewBox="0 0 24 24">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+            ) 
+        },
+        { 
+            name: 'X/Twitter', 
+            desc: 'Tech thoughts & news', 
+            icon: (
+                <svg className="w-5 h-5 text-white group-hover:text-blue-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+            ) 
+        },
+        { 
+            name: 'Facebook', 
+            desc: 'Community updates', 
+            icon: (
+                <svg className="w-5 h-5 text-white group-hover:text-blue-500 transition-colors" fill="currentColor" viewBox="0 0 24 24">
+                    <path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978 1.602 0 2.444.053 2.846.106v2.616h-1.51c-1.881 0-2.124.701-2.124 2.15v1.586h3.647l-.406 3.667h-3.241v7.98H9.101z"/>
+                </svg>
+            ) 
+        },
     ];
 
     // Calendar logic
@@ -126,24 +160,37 @@ const Contact = ({ timeSlots = [] }) => {
                             
                             <h3 className="text-white text-[10px] sm:text-xs font-black uppercase tracking-[0.2em] mb-8 relative z-10">Agency Details</h3>
                             <div className="space-y-8 flex-1 relative z-10">
-                                <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-sm border border-white/10">📍</div>
+                                <div className="flex gap-4 group cursor-pointer">
+                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-blue-600/20 group-hover:border-blue-600/30 transition-all">
+                                        <svg className="w-4 h-4 text-white group-hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.243-4.243a8 8 0 1111.314 0z" />
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                                        </svg>
+                                    </div>
                                     <div>
-                                        <p className="text-[10px] text-slate-500 uppercase font-black mb-1">Office</p>
+                                        <p className="text-[10px] text-slate-500 uppercase font-black mb-1 transition-colors group-hover:text-slate-400">Office</p>
                                         <p className="text-white text-xs font-bold leading-relaxed">85 Great Portland Street,<br />London, W1W 7LT</p>
                                     </div>
                                 </div>
-                                <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-sm border border-white/10">✉️</div>
+                                <div className="flex gap-4 group cursor-pointer">
+                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-blue-600/20 group-hover:border-blue-600/30 transition-all">
+                                        <svg className="w-4 h-4 text-white group-hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                                        </svg>
+                                    </div>
                                     <div>
-                                        <p className="text-[10px] text-slate-500 uppercase font-black mb-1">Email</p>
+                                        <p className="text-[10px] text-slate-500 uppercase font-black mb-1 transition-colors group-hover:text-slate-400">Email</p>
                                         <p className="text-white text-xs font-bold">hello@backcaps.agency</p>
                                     </div>
                                 </div>
-                                <div className="flex gap-4">
-                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center text-sm border border-white/10">🕒</div>
+                                <div className="flex gap-4 group cursor-pointer">
+                                    <div className="w-10 h-10 rounded-full bg-white/5 flex items-center justify-center border border-white/10 group-hover:bg-blue-600/20 group-hover:border-blue-600/30 transition-all">
+                                        <svg className="w-4 h-4 text-white group-hover:text-blue-500 transition-colors" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2">
+                                            <path strokeLinecap="round" strokeLinejoin="round" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                        </svg>
+                                    </div>
                                     <div>
-                                        <p className="text-[10px] text-slate-500 uppercase font-black mb-1">Office Hours</p>
+                                        <p className="text-[10px] text-slate-500 uppercase font-black mb-1 transition-colors group-hover:text-slate-400">Office Hours</p>
                                         <p className="text-white text-xs font-bold">Mon — Fri: 09:00 - 18:00 GMT</p>
                                     </div>
                                 </div>
