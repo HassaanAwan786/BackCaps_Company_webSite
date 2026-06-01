@@ -287,22 +287,14 @@ const Services = () => {
                                         <div className={`absolute inset-0 flex ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'items-end' : 'items-center'} justify-center transition-opacity duration-500 ${isFlipped ? 'opacity-20' : 'opacity-100'}`}>
                                             <motion.div
                                                 initial={{ scale: 0.8, opacity: 0, y: 20 }}
-                                                whileInView={{
-                                                    scale: 1,
-                                                    opacity: 1,
-                                                    y: [0, -15, 0],
-                                                    rotate: [0, 1, -1, 0]
-                                                }}
+                                                whileInView={{ scale: 1, opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
-                                                transition={{
-                                                    scale: { duration: 0.8, delay: 0.2 },
-                                                    opacity: { duration: 0.8, delay: 0.2 },
-                                                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                                                    rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                                                }}
+                                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                                                 className="relative z-0"
                                             >
-                                                <img
+                                                <motion.img
+                                                    animate={{ y: [0, -15, 0], rotate: [0, 1, -1, 0] }}
+                                                    transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" } }}
                                                     src={service.image}
                                                     alt={service.title}
                                                     className={`w-full 
@@ -312,24 +304,21 @@ const Services = () => {
                                                         object-contain drop-shadow-2xl transition-transform duration-700 ${service.title === 'Mobile Application Development' ? 'translate-x-20 lg:translate-x-12 translate-y-18 lg:translate-y-5' : ''}`}
                                                 />
                                                 {service.image2 && (
-                                                    <motion.img
-                                                        src={service.image2}
-                                                        alt={service.title}
+                                                    <motion.div
                                                         initial={{ opacity: 0, x: -20 }}
-                                                        whileInView={{
-                                                            opacity: 1,
-                                                            x: 0,
-                                                            y: [0, 10, 0],
-                                                            rotate: [0, -3, 3, 0]
-                                                        }}
-                                                        transition={{
-                                                            opacity: { duration: 0.8, delay: 0.4 },
-                                                            x: { duration: 0.8, delay: 0.4 },
-                                                            y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                                                            rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" }
-                                                        }}
-                                                        className="absolute -left-10 bottom-0 w-[120px] object-contain drop-shadow-2xl z-20 transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
-                                                    />
+                                                        whileInView={{ opacity: 1, x: 0 }}
+                                                        viewport={{ once: true }}
+                                                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                                                        className="absolute -left-10 bottom-0 w-[120px] z-20"
+                                                    >
+                                                        <motion.img
+                                                            src={service.image2}
+                                                            alt={service.title}
+                                                            animate={{ y: [0, 10, 0], rotate: [0, -3, 3, 0] }}
+                                                            transition={{ y: { duration: 5, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" } }}
+                                                            className="w-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
+                                                        />
+                                                    </motion.div>
                                                 )}
                                             </motion.div>
 
@@ -337,20 +326,11 @@ const Services = () => {
                                                 <motion.div
                                                     key={i}
                                                     initial={{ opacity: 0, scale: 0 }}
-                                                    whileInView={{
-                                                        opacity: 1,
-                                                        scale: 1,
-                                                        y: [0, (i % 2 === 0 ? -12 : 12), 0],
-                                                        x: [0, (i % 3 === 0 ? 8 : -8), 0],
-                                                        rotate: [0, (i % 2 === 0 ? 10 : -10), 0]
-                                                    }}
+                                                    whileInView={{ opacity: 1, scale: 1 }}
                                                     viewport={{ once: true }}
                                                     transition={{
-                                                        opacity: { duration: 0.5, delay: 0.5 + i * 0.1 },
-                                                        scale: { duration: 0.5, delay: 0.5 + i * 0.1 },
-                                                        y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
-                                                        x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
-                                                        rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                        opacity: { duration: 0.4, delay: 0.3 + i * 0.1 },
+                                                        scale: { type: "spring", stiffness: 200, damping: 15, delay: 0.3 + i * 0.1 }
                                                     }}
                                                     style={{
                                                         position: 'absolute',
@@ -362,11 +342,24 @@ const Services = () => {
                                                     }}
                                                     className="bg-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
                                                 >
-                                                    <img
-                                                        src={`https://cdn.simpleicons.org/${icon.name}/${icon.color.replace('#', '')}`}
-                                                        alt={icon.name}
-                                                        className="w-4 h-4 sm:w-6 sm:h-6 object-contain"
-                                                    />
+                                                    <motion.div
+                                                        animate={{
+                                                            y: [0, (i % 2 === 0 ? -8 : 8), 0],
+                                                            x: [0, (i % 3 === 0 ? 6 : -6), 0],
+                                                            rotate: [0, (i % 2 === 0 ? 8 : -8), 0]
+                                                        }}
+                                                        transition={{
+                                                            y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
+                                                            x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
+                                                            rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                        }}
+                                                    >
+                                                        <img
+                                                            src={`https://cdn.simpleicons.org/${icon.name}/${icon.color.replace('#', '')}`}
+                                                            alt={icon.name}
+                                                            className="w-4 h-4 sm:w-6 sm:h-6 object-contain"
+                                                        />
+                                                    </motion.div>
                                                 </motion.div>
                                             ))}
                                         </div>
