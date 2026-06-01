@@ -37,7 +37,7 @@ export default function ReadyToStart() {
                             <motion.span
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
-                                className="text-brand-purple font-black uppercase tracking-[0.3em] text-xs mb-6 block"
+                                className="text-[10px] sm:text-xs font-black text-brand-purple uppercase tracking-[0.2em] mb-6 block"
                             >
                                 Get Started
                             </motion.span>
@@ -45,7 +45,7 @@ export default function ReadyToStart() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.1 }}
-                                className="text-3xl sm:text-4xl lg:text-5xl font-black text-gray-900 leading-none tracking-tighter mb-8 font-display"
+                                className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9] mb-8 font-display"
                             >
                                 READY TO <br /> <span className="text-brand-purple">BUILD?</span>
                             </motion.h2>
@@ -53,7 +53,7 @@ export default function ReadyToStart() {
                                 initial={{ opacity: 0, y: 20 }}
                                 whileInView={{ opacity: 1, y: 0 }}
                                 transition={{ delay: 0.2 }}
-                                className="text-gray-600 text-lg font-normal leading-relaxed mb-10"
+                                className="text-gray-600 text-sm sm:text-lg lg:text-xl font-light leading-relaxed mb-10"
                             >
                                 Tell us about your vision. Our team of product engineers is ready to turn your ideas into a high-performance digital reality.
                             </motion.p>

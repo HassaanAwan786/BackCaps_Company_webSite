@@ -77,7 +77,7 @@ const WhoWeAre = () => {
                         transition={{ delay: 0.1 }}
                         className="flex flex-col items-center mb-6 sm:mb-10"
                     >
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9] mb-2 font-display">
+                        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-gray-900 uppercase tracking-tighter leading-[0.9] mb-2 font-display">
                             Who
                         </h2>
                         <div className="flex items-center gap-4 sm:gap-12">
@@ -95,7 +95,7 @@ const WhoWeAre = () => {
                             </motion.div>
 
                             <div className="bg-[#1d4ed8] px-6 py-2 sm:px-8 sm:py-3 rounded-xl transform -rotate-1">
-                                <span className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] font-display">
+                                <span className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] font-display">
                                     We Are
                                 </span>
                             </div>
@@ -120,7 +120,7 @@ const WhoWeAre = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2 }}
-                        className="text-gray-600 text-base sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto"
+                        className="text-gray-600 text-sm sm:text-lg lg:text-xl font-light leading-relaxed max-w-2xl mx-auto"
                     >
                         For a decade, we've partnered with ambitious startups and Fortune 500s to design, develop, and scale world-class digital products. Our team doesn't just build software—we architect solutions that redefine industries.
                     </motion.p>

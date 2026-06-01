@@ -63,7 +63,7 @@ const Services = () => {
                 { name: 'figma', top: '25%', left: '5%', color: '#F24E1E', mTop: '25%', mLeft: '0%', },
                 { name: 'dribbble', top: '25%', right: '-10%', color: '#EA4C89', mTop: '25%', mRight: '10%', },
                 { name: 'behance', bottom: '70%', left: '42%', color: '#1769FF', mBottom: '80%', mLeft: '42%', },
-                { name: 'miro', top: '70%', right: '-15%', color: '#FFD500', mTop: '60%', mRight: '0%', },
+                { name: 'miro', top: '70%', right: '-12%', color: '#FFD500', mTop: '60%', mRight: '0%', },
                 { name: 'sketch', bottom: '25%', left: '-20%', color: '#F7B500', mTop: '60%', m: '-20%', },
             ]
         },
@@ -153,11 +153,11 @@ const Services = () => {
                         <span className="text-[10px] sm:text-xs font-black text-gray-500 uppercase tracking-[0.2em]">Our Services</span>
                     </div>
 
-                    <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-4xl mx-auto mb-8 font-display">
+                    <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-4xl mx-auto mb-8 font-display">
                         We Build Digital <br /> Solutions That <span className="text-blue-600">Drive Results.</span>
                     </h2>
 
-                    <p className="text-white text-base sm:text-lg lg:text-xl max-w-2xl mx-auto font-light leading-relaxed">
+                    <p className="text-white text-sm sm:text-lg lg:text-xl max-w-2xl mx-auto font-light leading-relaxed">
                         Our team blends design with technology to deliver exceptional and functional digital solutions.
                     </p>
                 </div>
@@ -199,7 +199,7 @@ const Services = () => {
                                     viewport={{ once: true }}
                                     transition={{ delay: index * 0.1 }}
                                     onClick={() => isMobile && setFlippedCard(isFlipped ? null : index)}
-                                    className={`${service.bg} ${service.className || ''} rounded-[2rem] p-6 sm:p-10 lg:p-12 relative overflow-hidden group lg:min-h-[380px] border flex flex-col lg:flex-row gap-8 lg:gap-10 items-start text-left transition-all duration-500 hover:scale-[1.01] lg:hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-600/10 cursor-pointer lg:cursor-default`}
+                                    className={`${service.bg} ${service.className || ''} rounded-[2rem] p-6 sm:p-8 lg:p-8 relative overflow-hidden group lg:min-h-[320px] border flex flex-col lg:flex-row gap-6 lg:gap-8 items-center text-left transition-all duration-500 hover:scale-[1.01] lg:hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-600/10 cursor-pointer lg:cursor-default`}
                                 >
                                     {/* Background Image */}
                                     {service.bgImage && (
@@ -222,20 +222,20 @@ const Services = () => {
                                         <div className={`transition-all duration-700 ease-[cubic-bezier(0.23,1,0.32,1)] 
                                             ${isFlipped ? 'opacity-0 -translate-y-12 scale-95 blur-sm' : 'opacity-100 translate-y-0 scale-100'}
                                             ${service.bgImage ? 'lg:group-hover:opacity-0 lg:group-hover:scale-95' : 'lg:group-hover:opacity-0 lg:group-hover:-translate-y-12 lg:group-hover:scale-95 lg:group-hover:blur-sm'}`}>
-                                            <div className="flex items-center gap-4 mb-8">
+                                            <div className="flex items-center gap-4 mb-6">
                                                 <div className="flex-shrink-0 flex items-center justify-center">
-                                                    <img src={service.icon} alt="" width={40} height={40} className="sm:w-[50px] sm:h-[50px] brightness-110" />
+                                                    <img src={service.icon} alt="" width={32} height={32} className="sm:w-[40px] sm:h-[40px] brightness-110" />
                                                 </div>
-                                                <h3 className="text-lg sm:text-xl font-black text-white uppercase tracking-tight leading-tight font-display">
+                                                <h3 className="text-2xl sm:text-3xl lg:text-3xl font-black text-white uppercase tracking-tighter leading-[0.9] font-display">
                                                     {service.title}
                                                 </h3>
                                             </div>
-                                            <p className="text-white text-[13px] sm:text-sm font-normal leading-relaxed mb-8">
+                                            <p className="text-white text-sm sm:text-base font-light leading-relaxed mb-6">
                                                 {service.description}
                                             </p>
                                             <ul className="space-y-3 sm:space-y-4 inline-block text-left">
                                                 {service.items.map((item, i) => (
-                                                    <li key={i} className="flex items-center gap-3 text-[13px] font-bold text-gray-300">
+                                                    <li key={i} className="flex items-center gap-3 text-sm sm:text-base font-light text-gray-300">
                                                         {checkmark}
                                                         {item}
                                                     </li>
@@ -287,49 +287,38 @@ const Services = () => {
                                         <div className={`absolute inset-0 flex ${(service.title === 'UI/UX Designing' || service.title === 'Artificial Intelligence') ? 'items-end' : 'items-center'} justify-center transition-opacity duration-500 ${isFlipped ? 'opacity-20' : 'opacity-100'}`}>
                                             <motion.div
                                                 initial={{ scale: 0.8, opacity: 0, y: 20 }}
-                                                whileInView={{
-                                                    scale: 1,
-                                                    opacity: 1,
-                                                    y: [0, -15, 0],
-                                                    rotate: [0, 1, -1, 0]
-                                                }}
+                                                whileInView={{ scale: 1, opacity: 1, y: 0 }}
                                                 viewport={{ once: true }}
-                                                transition={{
-                                                    scale: { duration: 0.8, delay: 0.2 },
-                                                    opacity: { duration: 0.8, delay: 0.2 },
-                                                    y: { duration: 4, repeat: Infinity, ease: "easeInOut" },
-                                                    rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" }
-                                                }}
+                                                transition={{ duration: 0.8, delay: 0.2, ease: "easeOut" }}
                                                 className="relative z-0"
                                             >
-                                                <img
+                                                <motion.img
+                                                    animate={{ y: [0, -15, 0], rotate: [0, 1, -1, 0] }}
+                                                    transition={{ y: { duration: 4, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 6, repeat: Infinity, ease: "easeInOut" } }}
                                                     src={service.image}
                                                     alt={service.title}
                                                     className={`w-full 
                                                         ${service.title === 'UI/UX Designing' ? 'max-w-[220px] lg:max-w-[340px] translate-y-4 lg:translate-y-8 scale-110 lg:scale-140 lg:group-hover:scale-145' :
                                                             service.title === 'Artificial Intelligence' ? 'max-w-[220px] lg:max-w-[320px] translate-y-6 lg:translate-x-10 lg:translate-y-10 scale-100 lg:scale-110' :
-                                                                'max-w-[180px] lg:max-w-[300px] lg:group-hover:scale-105'} 
-                                                        object-contain drop-shadow-2xl transition-transform duration-700 ${service.title === 'Mobile Application Development' ? 'translate-x-20 lg:translate-x-12 translate-y-18 lg:translate-y-5' : ''}`}
+                                                                'max-w-[150px] lg:max-w-[240px] lg:group-hover:scale-105'} 
+                                                        object-contain drop-shadow-2xl transition-transform duration-700 ${service.title === 'Mobile Application Development' ? 'translate-x-10 lg:translate-x-8 translate-y-8 lg:translate-y-4' : ''}`}
                                                 />
                                                 {service.image2 && (
-                                                    <motion.img
-                                                        src={service.image2}
-                                                        alt={service.title}
+                                                    <motion.div
                                                         initial={{ opacity: 0, x: -20 }}
-                                                        whileInView={{
-                                                            opacity: 1,
-                                                            x: 0,
-                                                            y: [0, 10, 0],
-                                                            rotate: [0, -3, 3, 0]
-                                                        }}
-                                                        transition={{
-                                                            opacity: { duration: 0.8, delay: 0.4 },
-                                                            x: { duration: 0.8, delay: 0.4 },
-                                                            y: { duration: 5, repeat: Infinity, ease: "easeInOut" },
-                                                            rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" }
-                                                        }}
-                                                        className="absolute -left-10 bottom-0 w-[120px] object-contain drop-shadow-2xl z-20 transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
-                                                    />
+                                                        whileInView={{ opacity: 1, x: 0 }}
+                                                        viewport={{ once: true }}
+                                                        transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
+                                                        className="absolute -left-10 bottom-0 w-[120px] z-20"
+                                                    >
+                                                        <motion.img
+                                                            src={service.image2}
+                                                            alt={service.title}
+                                                            animate={{ y: [0, 10, 0], rotate: [0, -3, 3, 0] }}
+                                                            transition={{ y: { duration: 5, repeat: Infinity, ease: "easeInOut" }, rotate: { duration: 7, repeat: Infinity, ease: "easeInOut" } }}
+                                                            className="w-full object-contain drop-shadow-2xl transition-transform duration-700 group-hover:-translate-x-4 group-hover:translate-y-2"
+                                                        />
+                                                    </motion.div>
                                                 )}
                                             </motion.div>
 
@@ -337,20 +326,11 @@ const Services = () => {
                                                 <motion.div
                                                     key={i}
                                                     initial={{ opacity: 0, scale: 0 }}
-                                                    whileInView={{
-                                                        opacity: 1,
-                                                        scale: 1,
-                                                        y: [0, (i % 2 === 0 ? -12 : 12), 0],
-                                                        x: [0, (i % 3 === 0 ? 8 : -8), 0],
-                                                        rotate: [0, (i % 2 === 0 ? 10 : -10), 0]
-                                                    }}
+                                                    whileInView={{ opacity: 1, scale: 1 }}
                                                     viewport={{ once: true }}
                                                     transition={{
-                                                        opacity: { duration: 0.5, delay: 0.5 + i * 0.1 },
-                                                        scale: { duration: 0.5, delay: 0.5 + i * 0.1 },
-                                                        y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
-                                                        x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
-                                                        rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                        opacity: { duration: 0.4, delay: 0.3 + i * 0.1 },
+                                                        scale: { type: "spring", stiffness: 200, damping: 15, delay: 0.3 + i * 0.1 }
                                                     }}
                                                     style={{
                                                         position: 'absolute',
@@ -362,11 +342,24 @@ const Services = () => {
                                                     }}
                                                     className="bg-white p-1.5 sm:p-2 rounded-lg sm:rounded-xl shadow-lg hover:scale-110 transition-transform duration-300"
                                                 >
-                                                    <img
-                                                        src={`https://cdn.simpleicons.org/${icon.name}/${icon.color.replace('#', '')}`}
-                                                        alt={icon.name}
-                                                        className="w-4 h-4 sm:w-6 sm:h-6 object-contain"
-                                                    />
+                                                    <motion.div
+                                                        animate={{
+                                                            y: [0, (i % 2 === 0 ? -8 : 8), 0],
+                                                            x: [0, (i % 3 === 0 ? 6 : -6), 0],
+                                                            rotate: [0, (i % 2 === 0 ? 8 : -8), 0]
+                                                        }}
+                                                        transition={{
+                                                            y: { duration: 3 + (i % 3), repeat: Infinity, ease: "easeInOut" },
+                                                            x: { duration: 4 + (i % 2), repeat: Infinity, ease: "easeInOut" },
+                                                            rotate: { duration: 5 + (i % 4), repeat: Infinity, ease: "easeInOut" }
+                                                        }}
+                                                    >
+                                                        <img
+                                                            src={`https://cdn.simpleicons.org/${icon.name}/${icon.color.replace('#', '')}`}
+                                                            alt={icon.name}
+                                                            className="w-4 h-4 sm:w-6 sm:h-6 object-contain"
+                                                        />
+                                                    </motion.div>
                                                 </motion.div>
                                             ))}
                                         </div>
