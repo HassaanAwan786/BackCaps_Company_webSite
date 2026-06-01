@@ -297,10 +297,10 @@ const Team = () => {
                             <div className="h-[2px] w-8 bg-blue-600 shadow-[0_0_15px_rgba(37,99,235,0.8)]" />
                             <span className="text-[10px] sm:text-xs font-black text-blue-500 uppercase tracking-[0.2em]">Our Elite Collective</span>
                         </div>
-                        <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8 font-display">
+                        <h2 className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] mb-8 font-display">
                             Meet the Minds <br /> Behind <span className="text-blue-600">The Magic.</span>
                         </h2>
-                        <p className="text-white text-base sm:text-lg lg:text-xl font-light leading-relaxed mb-8 max-w-lg">
+                        <p className="text-white text-sm sm:text-lg lg:text-xl font-light leading-relaxed mb-8 max-w-lg">
                             We're a team of designers, developers, and strategists passionate about building digital experiences that drive real results.
                         </p>
                         <button className="flex items-center gap-3 px-8 py-4 bg-blue-600 hover:bg-blue-500 text-white text-xs sm:text-sm font-bold uppercase tracking-widest rounded-full transition-all duration-300 shadow-xl shadow-blue-600/20 active:scale-95 group">

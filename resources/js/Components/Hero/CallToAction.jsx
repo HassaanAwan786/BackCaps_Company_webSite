@@ -19,7 +19,7 @@ const CallToAction = () => {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true }}
                         transition={{ delay: 0.2, duration: 0.6 }}
-                        className="text-4xl sm:text-5xl lg:text-6xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-5xl mb-10 font-display"
+                        className="text-4xl sm:text-6xl lg:text-7xl font-black text-white uppercase tracking-tighter leading-[0.9] max-w-5xl mb-10 font-display"
                     >
                         Let's Build<br />
                         Something Great<br />
@@ -31,7 +31,7 @@ const CallToAction = () => {
                     whileInView={{ opacity: 1, y: 0 }}
                     viewport={{ once: true }}
                     transition={{ delay: 0.3, duration: 0.6 }}
-                    className="text-white text-base sm:text-lg lg:text-xl max-w-2xl mb-14 font-light leading-relaxed"
+                    className="text-white text-sm sm:text-lg lg:text-xl max-w-2xl mb-14 font-light leading-relaxed"
                 >
                     Ready to turn your vision into reality? Whether you're launching a startup or scaling an enterprise, we're here to build something extraordinary with you.
                 </motion.p>
