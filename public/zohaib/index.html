@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Zohaib Ahmed | Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="/zohaib/style.css">
+</head>
+<body class="bg-[#F8FAFC] text-[#1E293B] font-inter overflow-x-hidden">
+
+    <!-- Navbar -->
+    <nav class="fixed w-full top-0 z-50 transition-all duration-500" id="navbar">
+        <div class="max-w-7xl mx-auto px-6 py-5">
+            <div id="navPill" class="nav-pill-scrolled rounded-full px-6 py-3 flex justify-between items-center transition-all duration-500">
+                <a href="#" class="text-2xl font-bold font-space text-white tracking-tighter nav-logo">ZA.</a>
+                
+                <div class="hidden md:flex space-x-8 text-sm font-medium uppercase tracking-wider">
+                    <a href="#projects" class="nav-link hover:text-blue-600 transition-colors">Projects</a>
+                    <a href="#about" class="nav-link hover:text-blue-600 transition-colors">About</a>
+                    <a href="#contact" class="nav-link hover:text-blue-600 transition-colors">Contact</a>
+                </div>
+
+                <div class="flex items-center space-x-4">
+                    <a href="https://github.com/Zohaib1397" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                        <i class="fab fa-github text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/in/zohaib1397" target="_blank" class="text-slate-400 hover:text-white transition-colors">
+                        <i class="fab fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="#contact" class="nav-hire-btn bg-white/10 border border-white/20 text-white px-6 py-2.5 rounded-full text-sm font-bold hover:bg-white hover:text-[#0F172A] transition-all hover:shadow-lg transform hover:-translate-y-0.5 backdrop-blur-sm">
+                        HIRE ME
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section — Redesigned -->
+    <section class="hero-section min-h-screen relative flex items-center overflow-hidden">
+
+        <!-- Dark base layer -->
+        <div class="absolute inset-0 hero-base-bg z-0"></div>
+
+        <!-- Aurora orbs -->
+        <div class="absolute inset-0 z-0 pointer-events-none" aria-hidden="true">
+            <div class="aurora-orb aurora-1"></div>
+            <div class="aurora-orb aurora-2"></div>
+            <div class="aurora-orb aurora-3"></div>
+            <div class="aurora-orb aurora-4"></div>
+        </div>
+
+        <!-- Dot grid overlay -->
+        <div class="hero-grid absolute inset-0 z-0 pointer-events-none"></div>
+
+        <!-- Moving scan line -->
+        <div class="hero-scan-line absolute left-0 right-0 z-0 pointer-events-none"></div>
+
+        <!-- Vignette edge fade -->
+        <div class="absolute inset-0 z-0 hero-vignette pointer-events-none"></div>
+
+        <!-- Content -->
+        <div class="max-w-7xl mx-auto w-full px-6 pt-36 pb-28 relative z-10 grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center">
+
+            <!-- Left: Text -->
+            <div data-aos="fade-up" data-aos-duration="900">
+
+                <!-- Available badge -->
+                <div class="inline-flex items-center gap-2.5 bg-emerald-50 border border-emerald-200 rounded-full px-4 py-2 mb-8">
+                    <span class="w-2 h-2 rounded-full bg-emerald-500 hero-pulse-dot"></span>
+                    <span class="text-emerald-700 text-xs font-bold tracking-[0.2em] uppercase">Available for Work</span>
+                </div>
+
+                <!-- Role line -->
+                <div class="flex items-center gap-3 mb-5">
+                    <div class="h-px w-10 bg-indigo-400"></div>
+                    <span class="text-slate-500 text-xs font-semibold tracking-[0.25em] uppercase">UI/UX Designer · iOS · Flutter · Full-Stack</span>
+                </div>
+
+                <!-- Name -->
+                <h1 class="font-space font-black leading-[0.88] tracking-tighter mb-8">
+                    <span class="hero-first-name block text-slate-900" style="font-size: clamp(4.5rem, 10vw, 8.5rem);">Zohaib</span>
+                    <span class="hero-gradient-name block" style="font-size: clamp(4.5rem, 10vw, 8.5rem);">Ahmed</span>
+                </h1>
+
+                <!-- Description -->
+                <p class="text-slate-600 text-lg max-w-md leading-relaxed mb-10">
+                    Software Engineer crafting pixel-perfect interfaces and robust cross-platform products — from native iOS apps to AI-driven web systems. Driven by design quality and real user impact.
+                </p>
+
+                <!-- CTA Buttons -->
+                <div class="flex flex-wrap gap-4 mb-14">
+                    <a href="#contact" class="hero-btn-primary inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all">
+                        <i class="fas fa-paper-plane text-xs"></i>
+                        Get In Touch
+                    </a>
+                    <a href="/zohaib/src/ZOHAIB Resume.pdf" download class="hero-btn-secondary inline-flex items-center gap-2 px-8 py-3.5 rounded-full text-sm font-bold tracking-wide transition-all">
+                        <i class="far fa-file-pdf text-xs"></i>
+                        Download CV
+                    </a>
+                </div>
+
+                <!-- Stats row -->
+                <div class="flex items-center gap-10">
+                    <div class="text-center">
+                        <div class="text-4xl font-black font-space text-slate-900 leading-none">3+</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mt-2">Years Exp.</div>
+                    </div>
+                    <div class="w-px h-10 bg-slate-200"></div>
+                    <div class="text-center">
+                        <div class="text-4xl font-black font-space text-slate-900 leading-none">10+</div>
+                        <div class="text-[11px] text-slate-400 uppercase tracking-[0.2em] mt-2">Projects</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right: Profile visual -->
+            <div class="relative flex items-center justify-center" data-aos="fade-left" data-aos-duration="1100" data-aos-delay="200">
+
+                <!-- Outer orbit ring -->
+                <div class="hero-orbit-ring absolute rounded-full pointer-events-none"></div>
+
+                <!-- Glow ring -->
+                <div class="hero-glow-ring absolute rounded-full pointer-events-none"></div>
+
+                <!-- Profile frame -->
+                <div class="hero-profile-frame relative z-10">
+                    <img src="/zohaib/src/profile.JPG" alt="Zohaib Ahmed" class="w-full h-full object-cover hero-profile-img">
+                    <!-- Inner gradient overlay -->
+                    <div class="absolute inset-0 hero-profile-overlay rounded-full"></div>
+                </div>
+
+                <!-- Floating skill chips -->
+                <div class="hero-chip chip-flutter animate-float-slow">
+                    <i class="fas fa-mobile-alt text-xs mr-1.5 text-cyan-400"></i> Flutter
+                </div>
+                <div class="hero-chip chip-ios" style="animation-delay:1.2s">
+                    <i class="fab fa-apple text-xs mr-1.5 text-white"></i> iOS Dev
+                </div>
+                <div class="hero-chip chip-uiux" style="animation-delay:0.6s">
+                    <i class="fas fa-pen-nib text-xs mr-1.5 text-violet-400"></i> UI/UX
+                </div>
+                <div class="hero-chip chip-firebase" style="animation-delay:1.8s">
+                    <i class="fas fa-fire text-xs mr-1.5 text-orange-400"></i> Firebase
+                </div>
+
+                <!-- Status card -->
+                <div class="hero-status-card absolute -bottom-6 left-1/2 -translate-x-1/2 animate-float z-20">
+                    <div class="flex items-center gap-3">
+                        <div class="w-9 h-9 rounded-full bg-emerald-500/20 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-check text-emerald-400 text-xs"></i>
+                        </div>
+                        <div>
+                            <div class="text-[10px] font-bold text-emerald-600 uppercase tracking-widest">Open to Work</div>
+                            <div class="text-slate-700 text-xs font-semibold leading-tight">Available for collaborations</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Scroll cue -->
+        <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex flex-col items-center gap-1.5 hero-scroll-cue">
+            <span class="text-[10px] text-slate-500 uppercase tracking-[0.25em] font-semibold">Scroll</span>
+            <div class="hero-scroll-line"></div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="py-24 px-6 bg-white">
+        <div class="max-w-7xl mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-4xl md:text-5xl font-space font-bold text-[#0F172A] mb-4" data-aos="fade-up">Featured Work</h2>
+                <p class="text-slate-500 text-lg max-w-2xl mx-auto" data-aos="fade-up" data-aos-delay="100">Explore clean codebases, rich case studies, and comprehensive mockups with interactive details.</p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Project 1: Delicacia -->
+                <div class="group cursor-pointer" onclick="openProject('delicacia')" data-aos="fade-up" data-aos-delay="100">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/Delicacia.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Delicacia">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Mobile App</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">Delicacia Sphere</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">A comprehensive food delivery and restaurant management ecosystem.</p>
+                    </div>
+                </div>
+
+                <!-- Project 2: Logistics -->
+                <div class="group cursor-pointer" onclick="openProject('logistics')" data-aos="fade-up" data-aos-delay="200">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/Logistics.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Logistics">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Web + Mobile</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">BackCAPS Logistics</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Revolutionizing transportation with complete online booking booking systems.</p>
+                    </div>
+                </div>
+
+                <!-- Project 3: Hezzni -->
+                <div class="group cursor-pointer" onclick="openProject('hezzni')" data-aos="fade-up" data-aos-delay="300">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/Hezzni.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Hezzni">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Mobile App</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">Hezzni</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Automated ride-sharing platform specifically built for the Moroccan market.</p>
+                    </div>
+                </div>
+
+                <!-- Project 4: KariGhar -->
+                <div class="group cursor-pointer" onclick="openProject('karighar')" data-aos="fade-up" data-aos-delay="400">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/KariGhar.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="KariGhar">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Mobile App</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">KariGhar</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">On-demand home services platform matching local handymen with customers.</p>
+                    </div>
+                </div>
+
+                <!-- Project 5: CureVio -->
+                <div class="group cursor-pointer" onclick="openProject('curevio')" data-aos="fade-up" data-aos-delay="500">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/CureVio.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="CureVio">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Healthcare</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">CureVio</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Telemedicine application for streamlining diagnostic patient metrics.</p>
+                    </div>
+                </div>
+
+                <!-- Project 6: LifeKarts -->
+                <div class="group cursor-pointer" onclick="openProject('lifekarts')" data-aos="fade-up" data-aos-delay="600">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/LifeKarts.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="LifeKarts">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">UI/UX Design</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">LifeKarts</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Medical inventory and digital prescription assistant design on Figma.</p>
+                    </div>
+                </div>
+
+                <!-- Project 7: Spoken Buddy -->
+                <div class="group cursor-pointer" onclick="openProject('spoken_buddy')" data-aos="fade-up" data-aos-delay="700">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/Spoken buddy.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Spoken Buddy">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Web + Mobile</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">Spoken Buddy</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">AI speaking partner that checks fluency and assists ESL students.</p>
+                    </div>
+                </div>
+
+                <!-- Project 8: Material Scanner -->
+                <div class="group cursor-pointer" onclick="openProject('material_scanner')" data-aos="fade-up" data-aos-delay="800">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/Material Scanner.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Material Scanner">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Mobile App</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">Material Scanner</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">A fast scanning workspace tool featuring auto-clipping & filters.</p>
+                    </div>
+                </div>
+
+                <!-- Project 9: Krixsen -->
+                <div class="group cursor-pointer" onclick="openProject('web_projects')" data-aos="fade-up" data-aos-delay="900">
+                    <div class="rounded-3xl overflow-hidden mb-6 bg-slate-100 aspect-[4/3] relative shadow-sm border border-slate-100">
+                        <img src="/zohaib/src/thumbnails/Websites.png" class="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" alt="Krixsen Web Portal">
+                        <div class="absolute inset-0 bg-[#0F172A]/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                            <span class="bg-white text-[#0F172A] px-6 py-2.5 rounded-full font-medium transform translate-y-4 group-hover:translate-y-0 transition-all duration-300 shadow-lg flex items-center gap-2">
+                                <i class="fas fa-eye"></i> View Case Study
+                            </span>
+                        </div>
+                    </div>
+                    <div class="px-2">
+                        <span class="text-xs font-bold text-blue-500 tracking-wider uppercase border border-blue-100 px-3 py-1 rounded-full mb-3 inline-block">Web Platform</span>
+                        <h3 class="text-2xl font-bold font-space text-[#0F172A] mb-2 group-hover:text-blue-600 transition-colors">Krixsen Portal</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed">Corporate website portals and specialized systems for coworking spaces.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Experience / Foundations Info -->
+    <section id="about" class="py-24 px-6 bg-[#F8FAFC]">
+        <div class="max-w-7xl mx-auto grid grid-cols-1 lg:grid-cols-12 gap-16 pb-12">
+            <div class="lg:col-span-8" data-aos="fade-right">
+                <h2 class="text-5xl font-space font-bold text-[#0F172A] mb-12 italic">Foundations_</h2>
+                
+                <div class="space-y-12 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-gradient-to-b before:from-transparent before:via-slate-300 before:to-transparent pt-4">
+                    
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-blue-500 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10 transition-transform duration-300 hover:scale-110"></div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white shadow-sm border border-slate-100 hover:shadow-md transition-shadow">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-[#0F172A]">Lab Instructor</h3>
+                                <span class="text-xs font-medium text-slate-400">Sep 2024 - Current</span>
+                            </div>
+                            <h4 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Capital University of Science & Technology</h4>
+                            <p class="text-slate-500 text-sm">Providing hands-on guidance in core CS subjects: instructed Data Structures (C++) and Database Labs (SQL, ER Modeling). Mentored students in algorithmic problem-solving.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-300 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white shadow-sm border border-slate-100">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-[#0F172A]">Software Engineer Intern</h3>
+                                <span class="text-xs font-medium text-slate-400">Mar 2023 - Jul 2024</span>
+                            </div>
+                            <h4 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Bitoreal Pvt. Ltd.</h4>
+                            <p class="text-slate-500 text-sm">Developed reliable and user-friendly software solutions with a focus on code quality. Worked on Web Application Development using frameworks like Flutter and JavaScript.</p>
+                        </div>
+                    </div>
+
+                    <div class="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
+                        <div class="flex items-center justify-center w-10 h-10 rounded-full border-4 border-white bg-slate-300 text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 z-10"></div>
+                        <div class="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-6 rounded-2xl bg-white shadow-sm border border-slate-100">
+                            <div class="flex justify-between items-start mb-2">
+                                <h3 class="font-bold text-xl text-[#0F172A]">Wordpress Developer</h3>
+                                <span class="text-xs font-medium text-slate-400">Sep 2021 - Dec 2022</span>
+                            </div>
+                            <h4 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Krixsen Pvt. Ltd.</h4>
+                            <p class="text-slate-500 text-sm">Created the main Krixsen website and designed a co-working space portal. Implemented notification systems for scheduling and admin tasks.</p>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+            <!-- Toolkit / Education -->
+            <div class="lg:col-span-4 space-y-8" data-aos="fade-left" data-aos-delay="200">
+                <div class="bg-[#0F172A] rounded-[2rem] p-8 text-white">
+                    <h3 class="text-2xl font-bold font-space mb-6">Toolkit</h3>
+                    <div class="flex flex-wrap gap-3">
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">Flutter</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">iOS (Swift)</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">Android (Kotlin)</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">React / HTML / CSS / JS</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">NodeJS / Express</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">UI/UX Design</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">Figma</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">Firebase</span>
+                        <span class="px-4 py-2 bg-white/10 rounded-full text-sm font-medium border border-white/10 hover:bg-white/20 transition-colors cursor-default">C++ / Java / Python</span>
+                    </div>
+                </div>
+
+                <div class="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
+                    <h4 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-2">Education</h4>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <h3 class="text-xl font-bold text-[#0F172A] mb-1">BS Software Engineering</h3>
+                            <p class="text-slate-500 text-sm">Capital University Of Science & Technology</p>
+                            <p class="text-slate-400 text-xs mt-1">2020 – 2024</p>
+                        </div>
+                        <div class="text-right">
+                            <span class="block text-3xl font-bold text-blue-500 font-space">3.92</span>
+                            <span class="text-[10px] font-bold text-slate-400 uppercase tracking-widest">CGPA</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Certifications Block -->
+                <div class="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
+                    <h4 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-4">Certifications</h4>
+                    <div class="space-y-4">
+                        <div class="border-b border-slate-100 pb-3 last:border-0 last:pb-0">
+                            <div class="flex justify-between items-start">
+                                <h5 class="text-sm font-bold text-[#0F172A]">Hackathon ExcITe Cup</h5>
+                                <span class="text-[10px] text-slate-400 font-bold uppercase">2023</span>
+                            </div>
+                            <p class="text-slate-500 text-xs mt-0.5">Capital University of Science & Technology</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-3 last:border-0 last:pb-0">
+                            <div class="flex justify-between items-start">
+                                <h5 class="text-sm font-bold text-[#0F172A]">2022 ICPC Asia Topi</h5>
+                                <span class="text-[10px] text-slate-400 font-bold uppercase">2022</span>
+                            </div>
+                            <p class="text-slate-500 text-xs mt-0.5">International Collegiate Programming Contest</p>
+                        </div>
+                        <div class="border-b border-slate-100 pb-2 last:border-0 last:pb-0">
+                            <div class="flex justify-between items-start">
+                                <h5 class="text-sm font-bold text-[#0F172A]">Frontend Fundamentals</h5>
+                                <span class="text-[10px] text-slate-400 font-bold uppercase">2020</span>
+                            </div>
+                            <p class="text-slate-500 text-xs mt-0.5">Pirple.com</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Languages Block -->
+                <div class="bg-white rounded-[2rem] p-8 border border-slate-100 shadow-sm">
+                    <h4 class="text-xs font-bold text-slate-400 tracking-wider uppercase mb-3">Languages</h4>
+                    <div class="flex space-x-6">
+                        <div>
+                            <span class="text-sm font-bold text-[#0F172A] block">Urdu</span>
+                            <span class="text-xs text-slate-400 font-medium">Native</span>
+                        </div>
+                        <div>
+                            <span class="text-sm font-bold text-[#0F172A] block">English</span>
+                            <span class="text-xs text-slate-400 font-medium">Moderate</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="py-20 px-6">
+        <div class="max-w-7xl mx-auto bg-[#0F172A] rounded-[3rem] p-12 lg:p-20 relative overflow-hidden" data-aos="zoom-in">
+            <div class="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-10">
+                <div>
+                    <h2 class="text-5xl md:text-7xl font-space font-bold text-white mb-2">Let's start your</h2>
+                    <h2 class="text-5xl md:text-7xl font-space font-bold text-blue-500 italic mb-12">next project.</h2>
+                    
+                    <div class="space-y-4">
+                        <a href="mailto:zohaib.ahmed1397@gmail.com" class="flex items-center space-x-4 text-white hover:text-blue-400 transition-colors w-fit group">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                                <i class="far fa-envelope text-xl"></i>
+                            </div>
+                            <span class="text-lg font-medium">zohaib.ahmed1397@gmail.com</span>
+                        </a>
+                        <a href="tel:+923088877196" class="flex items-center space-x-4 text-white hover:text-blue-400 transition-colors w-fit group">
+                            <div class="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center group-hover:bg-blue-500/20 transition-colors">
+                                <i class="fas fa-phone-alt"></i>
+                            </div>
+                            <span class="text-lg font-medium">+92 308 8877196</span>
+                        </a>
+                    </div>
+                </div>
+
+                <div class="flex space-x-4">
+                     <a href="#" class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-[#0F172A] transition-all transform hover:scale-110">
+                        <i class="fab fa-github text-2xl"></i>
+                    </a>
+                    <a href="#" class="w-16 h-16 rounded-full border border-white/20 flex items-center justify-center text-white hover:bg-white hover:text-[#0F172A] transition-all transform hover:scale-110">
+                        <i class="fas fa-external-link-alt text-xl"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="absolute bottom-8 right-12 z-10">
+                <p class="text-white/40 text-xs font-bold tracking-widest uppercase">Designed for Zohaib Ahmed • 2024</p>
+            </div>
+            
+            <!-- Decorative circle -->
+            <div class="absolute -right-64 -top-64 w-[800px] h-[800px] rounded-full bg-blue-500/10 blur-3xl pointer-events-none"></div>
+        </div>
+    </footer>
+
+    <!-- Project Details Modal (Behance Style) -->
+    <div id="projectModal" class="fixed inset-0 z-[100] hidden overflow-y-auto bg-[#0F172A]/90 backdrop-blur-md transition-all duration-300">
+        <div class="min-h-screen px-4 py-8 md:py-12 flex items-center justify-center">
+            <!-- Modal Wrapper Card -->
+            <div class="inline-block w-full max-w-5xl bg-[#F8FAFC] rounded-[2rem] md:rounded-[3rem] text-left align-middle shadow-2xl overflow-hidden transform transition-all duration-500 scale-95 opacity-0 my-4 relative" id="modalBox">
+                <!-- Absolute Close Button -->
+                <button onclick="closeModal()" class="absolute top-6 right-6 z-50 w-12 h-12 rounded-full bg-white/80 text-[#0F172A] hover:bg-[#0F172A] hover:text-white transition-all duration-300 flex items-center justify-center shadow-md">
+                    <i class="fas fa-times text-lg"></i>
+                </button>
+                
+                <!-- Injected Container -->
+                <div id="modalContent" class="overflow-y-auto max-h-[92vh] scroll-smooth">
+                    <!-- Loaded dynamically via JavaScript Case Studies -->
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="/zohaib/script.js"></script>
+</body>
+</html>
