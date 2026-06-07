@@ -92,6 +92,8 @@ const TeamModal = ({ member, onClose }) => {
                                             router.visit(route('team.ibnay-hussain'));
                                         } else if (member.name === "Muhammad Hassaan") {
                                             router.visit(route('team.muhammad-hassaan'));
+                                        } else if (member.name === "Zohaib Ahmed") {
+                                            router.visit(route('team.zohaib-ahmed'));
                                         } else {
                                             console.log("Navigate to full profile page for", member.name);
                                         }

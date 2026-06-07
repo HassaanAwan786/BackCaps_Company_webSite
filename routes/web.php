@@ -30,6 +30,10 @@ Route::get('/team/muhammad-hassaan', function () {
     return Inertia::render('Team/MuhammadHassaan');
 })->name('team.muhammad-hassaan');
 
+Route::get('/team/zohaib-ahmed', function () {
+    return Inertia::render('Team/ZohaibAhmed');
+})->name('team.zohaib-ahmed');
+
 /*
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
