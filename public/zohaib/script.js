@@ -302,7 +302,7 @@ function openProject(id) {
                 <div class="w-full md:w-1/2 lg:w-3/5 flex-shrink-0">
                     <div class="text-xs font-bold text-slate-400 uppercase tracking-widest mb-3">SCREEN 0${index + 1}</div>
                     <div class="w-full overflow-hidden rounded-2xl bg-[#0F172A]/5 p-2">
-                        <img src="${img.src}" alt="${img.title}" class="w-full h-auto max-h-[75vh] object-contain rounded-xl hover:scale-[1.01] transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80';">
+                        <img src="/zohaib/${img.src}" alt="${img.title}" class="w-full h-auto max-h-[75vh] object-contain rounded-xl hover:scale-[1.01] transition-transform duration-500" onerror="this.onerror=null; this.src='https://images.unsplash.com/photo-1555066931-4365d14bab8c?auto=format&fit=crop&w=1200&q=80';">
                     </div>
                 </div>
                 <div class="w-full md:w-1/2 lg:w-2/5 flex flex-col justify-center py-4">
